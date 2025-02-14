@@ -8,17 +8,20 @@ import SelectGroup from 'headless/SelectGroup/SelectGroup';
 
 type SidebarMenuProps = {
     children: React.ReactNode;
+    defaultValue: string;
 };
 
-const SidebarMenu = ({ children }: SidebarMenuProps) => {
+const SidebarMenu = ({ children, defaultValue }: SidebarMenuProps) => {
     const sidebarMenuStyle = css`
         width: 100%;
         padding: 18px 24px;
         box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
     `;
 
     return (
-        <SelectGroup>
+        <SelectGroup defaultValue={defaultValue}>
             <div css={sidebarMenuStyle}>{children}</div>
         </SelectGroup>
     );

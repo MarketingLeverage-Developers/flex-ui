@@ -27,6 +27,10 @@ const SidebarMenuItem = ({ label, value, icon, onItemClick }: SidebarMenuItemPro
         padding: 0 10px;
         box-sizing: border-box;
         color: ${theme.colors.grayDark};
+
+        &:hover {
+            background: ${theme.colors.blackAlpha.blackAlpha008};
+        }
     `;
     const itemActiveStyle = css`
         background: ${theme.colors.blackAlpha.blackAlpha004};

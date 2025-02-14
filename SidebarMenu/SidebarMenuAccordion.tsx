@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css, useTheme } from '@emotion/react';
 import React from 'react';
-import HeadlessAccordion from 'headless/Accordion/Accordion';
 import SidebarMenu from './SidebarMenu';
 import { IconType } from 'react-icons';
 import Accordion from 'headless/Accordion/Accordion';
+import { FaChevronDown } from 'react-icons/fa6';
 
 type AccordionProps = {
     children: React.ReactNode;
@@ -15,9 +15,9 @@ type AccordionProps = {
 const SidebarMenuAccordion = ({ children, icon, label }: AccordionProps) => {
     const theme = useTheme();
 
-    const accordionDefaultStyle = css`
+    const accordionBoxStyle = css`
         width: 100%;
-        height: 36px;
+        height: auto;
         border-radius: 8px;
         gap: 16px;
         align-items: center;
@@ -31,18 +31,32 @@ const SidebarMenuAccordion = ({ children, icon, label }: AccordionProps) => {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 100%;
+        height: 36px;
+    `;
+    const accordionVisibleStyle = css`
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        /* padding: 10px 0; */
+    `;
+    const accordionButtonStyle = css`
+        background-color: inherit;
+        border: none;
+        padding: 0;
     `;
 
     return (
         <Accordion>
-            <Accordion.Box defaultStyle={accordionDefaultStyle}>
-                <Accordion.Visible defalutStyle={visibleDefaultStyle}>
-                    <SidebarMenu.IconText icon={icon} label={label} />
-                    <Accordion.Button>열기</Accordion.Button>
-                </Accordion.Visible>
-                <HeadlessAccordion.Hidden>{children}</HeadlessAccordion.Hidden>
-            </Accordion.Box>
+            <Accordion.Button defaultStyle={accordionButtonStyle}>
+                <Accordion.Box defaultStyle={accordionBoxStyle}>
+                    <Accordion.Visible defalutStyle={visibleDefaultStyle}>
+                        <SidebarMenu.IconText icon={icon} label={label} />
+
+                        <FaChevronDown size={12} />
+                    </Accordion.Visible>
+                    <Accordion.Hidden defalutStyle={accordionVisibleStyle}>{children}</Accordion.Hidden>
+                </Accordion.Box>
+            </Accordion.Button>
         </Accordion>
     );
 };
