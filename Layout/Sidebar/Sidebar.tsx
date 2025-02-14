@@ -18,7 +18,7 @@ const Wrapper = newStyled.aside<{ sidebarWidth: string; sidebarMaxWidth: string 
     width: fit-content;
     justify-self: start;
   }
-}
+
 `;
 
 type SidebarProps = {

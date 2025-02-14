@@ -14,6 +14,7 @@ const SidebarMenu = ({ children }: SidebarMenuProps) => {
     const sidebarMenuStyle = css`
         width: 100%;
         padding: 18px 24px;
+        box-sizing: border-box;
     `;
 
     return (
