@@ -21,11 +21,6 @@ const SidebarMenuAccordion = ({ children, icon, label }: AccordionProps) => {
         border-radius: 8px;
         gap: 16px;
         align-items: center;
-        font-size: 14px;
-        font-weight: 700;
-        padding: 0 10px;
-        box-sizing: border-box;
-        color: ${theme.colors.grayDark};
     `;
     const visibleDefaultStyle = css`
         display: flex;
@@ -37,26 +32,32 @@ const SidebarMenuAccordion = ({ children, icon, label }: AccordionProps) => {
         display: flex;
         flex-direction: column;
         gap: 3px;
-        /* padding: 10px 0; */
+        padding: 0 10px;
     `;
     const accordionButtonStyle = css`
+        width: 100%;
         background-color: inherit;
         border: none;
-        padding: 0;
+        padding: 0 10px;
+        color: ${theme.colors.grayDark};
+        font-size: 14px;
+        font-weight: 700;
+        box-sizing: border-box;
     `;
 
     return (
         <Accordion>
-            <Accordion.Button defaultStyle={accordionButtonStyle}>
-                <Accordion.Box defaultStyle={accordionBoxStyle}>
+            <Accordion.Box defaultStyle={accordionBoxStyle}>
+                <Accordion.Button defaultStyle={accordionButtonStyle}>
                     <Accordion.Visible defalutStyle={visibleDefaultStyle}>
                         <SidebarMenu.IconText icon={icon} label={label} />
-
+                        {/* <Accordion.Button defaultStyle={accordionButtonStyle}> */}
                         <FaChevronDown size={12} />
+                        {/* </Accordion.Button> */}
                     </Accordion.Visible>
-                    <Accordion.Hidden defalutStyle={accordionVisibleStyle}>{children}</Accordion.Hidden>
-                </Accordion.Box>
-            </Accordion.Button>
+                </Accordion.Button>
+                <Accordion.Hidden defalutStyle={accordionVisibleStyle}>{children}</Accordion.Hidden>
+            </Accordion.Box>
         </Accordion>
     );
 };
