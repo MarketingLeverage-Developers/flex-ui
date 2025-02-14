@@ -39,10 +39,11 @@ const SidebarMenuAccordion = ({ children, icon, label }: AccordionProps) => {
         background-color: inherit;
         border: none;
         padding: 0 10px;
-        color: ${theme.colors.grayDark};
+        color: #646f7a;
         font-size: 14px;
-        font-weight: 700;
+        font-weight: 600;
         box-sizing: border-box;
+        cursor: pointer;
     `;
 
     return (

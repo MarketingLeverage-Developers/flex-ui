@@ -23,16 +23,18 @@ const SidebarMenuItem = ({ label, value, icon, onItemClick }: SidebarMenuItemPro
         gap: 16px;
         align-items: center;
         font-size: 14px;
-        font-weight: 700;
+        font-weight: 600;
         padding: 0 10px;
         box-sizing: border-box;
-        color: ${theme.colors.grayDark};
+        color: #646f7a;
+        cursor: pointer;
 
         &:hover {
             background: ${theme.colors.blackAlpha.blackAlpha008};
         }
     `;
     const itemActiveStyle = css`
+        color: #242a30;
         background: ${theme.colors.blackAlpha.blackAlpha004};
     `;
 
