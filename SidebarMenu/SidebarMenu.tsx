@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
-import Select from 'headless/Select/Select';
 import React from 'react';
 import SidebarMenuItem from './SidebarMenuItem';
 import SidebarMenuAccordion from './SidebarMenuAccordion';
 import SidebarMenuIconText from './SidebarMenuIconText';
 import { css } from '@emotion/react';
+import SelectGroup from 'headless/SelectGroup/SelectGroup';
 
 type SidebarMenuProps = {
     children: React.ReactNode;
@@ -18,9 +18,9 @@ const SidebarMenu = ({ children }: SidebarMenuProps) => {
     `;
 
     return (
-        <Select>
+        <SelectGroup>
             <div css={sidebarMenuStyle}>{children}</div>
-        </Select>
+        </SelectGroup>
     );
 };
 

@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css, useTheme } from '@emotion/react';
-import Select from 'headless/Select/Select';
 import React from 'react';
 import SidebarMenu from './SidebarMenu';
 import { IconType } from 'react-icons';
+import SelectGroup from 'headless/SelectGroup/SelectGroup';
 
 type SidebarMenuItemProps = {
     label: string;
@@ -33,14 +33,14 @@ const SidebarMenuItem = ({ label, value, icon, onItemClick }: SidebarMenuItemPro
     `;
 
     return (
-        <Select.Option
+        <SelectGroup.Item
             defaultStyle={itemDefaultStyle}
             activeStyle={itemActiveStyle}
             value={value}
-            onOptionClick={onItemClick}
+            onSelectGroupItemClick={onItemClick}
         >
             <SidebarMenu.IconText icon={icon} label={label} />
-        </Select.Option>
+        </SelectGroup.Item>
     );
 };
 
