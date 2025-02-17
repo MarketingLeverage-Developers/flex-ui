@@ -14,9 +14,12 @@ type TableProps = {
 const Table = ({ children }: TableProps) => {
     const tableStyle = css`
         width: 100%;
-        border-collapse: collapse;
+        border-collapse: separate; /* 변경 */
+        border-spacing: 0; /* 셀 간 간격 0 */
         table-layout: fixed; /* 셀 크기 균일화 */
-        border: 1px solid #ddd;
+        border: 0.5px solid #ddd;
+        border-radius: 8px; /* 원하는 둥근 모서리 */
+        overflow: hidden; /* 내부 내용이 둥근 모서리를 벗어나지 않게 */
     `;
 
     return <table css={tableStyle}>{children}</table>;

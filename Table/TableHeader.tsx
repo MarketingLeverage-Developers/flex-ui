@@ -8,7 +8,7 @@ type TableHeaderProps = {
 
 const TableHeader = ({ children }: TableHeaderProps) => {
     const tableHeaderStyle = css`
-        background: #f4f4f4;
+        background: rgba(249, 129, 49, 0.06);
         font-weight: bold;
     `;
 

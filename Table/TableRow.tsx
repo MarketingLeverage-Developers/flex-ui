@@ -9,7 +9,7 @@ type TableRowProps = {
 const TableRow = ({ children }: TableRowProps) => {
     const tableRowStyle = css`
         &:nth-of-type(even) {
-            background: #f9f9f9;
+            background: #f3f3f3;
         }
     `;
 

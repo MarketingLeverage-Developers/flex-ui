@@ -10,7 +10,7 @@ type TableCellProps = {
 const TableCell = ({ children, align = 'center' }: TableCellProps) => {
     const cellStyle = css`
         border: 1px solid #ddd;
-        padding: 12px;
+        padding: 8px;
         display: table-cell;
         vertical-align: top; /* 수직 정렬: 위쪽 */
         text-align: left;
