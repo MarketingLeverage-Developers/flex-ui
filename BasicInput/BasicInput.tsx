@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 import React from 'react';
 
-type BasicInputProps = React.ButtonHTMLAttributes<HTMLInputElement> & {
+type BasicInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
     left?: React.ReactNode;
     right?: React.ReactNode;
     children?: React.ReactNode;
@@ -33,7 +33,7 @@ const BasicInput = ({ left, children, right, ...props }: BasicInputProps) => {
     return (
         <div css={basicInputWrapperStyle}>
             {left}
-            <input {...props} css={basicInputStyle} placeholder="이메일 주소" />
+            <input {...props} css={basicInputStyle} />
             {right}
         </div>
     );
