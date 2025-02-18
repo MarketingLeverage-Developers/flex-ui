@@ -18,6 +18,10 @@ const BasicInput = ({ left, children, right, ...props }: BasicInputProps) => {
         display: flex;
         align-items: center;
         color: #96999c;
+
+        &:focus-within {
+            border: 1px solid #f98131;
+        }
     `;
 
     const basicInputStyle = css`
