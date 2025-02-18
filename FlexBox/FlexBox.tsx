@@ -18,6 +18,8 @@ export type FlexBoxProps = React.HTMLAttributes<HTMLDivElement> & {
     justifyContent?: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly';
     gap?: number;
     flexWrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
+    width?: number | string;
+    height?: number | string;
 };
 
 const FlexBox = ({
@@ -29,6 +31,8 @@ const FlexBox = ({
     justifyContent = 'flex-start',
     gap = 0,
     flexWrap = 'nowrap',
+    width,
+    height,
     ...props
 }: FlexBoxProps) => {
     // padding과 margin을 숫자 또는 객체로 처리하는 함수
@@ -42,6 +46,14 @@ const FlexBox = ({
         return '0';
     };
 
+    // width와 height를 숫자일 경우 px 단위를 붙이고, 문자열이면 그대로 사용
+    const dimensionToString = (dim?: number | string) => {
+        if (typeof dim === 'number') {
+            return `${dim}px`;
+        }
+        return dim || 'auto';
+    };
+
     const flexBoxStyle = css`
         display: flex;
         flex-direction: ${flexDirection};
@@ -51,6 +63,8 @@ const FlexBox = ({
         gap: ${gap}px;
         padding: ${spacingToString(padding)};
         margin: ${spacingToString(margin)};
+        width: ${dimensionToString(width)};
+        height: ${dimensionToString(height)};
     `;
 
     return (
