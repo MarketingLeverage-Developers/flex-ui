@@ -12,7 +12,6 @@ const BasicInput = ({ left, children, right, ...props }: BasicInputProps) => {
     const basicInputWrapperStyle = css`
         padding: 10px 18px;
         width: 100%;
-        max-width: 380px;
         box-sizing: border-box;
         border-radius: 8px;
         border: 1px solid #dbdbdb;
