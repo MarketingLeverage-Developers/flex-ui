@@ -2,12 +2,12 @@
 import { css } from '@emotion/react';
 import React from 'react';
 
-type BasicButtonProps = {
+type BasicButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
     children: React.ReactNode; // button text
     isVisible?: boolean;
 };
 
-const BasicButton = ({ children, isVisible }: BasicButtonProps) => {
+const BasicButton = ({ children, isVisible, ...props }: BasicButtonProps) => {
     const basicButtonStyle = css`
         padding: 5px 16px;
         box-sizing: border-box;
@@ -24,7 +24,11 @@ const BasicButton = ({ children, isVisible }: BasicButtonProps) => {
         transition: all 0.3s ease;
     `;
 
-    return <button css={basicButtonStyle}>{children}</button>;
+    return (
+        <button {...props} css={basicButtonStyle}>
+            {children}
+        </button>
+    );
 };
 
 export default BasicButton;
