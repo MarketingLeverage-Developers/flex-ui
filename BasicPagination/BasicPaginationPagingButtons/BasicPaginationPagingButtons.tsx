@@ -1,20 +1,19 @@
-/** @jsxImportSource @emotion/react */
 import React from 'react';
-import BasicPagination from './BasicPagination';
-import { PaginationValueType } from 'headless/Pagination/Pagination';
+import BasicPagination from '../BasicPagination';
+import { PaginationValueType, usePagination } from 'headless/Pagination/Pagination';
 import { ReactComponent as PaginationArrow } from 'assets/images/pagination-arrow.svg';
-import { css } from '@emotion/react';
-import newStyled from '@emotion/styled';
 import { SlArrowLeft } from 'react-icons/sl';
 import { SlArrowRight } from 'react-icons/sl';
 import FlexBox from 'headful/FlexBox/FlexBox';
+import styles from './BasicPaginationPagingButtons.module.scss';
 
 type BasicPaginationPagingButtonsProps = {
-    // children: React.ReactNode;
     onPagingButtonClick: (paginationValue: PaginationValueType) => Promise<void>;
 };
 
 const BasicPaginationPagingButtons = ({ onPagingButtonClick }: BasicPaginationPagingButtonsProps) => {
+    const { hasNextPage, hasPrevPage, hasFastNextPage, hasFastPrevPage } = usePagination();
+
     const handleFastPrevButtonClick = async (paginationValue: PaginationValueType) => {
         await onPagingButtonClick(paginationValue);
     };
@@ -31,39 +30,10 @@ const BasicPaginationPagingButtons = ({ onPagingButtonClick }: BasicPaginationPa
         await onPagingButtonClick(paginationValue);
     };
 
-    const pagingButtonStyle = css`
-        background: inherit;
-        font-size: 16px;
-        color: #888;
-        border: none;
-        cursor: pointer;
-        font-family: Pretendard;
-        font-weight: 400;
-        width: 30px;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    `;
-
-    const pagingButtonDisabledStyle = css`
-        color: #dedede;
-        fill: #dedede !important;
-        cursor: auto;
-    `;
-
-    const pagingButtonActiveStyle = css`
-        background-color: #f98131;
-        border-radius: 8px;
-        padding: 6px 8px;
-        color: #fff;
-    `;
-
     return (
         <FlexBox justifyContent="center" alignItems="center">
             <BasicPagination.FastPrev
-                defaultStyle={pagingButtonStyle}
-                disabledStyle={pagingButtonDisabledStyle}
+                className={`${styles['paging-button']} ${hasFastPrevPage || styles['paging-button--disabled']}`}
                 onFastPrevClick={handleFastPrevButtonClick}
             >
                 <FlexBox>
@@ -72,27 +42,24 @@ const BasicPaginationPagingButtons = ({ onPagingButtonClick }: BasicPaginationPa
                 </FlexBox>
             </BasicPagination.FastPrev>
             <BasicPagination.Prev
-                defaultStyle={pagingButtonStyle}
-                disabledStyle={pagingButtonDisabledStyle}
+                className={`${styles['paging-button']} ${hasPrevPage || styles['paging-button--disabled']}`}
                 onPrevClick={handlePrevButtonClick}
             >
                 <SlArrowLeft />
             </BasicPagination.Prev>
             <BasicPagination.Pages
-                defaultStyle={pagingButtonStyle}
-                activeStyle={pagingButtonActiveStyle}
+                className={styles['paging-button']}
+                activeClassName={styles['paging-button--active']}
                 onPagesClick={handlePagesButtonClick}
             />
             <BasicPagination.Next
-                defaultStyle={pagingButtonStyle}
-                disabledStyle={pagingButtonDisabledStyle}
+                className={`${styles['paging-button']} ${hasNextPage || styles['paging-button--disabled']}`}
                 onNextClick={handleNextButtonClick}
             >
                 <SlArrowRight />
             </BasicPagination.Next>
             <BasicPagination.FastNext
-                defaultStyle={pagingButtonStyle}
-                disabledStyle={pagingButtonDisabledStyle}
+                className={`${styles['paging-button']} ${hasFastNextPage || styles['paging-button--disabled']}`}
                 onFastNextClick={handleFastNextButtonClick}
             >
                 <FlexBox>

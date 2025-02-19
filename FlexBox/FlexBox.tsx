@@ -1,5 +1,3 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
 import React from 'react';
 
 type Spacing = {
@@ -35,8 +33,8 @@ const FlexBox = ({
     height,
     ...props
 }: FlexBoxProps) => {
-    // padding과 margin을 숫자 또는 객체로 처리하는 함수
-    const spacingToString = (spacing?: Spacing | number) => {
+    // 숫자 또는 객체 형태의 spacing을 문자열로 변환하는 함수
+    const spacingToString = (spacing?: Spacing | number): string => {
         if (typeof spacing === 'number') {
             return `${spacing}px`;
         }
@@ -46,29 +44,31 @@ const FlexBox = ({
         return '0';
     };
 
-    // width와 height를 숫자일 경우 px 단위를 붙이고, 문자열이면 그대로 사용
-    const dimensionToString = (dim?: number | string) => {
+    // width와 height를 숫자이면 px 단위를 붙이고, 문자열이면 그대로 사용
+    const dimensionToString = (dim?: number | string): string => {
         if (typeof dim === 'number') {
             return `${dim}px`;
         }
         return dim || 'auto';
     };
 
-    const flexBoxStyle = css`
-        display: flex;
-        flex-direction: ${flexDirection};
-        align-items: ${alignItems};
-        justify-content: ${justifyContent};
-        flex-wrap: ${flexWrap};
-        gap: ${gap}px;
-        padding: ${spacingToString(padding)};
-        margin: ${spacingToString(margin)};
-        width: ${dimensionToString(width)};
-        height: ${dimensionToString(height)};
-    `;
+    const inlineStyle: React.CSSProperties = {
+        display: 'flex',
+        flexDirection,
+        alignItems,
+        justifyContent,
+        flexWrap,
+        gap: `${gap}px`,
+        padding: spacingToString(padding),
+        margin: spacingToString(margin),
+        width: dimensionToString(width),
+        height: dimensionToString(height),
+    };
+
+    const combinedStyle: React.CSSProperties = { ...props.style, ...inlineStyle };
 
     return (
-        <div {...props} css={flexBoxStyle}>
+        <div {...props} style={combinedStyle}>
             {children}
         </div>
     );

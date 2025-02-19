@@ -1,10 +1,9 @@
-import { css } from '@emotion/react';
 import FlexBox from 'headful/FlexBox/FlexBox';
 import { useDropdown } from 'headless/Dropdown/Dropdown';
-import { PaginationValueType, usePagination } from 'headless/Pagination/Pagination';
 import SelectGroup, { useSelectGroup } from 'headless/SelectGroup/SelectGroup';
 import React from 'react';
 import { FaCheck } from 'react-icons/fa6';
+import styles from './BasicSelectItem.module.scss';
 
 type BasicSelectItemProps = {
     children: React.ReactNode;
@@ -23,30 +22,9 @@ const BasicSelectItem = ({ children, value, onBasicSelectItemClick }: BasicSelec
         closeDropdown();
     };
 
-    const basicPaginationPageSizeItemStyle = css`
-        height: 32px;
-        padding: 0 6px;
-        margin: 0 8px;
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
-        font-family: Pretendard;
-        font-weight: 600;
-        color: #3e4449;
-        border-radius: 8px;
-
-        &:hover {
-            background-color: rgba(0, 0, 0, 0.015);
-        }
-    `;
-    const basicPaginationPageSizeItemActiveStyle = css`
-        /* background-color: #e9e9ea; */
-    `;
-
     return (
         <SelectGroup.Item
-            defaultStyle={basicPaginationPageSizeItemStyle}
-            activeStyle={basicPaginationPageSizeItemActiveStyle}
+            className={styles['basic-select-item']}
             value={value}
             onSelectGroupItemClick={handleBaiscSelectItemPageSizeItemClick}
         >

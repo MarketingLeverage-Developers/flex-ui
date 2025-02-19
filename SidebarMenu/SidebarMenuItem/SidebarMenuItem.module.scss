@@ -1,0 +1,24 @@
+/* Block: sidebar-menu-item */
+.sidebar-menu-item {
+    width: 100%;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0 10px;
+    box-sizing: border-box;
+    color: #646f7a;
+    cursor: pointer;
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.08); // blackAlpha008
+    }
+}
+
+.sidebar-menu-item--active {
+    color: #242a30;
+    background: rgba(0, 0, 0, 0.04); // blackAlpha004
+}

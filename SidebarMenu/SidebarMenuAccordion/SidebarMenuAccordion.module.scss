@@ -1,0 +1,36 @@
+/* Block: sidebar-menu-accordion */
+.sidebar-menu-accordion {
+    &__box {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        gap: 16px;
+        align-items: center;
+    }
+
+    &__button {
+        width: 100%;
+        background-color: inherit;
+        border: none;
+        padding: 0 10px;
+        color: #646f7a;
+        font-size: 14px;
+        font-weight: 600;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+
+    &__visible {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 36px;
+    }
+
+    &__hidden {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        padding: 0 10px;
+    }
+}

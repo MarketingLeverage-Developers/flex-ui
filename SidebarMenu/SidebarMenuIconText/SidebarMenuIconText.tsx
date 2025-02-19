@@ -1,7 +1,6 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
 import React from 'react';
 import { IconType } from 'react-icons';
+import styles from './SidebarMenuIconText.module.scss';
 
 type SidebarMenuIconTextProps = {
     icon: IconType;
@@ -9,15 +8,10 @@ type SidebarMenuIconTextProps = {
 };
 
 const SidebarMenuIconText = ({ icon: Icon, label }: SidebarMenuIconTextProps) => {
-    const accordionDefaultStyle = css`
-        display: flex;
-        gap: 16px;
-    `;
-
     return (
-        <div css={[accordionDefaultStyle]}>
-            <Icon />
-            <span>{label}</span>
+        <div className={styles['sidebar-menu-icon-text']}>
+            <Icon className={styles['sidebar-menu-icon-text__icon']} />
+            <span className={styles['sidebar-menu-icon-text__label']}>{label}</span>
         </div>
     );
 };

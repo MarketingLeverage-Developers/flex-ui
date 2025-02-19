@@ -1,11 +1,10 @@
 import Dropdown from 'headless/Dropdown/Dropdown';
 import SelectGroup from 'headless/SelectGroup/SelectGroup';
 import React from 'react';
-import BasicSelectItem from './BasicSelectItem';
-import BasicSelectContent from './BasicSelectContent';
-import BasicSelectTrigger from './BasicSelectTrigger';
-import { usePagination } from 'headless/Pagination/Pagination';
-import { css } from '@emotion/react';
+import BasicSelectItem from './BasicSelectItem/BasicSelectItem';
+import BasicSelectContent from './BasicSelectContent/BasicSelectContent';
+import BasicSelectTrigger from './BasicSelectTrigger/BasicSelectTrigger';
+import styles from './BasicSelect.module.scss';
 
 type BasicSelectProps = {
     children: React.ReactNode;
@@ -13,17 +12,10 @@ type BasicSelectProps = {
 };
 
 const BasicSelect = ({ children, defaultValue }: BasicSelectProps) => {
-    const basicPaginationPageSizeStyle = css`
-        /* display: flex; */
-        font-size: 14px;
-        cursor: pointer;
-        align-self: flex-start;
-    `;
-
     return (
         <SelectGroup defaultValue={defaultValue}>
             <Dropdown>
-                <Dropdown.Box defaultStyle={basicPaginationPageSizeStyle}>{children}</Dropdown.Box>
+                <Dropdown.Box className={styles['basic-select__box']}>{children}</Dropdown.Box>
             </Dropdown>
         </SelectGroup>
     );

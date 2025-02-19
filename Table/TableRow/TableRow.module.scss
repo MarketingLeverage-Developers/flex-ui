@@ -1,0 +1,6 @@
+/* Block: table-row */
+.table-row {
+    &:nth-of-type(even) {
+        background: #f3f3f3;
+    }
+}

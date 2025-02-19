@@ -1,0 +1,27 @@
+/* Block: paging-button */
+.paging-button {
+    background: inherit;
+    font-size: 16px;
+    color: #888;
+    border: none;
+    cursor: pointer;
+    font-family: Pretendard, sans-serif;
+    font-weight: 400;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--disabled {
+        color: #dedede;
+        fill: #dedede !important;
+        cursor: auto;
+    }
+    &--active {
+        background-color: #f98131;
+        border-radius: 8px;
+        padding: 6px 8px;
+        color: #fff;
+    }
+}

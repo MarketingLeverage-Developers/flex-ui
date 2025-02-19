@@ -1,5 +1,5 @@
 import BasicSelect from 'headful/BasicSelect/BasicSelect';
-import BasicSelectContent from 'headful/BasicSelect/BasicSelectContent';
+import BasicSelectContent from 'headful/BasicSelect/BasicSelectContent/BasicSelectContent';
 import React from 'react';
 
 type PageSizeSelectContentProps = {

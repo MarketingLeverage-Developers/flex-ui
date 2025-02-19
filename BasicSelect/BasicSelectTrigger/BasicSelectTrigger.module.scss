@@ -1,0 +1,19 @@
+/* Block: basic-select-trigger */
+.basic-select-trigger {
+    width: auto;
+    height: 24px;
+    padding: 0 8px;
+    border-radius: 6px;
+    background-color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Pretendard, sans-serif;
+    font-size: 12px;
+}
+
+/* Element: basic-select-trigger__display */
+.basic-select-trigger__display {
+    /* 기본 스타일이 필요하면 여기에 작성 */
+}

@@ -1,5 +1,4 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
+import React from 'react';
 
 type TextProps = React.HTMLAttributes<HTMLDivElement> & {
     fontSize?: number;
@@ -10,15 +9,17 @@ type TextProps = React.HTMLAttributes<HTMLDivElement> & {
 };
 
 const Text = ({ fontSize, fontWeight, color, textAlign, children, ...props }: TextProps) => {
-    const textStyle = css`
-        font-size: ${fontSize ?? 16}px;
-        font-weight: ${fontWeight ?? 400};
-        color: ${color ?? '#324449'};
-        text-align: ${textAlign ?? 'left'};
-    `;
+    const inlineStyle: React.CSSProperties = {
+        fontSize: `${fontSize ?? 16}px`,
+        fontWeight: fontWeight ?? 400,
+        color: color ?? '#324449',
+        textAlign: textAlign ?? 'left',
+    };
+
+    const combinedStyle: React.CSSProperties = { ...props.style, ...inlineStyle };
 
     return (
-        <div {...props} css={textStyle}>
+        <div {...props} style={combinedStyle}>
             {children}
         </div>
     );

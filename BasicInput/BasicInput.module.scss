@@ -1,0 +1,25 @@
+/* Block: basic-input */
+.basic-input {
+    padding: 10px 18px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid #dbdbdb;
+    display: flex;
+    align-items: center;
+    color: #96999c;
+
+    &:focus-within {
+        border: 1px solid #f98131;
+    }
+}
+
+/* Element: basic-input__input */
+.basic-input__input {
+    width: 100%;
+    padding: 10px 18px;
+    border: none;
+    font-size: 14px;
+    font-family: Pretendard, sans-serif;
+    outline: none;
+}

@@ -1,8 +1,5 @@
-import Dropdown from 'headless/Dropdown/Dropdown';
-import SelectGroup from 'headless/SelectGroup/SelectGroup';
 import React from 'react';
 import { usePagination } from 'headless/Pagination/Pagination';
-import { css } from '@emotion/react';
 import PageSizeSelectItem from './PageSizeSelectItem';
 import PageSizeSelectContent from './PageSizeSelectContent';
 import PageSizeSelectTrigger from './PageSizeSelectTrigger';

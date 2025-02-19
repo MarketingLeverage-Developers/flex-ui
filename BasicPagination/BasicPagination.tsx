@@ -1,24 +1,18 @@
-/** @jsxImportSource @emotion/react */
 import React from 'react';
-import BasicPaginationPageSize from './BasicPaginationPageSize.tsx/PageSizeSelect';
+import BasicPaginationPageSize from './PageSizeSelect/PageSizeSelect';
 import Pagination, { PaginationValueType } from 'headless/Pagination/Pagination';
-import BasicPaginationPagingButtons from './BasicPaginationPagingButtons';
-import { css } from '@emotion/react';
+import BasicPaginationPagingButtons from './BasicPaginationPagingButtons/BasicPaginationPagingButtons';
+import styles from './BasicPagination.module.scss';
 
 type BasicPaginationProps = {
     children: React.ReactNode;
     defaultValue?: PaginationValueType;
 };
-const BasicPagination = ({ children, defaultValue }: BasicPaginationProps) => {
-    const basicPaginationStyle = css`
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    `;
 
+const BasicPagination = ({ children, defaultValue }: BasicPaginationProps) => {
     return (
         <Pagination defaultValue={defaultValue}>
-            <div css={basicPaginationStyle}>{children}</div>
+            <div className={styles['basic-pagination']}>{children}</div>
         </Pagination>
     );
 };
