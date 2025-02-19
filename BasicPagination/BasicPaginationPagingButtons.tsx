@@ -5,6 +5,9 @@ import { PaginationValueType } from 'headless/Pagination/Pagination';
 import { ReactComponent as PaginationArrow } from 'assets/images/pagination-arrow.svg';
 import { css } from '@emotion/react';
 import newStyled from '@emotion/styled';
+import { SlArrowLeft } from 'react-icons/sl';
+import { SlArrowRight } from 'react-icons/sl';
+import FlexBox from 'headful/FlexBox/FlexBox';
 
 type BasicPaginationPagingButtonsProps = {
     // children: React.ReactNode;
@@ -28,11 +31,6 @@ const BasicPaginationPagingButtons = ({ onPagingButtonClick }: BasicPaginationPa
         await onPagingButtonClick(paginationValue);
     };
 
-    const pagingButtonWrapperStyle = css`
-        display: flex;
-        justify-content: center;
-    `;
-
     const pagingButtonStyle = css`
         background: inherit;
         font-size: 16px;
@@ -43,6 +41,9 @@ const BasicPaginationPagingButtons = ({ onPagingButtonClick }: BasicPaginationPa
         font-weight: 400;
         width: 30px;
         height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     `;
 
     const pagingButtonDisabledStyle = css`
@@ -58,28 +59,24 @@ const BasicPaginationPagingButtons = ({ onPagingButtonClick }: BasicPaginationPa
         color: #fff;
     `;
 
-    const PaginationArrowLeft = newStyled(PaginationArrow)`
-        transform: rotate(180deg);
-    `;
-    const PaginationArrowRight = newStyled(PaginationArrow)`
-    `;
-
     return (
-        <div css={pagingButtonWrapperStyle}>
+        <FlexBox justifyContent="center" alignItems="center">
             <BasicPagination.FastPrev
                 defaultStyle={pagingButtonStyle}
                 disabledStyle={pagingButtonDisabledStyle}
                 onFastPrevClick={handleFastPrevButtonClick}
             >
-                <PaginationArrowLeft />
-                <PaginationArrowLeft />
+                <FlexBox>
+                    <SlArrowLeft />
+                    <SlArrowLeft />
+                </FlexBox>
             </BasicPagination.FastPrev>
             <BasicPagination.Prev
                 defaultStyle={pagingButtonStyle}
                 disabledStyle={pagingButtonDisabledStyle}
                 onPrevClick={handlePrevButtonClick}
             >
-                <PaginationArrowLeft />
+                <SlArrowLeft />
             </BasicPagination.Prev>
             <BasicPagination.Pages
                 defaultStyle={pagingButtonStyle}
@@ -91,17 +88,19 @@ const BasicPaginationPagingButtons = ({ onPagingButtonClick }: BasicPaginationPa
                 disabledStyle={pagingButtonDisabledStyle}
                 onNextClick={handleNextButtonClick}
             >
-                <PaginationArrowRight />
+                <SlArrowRight />
             </BasicPagination.Next>
             <BasicPagination.FastNext
                 defaultStyle={pagingButtonStyle}
                 disabledStyle={pagingButtonDisabledStyle}
                 onFastNextClick={handleFastNextButtonClick}
             >
-                <PaginationArrowRight />
-                <PaginationArrowRight />
+                <FlexBox>
+                    <SlArrowRight />
+                    <SlArrowRight />
+                </FlexBox>
             </BasicPagination.FastNext>
-        </div>
+        </FlexBox>
     );
 };
 
