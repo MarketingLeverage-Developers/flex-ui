@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
-import BasicPaginationPageSize from './BasicPaginationPageSize.tsx/BasicPaginationPageSize';
+import BasicPaginationPageSize from './BasicPaginationPageSize.tsx/PageSizeSelect';
 import Pagination, { PaginationValueType } from 'headless/Pagination/Pagination';
 import BasicPaginationPagingButtons from './BasicPaginationPagingButtons';
 import { css } from '@emotion/react';
