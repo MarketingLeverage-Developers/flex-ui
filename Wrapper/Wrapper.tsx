@@ -7,7 +7,7 @@ type Spacing = {
     left: number;
 };
 
-type WrapperProps = {
+type WrapperProps = React.HTMLAttributes<HTMLDivElement> & {
     children: React.ReactNode;
     padding?: Spacing | number;
     margin?: Spacing | number;

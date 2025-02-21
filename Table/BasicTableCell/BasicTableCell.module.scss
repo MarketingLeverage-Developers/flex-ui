@@ -1,5 +1,6 @@
 /* Block: table-cell */
-.table-cell {
+.basic-table-cell {
+    width: 100%;
     border: 1px solid #ddd;
     padding: 8px;
     display: table-cell;
@@ -8,16 +9,20 @@
     word-break: break-word; // 단어가 길 때 강제로 줄바꿈
     white-space: normal; // 텍스트가 셀 너비를 초과하면 줄바꿈
     overflow-wrap: break-word; // CSS3 기준
+
+    @media (max-width: 1024px) {
+        width: 100px;
+    }
 }
 
-.table-cell--left {
+.basic-table-cell--left {
     text-align: left;
 }
 
-.table-cell--center {
+.basic-table-cell--center {
     text-align: center;
 }
 
-.table-cell--right {
+.basic-table-cell--right {
     text-align: right;
 }
