@@ -8,7 +8,7 @@ import styles from './BasicSelectItem.module.scss';
 type BasicSelectItemProps = {
     children: React.ReactNode;
     value: string;
-    onBasicSelectItemClick?: () => void;
+    onBasicSelectItemClick?: (value: string) => void;
 };
 
 const BasicSelectItem = ({ children, value, onBasicSelectItemClick }: BasicSelectItemProps) => {
@@ -17,8 +17,8 @@ const BasicSelectItem = ({ children, value, onBasicSelectItemClick }: BasicSelec
 
     const isCurrentItem = value === selectGroupValue;
 
-    const handleBaiscSelectItemPageSizeItemClick = async () => {
-        onBasicSelectItemClick && onBasicSelectItemClick();
+    const handleBaiscSelectItemPageSizeItemClick = async (value: string) => {
+        onBasicSelectItemClick && onBasicSelectItemClick(value);
         closeDropdown();
     };
 
