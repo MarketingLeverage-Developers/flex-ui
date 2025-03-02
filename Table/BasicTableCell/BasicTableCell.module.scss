@@ -1,24 +1,14 @@
-/* Block: table-cell */
 .basic-table-cell {
-    width: 100%;
-    border: 1px solid #ddd;
-    padding: 8px;
-    display: table-cell;
-    vertical-align: middle; // 수직 정렬: 위쪽
-    word-wrap: break-word; // 긴 단어 줄바꿈
-    word-break: keep-all; // 단어가 길 때 강제로 줄바꿈
-    white-space: wrap; // 텍스트가 셀 너비를 초과하면 줄바꿈
-    // overflow-wrap: break-word; // CSS3 기준
-
-    @media (max-width: 1024px) {
-        width: 100px;
-    }
-}
-
-.basic-table-cell--left {
+    padding: 14px;
+    border-bottom: 1px solid #eaeaea;
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
     text-align: left;
+    vertical-align: middle;
 }
 
+/* 📌 셀 정렬 */
 .basic-table-cell--center {
     text-align: center;
 }
