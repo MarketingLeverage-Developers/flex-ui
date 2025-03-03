@@ -1,0 +1,20 @@
+.MediumMenuItem {
+    font-size: 28px;
+    font-weight: 700;
+    color: #324449;
+
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        color: pink;
+    }
+
+    &.active {
+    // active 상태일 때 적용할 스타일을 여기에 작성합니다.
+    color: blue; /* 예시: active일 때 글자색을 파란색으로 변경 */
+    }
+
+
+}
