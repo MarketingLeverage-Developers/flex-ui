@@ -1,9 +1,11 @@
+// @import 'theme';
+
 .basic-table-header {
-    background: #fff;
-    font-weight: bold;
+    background: #f8f9f9;
+    height: 60px;
     text-align: left;
-    padding: 14px;
-    border-bottom: 2px solid #e0e0e0;
+    padding: 12px;
+    // box-sizing: border-box;
     font-size: 14px;
     color: #666;
 }
