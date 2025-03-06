@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './Header/Header';
+import Header from './Main/Header/Header';
 import Sidebar from './Sidebar/Sidebar';
 import Main from './Main/Main';
 import styles from './Layout.module.scss';
