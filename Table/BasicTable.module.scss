@@ -8,9 +8,9 @@
     background: #fff;
     box-shadow: rgba(0, 0, 0, 0.08) 0px 0px;
 
-    @media (max-width: 1024px) {
-        min-width: 1024px;
-    }
+    // @media (max-width: 1024px) {
+    //     min-width: 1024px;
+    // }
 }
 
 .basic-table {
@@ -18,8 +18,4 @@
     border-collapse: collapse;
     border-style: hidden;
     table-layout: fixed;
-    ;
-   
 }
-
-
