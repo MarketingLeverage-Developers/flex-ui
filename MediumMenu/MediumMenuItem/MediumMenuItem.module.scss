@@ -1,7 +1,7 @@
 .MediumMenuItem {
     font-size: 28px;
     font-weight: 700;
-    color: #324449;
+    color: #cacccd;
 
     background-color: inherit;
     border: none;
@@ -12,9 +12,7 @@
     }
 
     &.active {
-    // active 상태일 때 적용할 스타일을 여기에 작성합니다.
-    color: blue; /* 예시: active일 때 글자색을 파란색으로 변경 */
+        // active 상태일 때 적용할 스타일을 여기에 작성합니다.
+        color: #324449; /* 예시: active일 때 글자색을 파란색으로 변경 */
     }
-
-
 }
