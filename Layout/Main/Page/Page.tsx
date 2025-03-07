@@ -1,7 +1,9 @@
 import React from 'react';
 import styles from './Page.module.scss';
-import Content from './Content/Content';
-import Aside from './Aside/Aside';
+import Content from './Bottom/Content/Content';
+import Aside from './Bottom/Aside/Aside';
+import Top from './Top/Top';
+import Bottom from './Bottom/Bottom';
 
 type PageProps = {
     children: React.ReactNode;
@@ -15,3 +17,5 @@ export default Page;
 
 Page.Content = Content;
 Page.Aside = Aside;
+Page.Top = Top;
+Page.Bottom = Bottom;
