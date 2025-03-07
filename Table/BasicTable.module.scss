@@ -4,18 +4,14 @@
     width: 100%;
     border: 1px solid #eaeaea;
     border-radius: 8px;
-    overflow: hidden;
+    overflow: auto;
     background: #fff;
     box-shadow: rgba(0, 0, 0, 0.08) 0px 0px;
-
-    // @media (max-width: 1024px) {
-    //     min-width: 1024px;
-    // }
 }
 
 .basic-table {
     width: 100%;
     border-collapse: collapse;
     border-style: hidden;
-    table-layout: fixed;
+    table-layout: auto;
 }

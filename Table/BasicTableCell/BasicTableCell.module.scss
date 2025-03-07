@@ -1,5 +1,6 @@
 .basic-table-cell {
     width: 100%;
+    min-width: 100px;
     border: 1px solid #eaeaea;
     padding: 12px;
     box-sizing: border-box;
@@ -8,10 +9,6 @@
     word-wrap: break-word; // 긴 단어 줄바꿈
     word-break: keep-all; // 단어가 길 때 강제로 줄바꿈
     white-space: wrap; // 텍스트가 셀 너비를 초과하면 줄바꿈
-
-    // @media (max-width: 1024px) {
-    //     width: 100px;
-    // }
 }
 
 /* 📌 셀 정렬 */
