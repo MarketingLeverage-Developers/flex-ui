@@ -1,0 +1,29 @@
+.ProfileCard {
+    background-color: inherit;
+    padding: 20px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid whitesmoke;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #f8f9f9;
+    }
+
+    .Profile {
+        width: 32px;
+        height: 32px;
+        border-radius: 12px;
+
+        &.Default {
+            background-color: #8bacb8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+        }
+    }
+}
