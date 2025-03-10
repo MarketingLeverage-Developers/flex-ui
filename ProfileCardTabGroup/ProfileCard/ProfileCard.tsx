@@ -4,14 +4,21 @@ import styles from './ProfileCard.module.scss';
 import FlexBox from 'headful/FlexBox/FlexBox';
 import Text from 'headful/Text/Text';
 import classNames from 'classnames';
+import { useTabGroup } from 'headless/TabGroup/TabGroup';
 
 type ProfileCardProps = { profile?: string; title: string; subTitle: string } & React.ComponentProps<
     typeof TabGroupItem
 >;
 
 const ProfileCard = ({ profile, title, subTitle, ...props }: ProfileCardProps) => {
+    const { tabGroupValue } = useTabGroup();
+
+    const combinedClassName = classNames(styles.ProfileCard, {
+        [styles.Active]: tabGroupValue === props.value,
+    });
+
     return (
-        <TabGroupItem {...props} className={styles.ProfileCard}>
+        <TabGroupItem {...props} className={combinedClassName}>
             <FlexBox alignItems="center" gap={12}>
                 <Profile profile={profile} title={title} />
                 <FlexBox flexDirection="column" gap={4}>
