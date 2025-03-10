@@ -6,7 +6,11 @@ type TopProps = {
 };
 
 const Top = ({ children }: TopProps) => {
-    return <div className={styles.Top}>{children}</div>;
+    return (
+        <div id="page-top" className={styles.Top}>
+            {children}
+        </div>
+    );
 };
 
 export default Top;
