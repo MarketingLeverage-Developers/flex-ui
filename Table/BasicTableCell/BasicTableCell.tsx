@@ -9,7 +9,7 @@ type BasicTableCellProps = {
 const BasicTableCell = ({ children, align = 'center' }: BasicTableCellProps) => {
     const alignClass = styles[`basic-table-cell--${align}`];
 
-    return <div className={`${styles['basic-table-cell']} ${alignClass}`}>{children}</div>;
+    return <td className={`${styles['basic-table-cell']} ${alignClass}`}>{children}</td>;
 };
 
 export default BasicTableCell;
