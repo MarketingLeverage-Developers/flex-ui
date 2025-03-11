@@ -3,14 +3,14 @@
     padding: 10px 18px;
     width: 100%;
     box-sizing: border-box;
-    border-radius: 8px;
-    border: 1px solid #dbdbdb;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--base-color-quaternary);
     display: flex;
     align-items: center;
-    color: #96999c;
+    color: var(--base-color-tertiary);
 
     &:focus-within {
-        border: 1px solid #f98131;
+        border: 1px solid var(--brand-color--primary);
     }
 }
 
@@ -19,7 +19,7 @@
     width: 100%;
     padding: 10px 18px;
     border: none;
-    font-size: 14px;
+    font-size: var(--font-size-sm);
     font-family: Pretendard, sans-serif;
     outline: none;
 }

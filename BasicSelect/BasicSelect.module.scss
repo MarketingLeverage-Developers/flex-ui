@@ -1,6 +1,6 @@
 /* Block: basic-select */
 .basic-select__box {
-    font-size: 14px;
+    font-size: var(--font-size-sm);
     cursor: pointer;
     align-self: flex-start;
 }

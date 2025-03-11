@@ -1,11 +1,11 @@
 // Block: header
 .header {
     grid-area: header;
-    border-bottom: 1px solid #ccc; // theme.colors.black.black010 대신 적절한 값 사용
+    border-bottom: 1px solid var(--base-color-quaternary); // theme.colors.black.black010 대신 적절한 값 사용
     height: auto; // 내부 내용에 따라 높이 결정
-    background: #fff;
+    background: var(--base-color-secondary);
     margin: 0;
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: var(--z-index-header);
 }

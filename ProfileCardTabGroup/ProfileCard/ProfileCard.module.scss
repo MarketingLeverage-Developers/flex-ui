@@ -7,27 +7,27 @@
     cursor: pointer;
 
     &:hover {
-        background-color: #f8f9f9;
+        background-color: var(--hover-color-primary);
     }
 
     &.Active {
-        background-color: #f8f9f9;
+        background-color: var(--active-color-primary);
     }
 
     .Profile {
         width: 32px;
         height: 32px;
-        border-radius: 12px;
+        border-radius: var(--font-size-xs);
 
         &.Default {
-            background-color: #8bacb8;
+            background-color: #f9813199;
             display: flex;
             justify-content: center;
             align-items: center;
 
-            color: #fff;
-            font-size: 12px;
-            font-weight: 600;
+            color: var(--base-color-secondary);
+            font-size: var(--font-size-xs);
+            font-weight: var(--font-weight-semi-bold);
         }
     }
 }

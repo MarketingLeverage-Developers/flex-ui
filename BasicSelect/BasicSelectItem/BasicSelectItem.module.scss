@@ -6,18 +6,18 @@
     display: flex;
     align-items: center;
     font-family: Pretendard;
-    font-weight: 600; /* Block: basic-select */
+    font-weight: var(--font-weight-semi-bold); /* Block: basic-select */
     .basic-select__box {
-        font-size: 14px;
+        font-size: var(--font-size-sm);
         cursor: pointer;
         align-self: flex-start;
     }
 
-    color: #3e4449;
-    border-radius: 8px;
+    color: var(--base-color-primary);
+    border-radius: var(--border-radius);
 
     &:hover {
-        background-color: rgba(0, 0, 0, 0.015);
+        background-color: var(--hover-color-primary);
     }
     &--active {
     }

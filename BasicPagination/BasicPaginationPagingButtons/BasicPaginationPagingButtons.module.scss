@@ -1,12 +1,12 @@
 /* Block: paging-button */
 .paging-button {
     background: inherit;
-    font-size: 16px;
-    color: #888;
+    font-size: var(--font-size-md);
+    color: var(--base-color-tertiary);
     border: none;
     cursor: pointer;
     font-family: Pretendard, sans-serif;
-    font-weight: 400;
+    font-weight: var(--font-weight-regular);
     width: 30px;
     height: 30px;
     display: flex;
@@ -14,14 +14,14 @@
     justify-content: center;
 
     &--disabled {
-        color: #dedede;
-        fill: #dedede !important;
+        color: var(--base-color-quaternary);
+        fill: var(--base-color-quaternary) !important;
         cursor: auto;
     }
     &--active {
-        background-color: #f98131;
-        border-radius: 8px;
+        background-color: var(--brand-color-primary);
+        border-radius: var(--border-radius);
         padding: 6px 8px;
-        color: #fff;
+        color: var(--base-color-secondary);
     }
 }

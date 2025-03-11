@@ -1,9 +1,9 @@
 /* Block: header-tab */
 .header-tab {
     padding: 30px 40px;
-    font-size: 28px;
-    font-weight: 700;
-    color: #324449;
+    font-size: var(--font-size-5xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--base-color-primary);
     width: 100%;
     display: flex;
     justify-content: space-between;

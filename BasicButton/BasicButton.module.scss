@@ -3,11 +3,11 @@
     padding: 5px 16px;
     box-sizing: border-box;
     width: auto;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     border: none;
-    color: #fff;
+    color: var(--base-color-secondary);
     font-family: Pretendard, sans-serif;
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     white-space: nowrap;
     transition: all 0.3s ease;
     cursor: pointer;

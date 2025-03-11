@@ -3,7 +3,7 @@
     &__box {
         width: 100%;
         height: auto;
-        border-radius: 8px;
+        border-radius: var(--border-radius);
         gap: 16px;
         align-items: center;
     }
@@ -14,8 +14,8 @@
         border: none;
         padding: 0 10px;
         color: #646f7a;
-        font-size: 14px;
-        font-weight: 600;
+        font-size: var(--font-size-sm);
+        font-weight: var(--font-weight-semi-bold);
         box-sizing: border-box;
         cursor: pointer;
     }

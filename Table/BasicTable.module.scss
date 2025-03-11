@@ -2,11 +2,10 @@
 /* 📌 테이블 전체 래퍼 */
 .basic-table-wrapper {
     width: 100%;
-    border: 1px solid #eaeaea;
-    border-radius: 8px;
+    border: 1px solid var(--base-color-quaternary);
+    border-radius: var(--border-radius);
     overflow: auto;
-    background: #fff;
-    box-shadow: rgba(0, 0, 0, 0.08) 0px 0px;
+    background: var(--base-color-secondary);
 }
 
 .basic-table {
