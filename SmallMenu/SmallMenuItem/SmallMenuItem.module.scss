@@ -1,0 +1,18 @@
+.SmallMenuItem {
+    font-size: var(--font-size-5xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--base-color-quaternary);
+
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--base-color-tertiary);
+    }
+
+    &.active {
+        // active 상태일 때 적용할 스타일을 여기에 작성합니다.
+        color: var(--base-color-primary); /* 예시: active일 때 글자색을 파란색으로 변경 */
+    }
+}
