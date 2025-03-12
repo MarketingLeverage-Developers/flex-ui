@@ -1,6 +1,7 @@
 import TabGroup from 'headless/TabGroup/TabGroup';
 import styles from './SmallMenu.module.scss';
 import SmallMenuItem from './SmallMenuItem/SmallMenuItem';
+import FlexBox from 'headful/FlexBox/FlexBox';
 
 type SmallMenuProps = React.ComponentProps<typeof TabGroup>;
 

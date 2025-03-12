@@ -1,18 +1,26 @@
 .SmallMenuItem {
-    font-size: var(--font-size-5xl);
+    height: 56px;
+    box-sizing: border-box;
+    border-radius: var(--border-radius);
+
+    font-size: var(--font-size-md);
     font-weight: var(--font-weight-bold);
-    color: var(--base-color-quaternary);
+    color: var(--base-color-tertiary);
 
     background-color: inherit;
     border: none;
     cursor: pointer;
 
     &:hover {
-        color: var(--base-color-tertiary);
+        background-color: var(--base-color-quaternary);
     }
 
     &.active {
+        color: var(--base-color-primary);
+        border-bottom: 2px solid var(--base-color-primary);
         // active 상태일 때 적용할 스타일을 여기에 작성합니다.
-        color: var(--base-color-primary); /* 예시: active일 때 글자색을 파란색으로 변경 */
+        // color: var(--base-color-primary); /* 예시: active일 때 글자색을 파란색으로 변경 */
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
     }
 }
