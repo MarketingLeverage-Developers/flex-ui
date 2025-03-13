@@ -2,7 +2,7 @@ import React from 'react';
 import Dropdown from 'headless/Dropdown/Dropdown';
 import SelectGroup, { useSelectGroup } from 'headless/SelectGroup/SelectGroup';
 import { ReactComponent as PolygonImage } from 'assets/images/select-polygon.svg';
-import FlexBox from 'headful/FlexBox/FlexBox';
+import FlexBox from 'headful/Flex/Flex';
 import { VscClose } from 'react-icons/vsc';
 import styles from './BasicSelectTrigger.module.scss';
 

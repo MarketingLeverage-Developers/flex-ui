@@ -4,7 +4,7 @@ import { PaginationValueType, usePagination } from 'headless/Pagination/Paginati
 import { ReactComponent as PaginationArrow } from 'assets/images/pagination-arrow.svg';
 import { SlArrowLeft } from 'react-icons/sl';
 import { SlArrowRight } from 'react-icons/sl';
-import FlexBox from 'headful/FlexBox/FlexBox';
+import FlexBox from 'headful/Flex/Flex';
 import styles from './BasicPaginationPagingButtons.module.scss';
 
 type BasicPaginationPagingButtonsProps = {

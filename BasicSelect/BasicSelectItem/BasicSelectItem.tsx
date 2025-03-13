@@ -1,4 +1,4 @@
-import FlexBox from 'headful/FlexBox/FlexBox';
+import FlexBox from 'headful/Flex/Flex';
 import { useDropdown } from 'headless/Dropdown/Dropdown';
 import SelectGroup, { useSelectGroup } from 'headless/SelectGroup/SelectGroup';
 import React from 'react';

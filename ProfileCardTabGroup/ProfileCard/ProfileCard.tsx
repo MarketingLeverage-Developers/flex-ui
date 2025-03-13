@@ -1,7 +1,7 @@
 import TabGroupItem from 'headless/TabGroup/TabGroupItem';
 import React from 'react';
 import styles from './ProfileCard.module.scss';
-import FlexBox from 'headful/FlexBox/FlexBox';
+import FlexBox from 'headful/Flex/Flex';
 import Text from 'headful/Text/Text';
 import classNames from 'classnames';
 import { useTabGroup } from 'headless/TabGroup/TabGroup';
