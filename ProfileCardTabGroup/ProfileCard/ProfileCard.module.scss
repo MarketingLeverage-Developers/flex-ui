@@ -13,21 +13,21 @@
     &.Active {
         background-color: var(--active-color-primary);
     }
+}
 
-    .Profile {
-        width: 32px;
-        height: 32px;
-        border-radius: var(--font-size-xs);
+.Profile {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--font-size-xs);
 
-        &.Default {
-            background-color: #f9813199;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+    &.Default {
+        background-color: #f9813199;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-            color: var(--base-color-secondary);
-            font-size: var(--font-size-xs);
-            font-weight: var(--font-weight-semi-bold);
-        }
+        color: var(--base-color-secondary);
+        font-size: var(--font-size-xs);
+        font-weight: var(--font-weight-semi-bold);
     }
 }
