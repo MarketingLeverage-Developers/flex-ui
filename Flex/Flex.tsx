@@ -1,4 +1,6 @@
 import React from 'react';
+import classNames from 'classnames';
+import styles from './Flex.module.scss';
 
 type Spacing = {
     top: number;
@@ -7,7 +9,7 @@ type Spacing = {
     left: number;
 };
 
-export type FlexBoxProps = React.HTMLAttributes<HTMLDivElement> & {
+export type FlexProps = React.HTMLAttributes<HTMLDivElement> & {
     children: React.ReactNode;
     padding?: Spacing | number;
     margin?: Spacing | number;
@@ -20,7 +22,7 @@ export type FlexBoxProps = React.HTMLAttributes<HTMLDivElement> & {
     height?: number | string;
 };
 
-const FlexBox = ({
+const Flex = ({
     children,
     padding,
     margin,
@@ -31,8 +33,10 @@ const FlexBox = ({
     flexWrap = 'nowrap',
     width,
     height,
+    style,
+    className,
     ...props
-}: FlexBoxProps) => {
+}: FlexProps) => {
     // 숫자 또는 객체 형태의 spacing을 문자열로 변환하는 함수
     const spacingToString = (spacing?: Spacing | number): string => {
         if (typeof spacing === 'number') {
@@ -44,7 +48,7 @@ const FlexBox = ({
         return '0';
     };
 
-    // width와 height를 숫자이면 px 단위를 붙이고, 문자열이면 그대로 사용
+    // width와 height가 숫자면 px 단위를 붙이고, 문자열이면 그대로 사용
     const dimensionToString = (dim?: number | string): string => {
         if (typeof dim === 'number') {
             return `${dim}px`;
@@ -52,26 +56,24 @@ const FlexBox = ({
         return dim || 'auto';
     };
 
-    const inlineStyle: React.CSSProperties = {
-        display: 'flex',
-        flexDirection,
-        alignItems,
-        justifyContent,
-        flexWrap,
-        gap: `${gap}px`,
-        padding: spacingToString(padding),
-        margin: spacingToString(margin),
-        width: dimensionToString(width),
-        height: dimensionToString(height),
-    };
-
-    const combinedStyle: React.CSSProperties = { ...props.style, ...inlineStyle };
+    // CSS 변수로 동적 값 전달
+    const cssVariables: React.CSSProperties = {
+        '--flex-padding': spacingToString(padding),
+        '--flex-margin': spacingToString(margin),
+        '--flex-direction': flexDirection,
+        '--flex-align-items': alignItems,
+        '--flex-justify-content': justifyContent,
+        '--flex-wrap': flexWrap,
+        '--flex-gap': `${gap}px`,
+        '--flex-width': dimensionToString(width),
+        '--flex-height': dimensionToString(height),
+    } as React.CSSProperties;
 
     return (
-        <div {...props} style={combinedStyle}>
+        <div {...props} className={classNames(styles.flex, className)} style={{ ...cssVariables, ...style }}>
             {children}
         </div>
     );
 };
 
-export default FlexBox;
+export default Flex;
