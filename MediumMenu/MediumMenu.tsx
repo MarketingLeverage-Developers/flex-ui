@@ -1,13 +1,14 @@
 import TabGroup from 'headless/TabGroup/TabGroup';
+import classNames from 'classnames';
 import styles from './MediumMenu.module.scss';
 import MediumMenuItem from './MediumMenuItem/MediumMenuItem';
 
-type MediumMenuProps = React.ComponentProps<typeof TabGroup>;
+type MediumMenuProps = { className?: string } & React.ComponentProps<typeof TabGroup>;
 
-const MediumMenu = (props: MediumMenuProps) => {
+const MediumMenu = ({ children, className, ...props }: MediumMenuProps) => {
     return (
         <TabGroup {...props}>
-            <div className={styles.MediumMenu}>{props.children}</div>
+            <div className={classNames(styles.MediumMenu, className)}>{children}</div>
         </TabGroup>
     );
 };
