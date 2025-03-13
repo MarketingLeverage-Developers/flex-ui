@@ -1,0 +1,8 @@
+/* Image.module.scss */
+.image {
+    width: var(--image-width, auto);
+    height: var(--image-height, auto);
+    border-radius: var(--image-border-radius, 0);
+    border: var(--image-border, none);
+    object-fit: cover;
+}
