@@ -6,29 +6,3 @@
 }
 
 /* Block: paging-button */
-.PagingButton {
-    background: inherit;
-    font-size: var(--font-size-md);
-    color: var(--base-color-tertiary);
-    border: none;
-    cursor: pointer;
-    font-family: Pretendard, sans-serif;
-    font-weight: var(--font-weight-regular);
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &.Disabled {
-        color: var(--base-color-quaternary);
-        fill: var(--base-color-quaternary) !important;
-        cursor: auto;
-    }
-    &.Active {
-        background-color: var(--brand-color-primary);
-        border-radius: var(--border-radius);
-        padding: 6px 8px;
-        color: var(--base-color-secondary);
-    }
-}
