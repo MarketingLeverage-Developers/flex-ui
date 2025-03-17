@@ -12,8 +12,10 @@
     &.Right {
         text-align: right;
     }
-    &.Background {
+    &.AsHeader {
         background: var(--base-color-senary);
+        font-size: var(--font-size-sm);
+        color: var(--base-color-tertiary);
     }
     &.Editable {
         outline: none;

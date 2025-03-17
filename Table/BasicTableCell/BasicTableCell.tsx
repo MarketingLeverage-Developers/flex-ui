@@ -5,16 +5,16 @@ import styles from './BasicTableCell.module.scss';
 type BasicTableCellProps = {
     children: React.ReactNode;
     align?: 'left' | 'center' | 'right';
-    hasbgColor?: boolean;
+    asHeader?: boolean;
     isEditable?: boolean; // 편집 가능 여부 prop
     width?: number;
 };
 
-const BasicTableCell = ({ children, align = 'center', hasbgColor, isEditable = false, width }: BasicTableCellProps) => {
+const BasicTableCell = ({ children, align = 'center', asHeader, isEditable = false, width }: BasicTableCellProps) => {
     const cellClasses = classNames(
         styles.BasicTableCell,
         align === 'center' ? styles.Left : styles.Right,
-        hasbgColor && styles.Background,
+        asHeader && styles.AsHeader,
         isEditable && styles.Editable, // 편집 가능 시 추가 스타일 적용 (옵션)
         width && styles.Fixed
     );
