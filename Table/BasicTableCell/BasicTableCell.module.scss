@@ -1,21 +1,32 @@
-.basic-table-cell {
-    // width: 100%;
-    min-width: 100px;
+.BasicTableCell {
     border: 1px solid #eaeaea;
     padding: 12px;
     box-sizing: border-box;
     display: table-cell;
-    vertical-align: middle; // 수직 정렬: 위쪽
-    word-wrap: break-word; // 긴 단어 줄바꿈
-    word-break: keep-all; // 단어가 길 때 강제로 줄바꿈
-    white-space: wrap; // 텍스트가 셀 너비를 초과하면 줄바꿈
+    vertical-align: middle;
+    white-space: nowrap;
+
+    &.Left {
+        text-align: center;
+    }
+    &.Right {
+        text-align: right;
+    }
+    &.Background {
+        background: var(--base-color-senary);
+    }
+    &.Editable {
+        outline: none;
+    }
+    &.Fixed {
+        width: var(--cell-width);
+        min-width: var(--cell-width);
+        white-space: normal;
+        overflow-wrap: break-word; // 긴 단어가 넘칠 경우 줄바꿈 처리
+        word-break: break-all;
+    }
 }
 
-/* 📌 셀 정렬 */
-.basic-table-cell--center {
-    text-align: center;
-}
-
-.basic-table-cell--right {
-    text-align: right;
-}
+// .basic-table-cell:focus {
+//     outline: none;
+// }
