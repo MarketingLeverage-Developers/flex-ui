@@ -1,16 +1,29 @@
-import React from 'react';
+import React, { ChangeEventHandler } from 'react';
 import classNames from 'classnames';
 import styles from './BasicTableCell.module.scss';
 
 type BasicTableCellProps = {
-    children: React.ReactNode;
+    children: React.ReactNode | string;
     align?: 'left' | 'center' | 'right';
     asHeader?: boolean;
     isEditable?: boolean; // 편집 가능 여부 prop
     width?: number;
+    onTableCellChange?: (value: string) => void;
 };
 
-const BasicTableCell = ({ children, align = 'center', asHeader, isEditable = false, width }: BasicTableCellProps) => {
+const BasicTableCell = ({
+    children,
+    align = 'center',
+    asHeader,
+    isEditable = false,
+    width,
+    onTableCellChange,
+}: BasicTableCellProps) => {
+    const handleTableCellChange: ChangeEventHandler<HTMLInputElement> = (e) => {
+        const value = e.target.value as string;
+        onTableCellChange && onTableCellChange(value);
+    };
+
     const cellClasses = classNames(
         styles.BasicTableCell,
         align === 'center' ? styles.Left : styles.Right,
@@ -24,8 +37,12 @@ const BasicTableCell = ({ children, align = 'center', asHeader, isEditable = fal
     } as React.CSSProperties;
 
     return (
-        <td className={cellClasses} style={{ ...cssVariables }} contentEditable={isEditable}>
-            {children}
+        <td className={cellClasses} style={{ ...cssVariables }}>
+            {isEditable ? (
+                <input type="text" defaultValue={children as string} onChange={handleTableCellChange} />
+            ) : (
+                children
+            )}
         </td>
     );
 };
