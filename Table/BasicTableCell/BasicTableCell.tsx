@@ -3,12 +3,13 @@ import classNames from 'classnames';
 import styles from './BasicTableCell.module.scss';
 
 type BasicTableCellProps = {
-    children: React.ReactNode | string;
+    children?: React.ReactNode | string;
     align?: 'left' | 'center' | 'right';
     asHeader?: boolean;
     isEditable?: boolean; // 편집 가능 여부 prop
     width?: number;
     onTableCellChange?: (value: string) => void;
+    value?: string | number;
 };
 
 const BasicTableCell = ({
@@ -18,6 +19,7 @@ const BasicTableCell = ({
     isEditable = false,
     width,
     onTableCellChange,
+    value,
 }: BasicTableCellProps) => {
     const handleTableCellChange: ChangeEventHandler<HTMLInputElement> = (e) => {
         const value = e.target.value as string;
@@ -38,11 +40,8 @@ const BasicTableCell = ({
 
     return (
         <td className={cellClasses} style={{ ...cssVariables }}>
-            {isEditable ? (
-                <input type="text" defaultValue={children as string} onChange={handleTableCellChange} />
-            ) : (
-                children
-            )}
+            {children}
+            {isEditable && <input type="text" defaultValue={value as string} onChange={handleTableCellChange} />}
         </td>
     );
 };
