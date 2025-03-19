@@ -3,16 +3,16 @@ import classNames from 'classnames';
 import styles from './Flex.module.scss';
 
 type Spacing = {
-    top: number;
-    right: number;
-    bottom: number;
-    left: number;
+    top?: number;
+    right?: number;
+    bottom?: number;
+    left?: number;
 };
 
 export type FlexProps = React.HTMLAttributes<HTMLDivElement> & {
     children: React.ReactNode;
-    padding?: Spacing | number;
-    margin?: Spacing | number;
+    padding?: Partial<Spacing> | number;
+    margin?: Partial<Spacing> | number;
     flexDirection?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
     alignItems?: 'stretch' | 'center' | 'flex-start' | 'flex-end' | 'baseline';
     justifyContent?: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly';
@@ -37,18 +37,13 @@ const Flex = ({
     className,
     ...props
 }: FlexProps) => {
-    // 숫자 또는 객체 형태의 spacing을 문자열로 변환하는 함수
-    const spacingToString = (spacing?: Spacing | number): string => {
+    const spacingToString = (spacing?: Partial<Spacing> | number): string => {
         if (typeof spacing === 'number') {
             return `${spacing}px`;
         }
-        if (spacing) {
-            return `${spacing.top ?? 0}px ${spacing.right ?? 0}px ${spacing.bottom ?? 0}px ${spacing.left ?? 0}px`;
-        }
-        return '0';
+        return `${spacing?.top ?? 0}px ${spacing?.right ?? 0}px ${spacing?.bottom ?? 0}px ${spacing?.left ?? 0}px`;
     };
 
-    // width와 height가 숫자면 px 단위를 붙이고, 문자열이면 그대로 사용
     const dimensionToString = (dim?: number | string): string => {
         if (typeof dim === 'number') {
             return `${dim}px`;
@@ -56,7 +51,6 @@ const Flex = ({
         return dim || 'auto';
     };
 
-    // CSS 변수로 동적 값 전달
     const cssVariables: React.CSSProperties = {
         '--flex-padding': spacingToString(padding),
         '--flex-margin': spacingToString(margin),
