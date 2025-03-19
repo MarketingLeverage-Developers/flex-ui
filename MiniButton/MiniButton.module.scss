@@ -1,0 +1,18 @@
+.MiniButton {
+    height: 24px;
+    padding: 0 8px;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    background-color: var(--base-color-primary-light);
+
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    color: var(--base-color-primary);
+
+    white-space: nowrap;
+
+    &.Brand {
+        background-color: var(--brand-color-primary-light);
+        color: var(--brand-color-primary);
+    }
+}
