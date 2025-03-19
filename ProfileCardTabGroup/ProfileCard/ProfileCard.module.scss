@@ -16,8 +16,8 @@
 }
 
 .Profile {
-    width: 32px;
-    height: 32px;
+    width: var(--image-width);
+    height: var(--image-height);
     border-radius: var(--font-size-xs);
 
     &.Default {

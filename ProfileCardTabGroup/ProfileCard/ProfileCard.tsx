@@ -7,7 +7,7 @@ import classNames from 'classnames';
 import { useTabGroup } from 'headless/TabGroup/TabGroup';
 import Image from 'headful/Image/Image';
 
-type ProfileCardProps = { profile?: string; title: string; subTitle: string } & React.ComponentProps<
+type ProfileCardProps = { profile: string | null; title: string; subTitle: string } & React.ComponentProps<
     typeof TabGroupItem
 >;
 
@@ -38,22 +38,49 @@ const ProfileCard = ({ profile, title, subTitle, ...props }: ProfileCardProps) =
 export default ProfileCard;
 
 type ProfileProps = {
-    profile?: string;
+    profile?: string | null;
     title: string;
     width: number;
     height: number;
 };
 
 export const Profile = ({ profile, title, width, height }: ProfileProps) => {
-    const firstLetterOfTitle = title.charAt(0);
-
     return (
         <>
             {profile ? (
                 <Image width={width} height={height} className={styles.Profile} src={profile} />
             ) : (
-                <div className={classNames(styles.Default, styles.Profile)}>{firstLetterOfTitle}</div>
+                <DefaultProfile width={width} height={height} title={title} />
             )}
         </>
+    );
+};
+
+type DefaultProfileProps = {
+    width: number;
+    height: number;
+    title: string;
+};
+
+const DefaultProfile = ({ width, height, title }: DefaultProfileProps) => {
+    const firstLetterOfTitle = title.charAt(0);
+    const dimensionToString = (dim?: number | string): string => {
+        if (typeof dim === 'number') {
+            return `${dim}px`;
+        }
+        return dim || 'auto';
+    };
+    interface CSSPropertiesWithVars extends React.CSSProperties {
+        [key: `--${string}`]: string | number;
+    }
+    const cssVariables: CSSPropertiesWithVars = {
+        '--image-width': dimensionToString(width),
+        '--image-height': dimensionToString(height),
+    };
+
+    return (
+        <div className={classNames(styles.Default, styles.Profile)} style={cssVariables}>
+            {firstLetterOfTitle}
+        </div>
     );
 };
