@@ -1,7 +1,11 @@
 .Top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     width: 100%;
     // height: auto;
-    // padding: 16px 40px;
+    padding: 16px 40px;
     box-sizing: border-box;
     border-bottom: 1px solid var(--base-color-quaternary);
 
