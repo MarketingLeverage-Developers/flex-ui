@@ -1,5 +1,7 @@
 import Toggle, { useToggle } from 'headless/Toggle/Toggle';
 import React from 'react';
+import styles from './CheckToggle.module.scss';
+import classNames from 'classnames';
 
 type CheckToggleProps = {
     onToggleClick: (value: boolean) => void;
@@ -7,16 +9,6 @@ type CheckToggleProps = {
 };
 
 const CheckToggle = ({ onToggleClick, defaultValue }: CheckToggleProps) => {
-    return (
-        <Toggle defaultValue={defaultValue}>
-            <CheckBox onToggleClick={onToggleClick} />
-        </Toggle>
-    );
-};
-
-export default CheckToggle;
-
-const CheckBox = ({ onToggleClick }: { onToggleClick: (value: boolean) => void }) => {
     const { toggleValue, changeToggle } = useToggle();
 
     const handleCheckBoxClick = (value: boolean) => {
@@ -24,7 +16,15 @@ const CheckBox = ({ onToggleClick }: { onToggleClick: (value: boolean) => void }
         changeToggle();
     };
 
-    console.log(toggleValue, 'toggleValue');
+    const combinedClassName = classNames(styles.CheckToggle, {
+        [styles.Active]: toggleValue,
+    });
 
-    return <input type="checkbox" checked={toggleValue} onClick={() => handleCheckBoxClick(toggleValue)} />;
+    return (
+        <Toggle defaultValue={defaultValue}>
+            <Toggle.Button className={combinedClassName} onClick={() => handleCheckBoxClick(toggleValue)} />
+        </Toggle>
+    );
 };
+
+export default CheckToggle;
