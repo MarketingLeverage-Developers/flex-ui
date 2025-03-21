@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler } from 'react';
+import React, { ChangeEventHandler, TdHTMLAttributes } from 'react';
 import classNames from 'classnames';
 import styles from './BasicTableCell.module.scss';
 
@@ -10,7 +10,7 @@ type BasicTableCellProps = {
     width?: number;
     onTableCellChange?: (value: string) => void;
     value?: string | number;
-};
+} & TdHTMLAttributes<HTMLTableCellElement>;
 
 const BasicTableCell = ({
     children,
@@ -20,6 +20,7 @@ const BasicTableCell = ({
     width,
     onTableCellChange,
     value,
+    ...props
 }: BasicTableCellProps) => {
     const handleTableCellChange: ChangeEventHandler<HTMLInputElement> = (e) => {
         const value = e.target.value as string;
@@ -39,7 +40,7 @@ const BasicTableCell = ({
     } as React.CSSProperties;
 
     return (
-        <td className={cellClasses} style={{ ...cssVariables }}>
+        <td className={cellClasses} style={{ ...cssVariables }} {...props}>
             {children}
             {isEditable && <input type="text" defaultValue={value as string} onChange={handleTableCellChange} />}
         </td>
