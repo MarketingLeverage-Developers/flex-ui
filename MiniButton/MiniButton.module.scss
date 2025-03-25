@@ -16,4 +16,9 @@
         background-color: var(--brand-color-primary-light);
         color: var(--brand-color-primary);
     }
+
+    &.Warning {
+        background-color: var(--warning-color-primary-light);
+        color: var(--warning-color-primary);
+    }
 }
