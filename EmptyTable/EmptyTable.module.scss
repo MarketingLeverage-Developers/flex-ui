@@ -1,0 +1,10 @@
+.EmptyTable {
+    border-radius: var(--border-radius);
+    height: 208px;
+    background-color: var(--base-color-septenary);
+    border: 1px solid var(--base-color-quinary);
+
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--base-color-tertiary);
+}
