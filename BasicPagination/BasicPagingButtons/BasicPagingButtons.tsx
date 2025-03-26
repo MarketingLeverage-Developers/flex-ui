@@ -7,7 +7,7 @@ import FlexBox from 'headful/Flex/Flex';
 import { Pagination } from 'types/pagination';
 
 type BasicPagingButtonsProps = {
-    onPagingButtonClick: (paginationValue: Pagination) => Promise<void>;
+    onPagingButtonClick: (paginationValue: Pagination) => void;
 };
 
 const BasicPagingButtons = ({ onPagingButtonClick }: BasicPagingButtonsProps) => {

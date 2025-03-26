@@ -1,11 +1,10 @@
 import BasicSelect from 'headful/BasicSelect/BasicSelect';
 import { usePagination } from 'headless/Pagination/Pagination';
-import React from 'react';
 import { FaBook } from 'react-icons/fa';
 import { Pagination } from 'types/pagination';
 
 type BasicSizeSelectProps = {
-    onPageSizeSelectChange: (paginationValue: Pagination) => Promise<void>;
+    onPageSizeSelectChange?: (paginationValue: Pagination) => void;
 };
 
 const BasicSizeSelect = ({ onPageSizeSelectChange }: BasicSizeSelectProps) => {
@@ -14,7 +13,9 @@ const BasicSizeSelect = ({ onPageSizeSelectChange }: BasicSizeSelectProps) => {
 
     const handleSelectItemClick = async (value: string) => {
         const newPaginationValue = changeSize(parseInt(value));
-        await onPageSizeSelectChange(newPaginationValue);
+        if (onPageSizeSelectChange) {
+            await onPageSizeSelectChange(newPaginationValue);
+        }
     };
 
     return (
