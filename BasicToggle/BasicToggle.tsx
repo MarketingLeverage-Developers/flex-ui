@@ -1,17 +1,16 @@
 import Toggle, { useToggle } from 'headless/Toggle/Toggle';
-import React, { useEffect } from 'react';
 import styles from './BasicToggle.module.scss';
 import classNames from 'classnames';
 
-type CheckToggleProps = {
+type BasicToggleProps = {
     onToggleClick: (value: boolean) => void;
     defaultValue: boolean;
 };
 
-const CheckToggle = ({ onToggleClick, defaultValue }: CheckToggleProps) => {
+const BasicToggle = ({ onToggleClick, defaultValue }: BasicToggleProps) => {
     const { toggleValue, changeToggle } = useToggle();
 
-    const handleCheckBoxClick = (value: boolean) => {
+    const handleToggleClick = (value: boolean) => {
         onToggleClick(value);
         changeToggle();
     };
@@ -22,12 +21,9 @@ const CheckToggle = ({ onToggleClick, defaultValue }: CheckToggleProps) => {
 
     return (
         <Toggle defaultValue={defaultValue}>
-            <Toggle.Button
-                className={combinedClassName}
-                onClick={() => handleCheckBoxClick(toggleValue)}
-            ></Toggle.Button>
+            <Toggle.Button className={combinedClassName} onClick={() => handleToggleClick(toggleValue)}></Toggle.Button>
         </Toggle>
     );
 };
 
-export default CheckToggle;
+export default BasicToggle;
