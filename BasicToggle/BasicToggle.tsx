@@ -1,6 +1,7 @@
 import Toggle, { useToggle } from 'headless/Toggle/Toggle';
 import styles from './BasicToggle.module.scss';
 import classNames from 'classnames';
+import { MouseEventHandler } from 'react';
 
 type BasicToggleProps = {
     onToggleClick: (value: boolean) => void;
@@ -10,8 +11,9 @@ type BasicToggleProps = {
 const BasicToggle = ({ onToggleClick, defaultValue }: BasicToggleProps) => {
     const { toggleValue, changeToggle } = useToggle();
 
-    const handleToggleClick = (value: boolean) => {
-        onToggleClick(value);
+    const handleToggleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
+        e.stopPropagation();
+        onToggleClick(toggleValue);
         changeToggle();
     };
 
@@ -21,7 +23,7 @@ const BasicToggle = ({ onToggleClick, defaultValue }: BasicToggleProps) => {
 
     return (
         <Toggle defaultValue={defaultValue}>
-            <Toggle.Button className={combinedClassName} onClick={() => handleToggleClick(toggleValue)}></Toggle.Button>
+            <Toggle.Button className={combinedClassName} onClick={handleToggleClick}></Toggle.Button>
         </Toggle>
     );
 };

@@ -1,0 +1,12 @@
+.HamburgerDropdownTrigger {
+    background-color: inherit;
+    border: none;
+    padding: 0;
+    color: var(--base-color-primary);
+    cursor: pointer;
+    border-radius: var(--border-radius-sm);
+
+    &:hover {
+        background-color: var(--hover-color-secondary);
+    }
+}

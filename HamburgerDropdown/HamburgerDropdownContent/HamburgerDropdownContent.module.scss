@@ -1,0 +1,10 @@
+.HamburgerDropdownContent {
+    position: absolute;
+    top: 20px;
+    width: 100px;
+    height: auto;
+    border-radius: var(--border-radius-sm);
+
+    background-color: var(--base-color-secondary);
+    box-shadow: var(--brand-shadow-primary);
+}
