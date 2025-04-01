@@ -11,7 +11,7 @@ type InfoGroupHeadProps = {
 const InfoGroupHead = ({ label, rightNode }: InfoGroupHeadProps) => {
     return (
         <Flex className={styles.InfoGroupHead}>
-            <Flex alignItems="center">
+            <Flex width={'100%'} justifyContent="space-between" alignItems="center">
                 <Block>
                     <Text
                         fontSize="var(--font-size-xs)"
