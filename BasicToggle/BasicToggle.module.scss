@@ -1,5 +1,5 @@
 .BasicToggle {
-    width: 50px;
+    width: 40px;
     height: 25px;
     background-color: var(--base-color-quaternary);
     border-radius: 34px;
@@ -23,10 +23,11 @@
         border-radius: 50%;
         transition: transform 0.2s;
         transform: translateX(0); /* 초기 상태 설정 */
+        box-shadow: var(--brand-shadow-primary);
     }
 
     &.Active::before {
-        transform: translateX(26px);
+        transform: translateX(16px);
     }
 }
 
