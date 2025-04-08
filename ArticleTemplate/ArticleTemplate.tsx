@@ -1,5 +1,5 @@
 import Flex from 'headful/Flex/Flex';
-import styles from './ArticleModalTemplate.module.scss';
+import styles from './ArticleTemplate.module.scss';
 import Block from 'headful/Block/Block';
 import Text from 'headful/Text/Text';
 import ArticleEditor from 'headful/ArticleEditor/ArticleEditor';
@@ -8,7 +8,7 @@ import BasicInput from 'headful/BasicInput/BasicInput';
 import BasicButton from 'headful/BasicButton/BasicButton';
 import BasicModal from 'headful/BasicModal/BasicModal';
 
-type ArticleModalTemplateProps = {
+type ArticleTemplateProps = {
     isModal?: boolean;
     type: 'create' | 'update';
     title: string;
@@ -19,7 +19,7 @@ type ArticleModalTemplateProps = {
     onImageUpload: (files: FileList) => Promise<any>;
 };
 
-const ArticleModalTemplate = ({
+const ArticleTemplate = ({
     type,
     title,
     editor,
@@ -28,14 +28,9 @@ const ArticleModalTemplate = ({
     onEditorChange,
     onImageUpload,
     isModal,
-}: ArticleModalTemplateProps) => {
+}: ArticleTemplateProps) => {
     return (
-        <Flex
-            width={'100%'}
-            flexDirection="column"
-            justifyContent="space-between"
-            className={styles.ArticleModalTemplate}
-        >
+        <Flex width={'100%'} flexDirection="column" justifyContent="space-between" className={styles.ArticleTemplate}>
             <Block className={styles.Header}>
                 <Flex justifyContent="space-between" className={styles.HeaderWrapper}>
                     <Flex alignItems="center" gap={12}>
@@ -69,4 +64,4 @@ const ArticleModalTemplate = ({
     );
 };
 
-export default ArticleModalTemplate;
+export default ArticleTemplate;

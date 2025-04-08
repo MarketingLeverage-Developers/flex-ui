@@ -1,7 +1,7 @@
 import Modal from 'headless/Modal/Modal';
 import React from 'react';
 import ArticleModalContent from './ArticleModalContent/ArticleModalContent';
-import ArticleModalTemplate from './ArticleModalTemplate/ArticleModalTemplate';
+import ArticleModalTemplate from '../ArticleTemplate/ArticleTemplate';
 import BasicModal from 'headful/BasicModal/BasicModal';
 
 type ArticleModalProps = {
