@@ -1,15 +1,7 @@
 .ProfileCard {
     background-color: inherit;
-    padding: 20px;
-    box-sizing: border-box;
+    padding: 0;
     border: none;
-    border-bottom: 1px solid whitesmoke;
-    cursor: pointer;
-
-    &:hover {
-        background-color: var(--hover-color-primary);
-    }
-
     &.Active {
         background-color: var(--active-color-primary);
     }
