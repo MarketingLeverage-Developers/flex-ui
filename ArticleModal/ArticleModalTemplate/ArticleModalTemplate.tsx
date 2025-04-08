@@ -2,11 +2,11 @@ import Flex from 'headful/Flex/Flex';
 import styles from './ArticleModalTemplate.module.scss';
 import Block from 'headful/Block/Block';
 import Text from 'headful/Text/Text';
-import ArticleModal from '../ArticleModal';
 import ArticleEditor from 'headful/ArticleEditor/ArticleEditor';
 import { ChangeEventHandler } from 'react';
 import BasicInput from 'headful/BasicInput/BasicInput';
 import BasicButton from 'headful/BasicButton/BasicButton';
+import ArticleModal from 'headful/ArticleModal/ArticleModal';
 
 type ArticleModalTemplateProps = {
     type: 'create' | 'update';
