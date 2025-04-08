@@ -9,6 +9,7 @@ import BasicButton from 'headful/BasicButton/BasicButton';
 import BasicModal from 'headful/BasicModal/BasicModal';
 
 type ArticleModalTemplateProps = {
+    isModal?: boolean;
     type: 'create' | 'update';
     title: string;
     editor: string;
@@ -26,6 +27,7 @@ const ArticleModalTemplate = ({
     onInputChange,
     onEditorChange,
     onImageUpload,
+    isModal,
 }: ArticleModalTemplateProps) => {
     return (
         <Flex
@@ -42,7 +44,7 @@ const ArticleModalTemplate = ({
                             {title}
                         </Text>
                     </Flex>
-                    <BasicModal.Close />
+                    {isModal && <BasicModal.Close />}
                 </Flex>
                 <Flex className={styles.InputWrapper}>
                     <BasicInput
