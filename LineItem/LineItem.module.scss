@@ -1,11 +1,6 @@
-.LineItem {
-    background-color: inherit;
-    padding: 20px;
-    box-sizing: border-box;
-    border: none;
-    border-bottom: 1px solid whitesmoke;
-    cursor: pointer;
-
+.LineItemWrapper {
+    padding-left: 20px;
+    padding-right: 20px;
     &:hover {
         background-color: var(--hover-color-primary);
     }
@@ -13,4 +8,13 @@
     &.Active {
         background-color: var(--active-color-primary);
     }
+}
+.LineItem {
+    background-color: inherit;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid whitesmoke;
+    cursor: pointer;
 }

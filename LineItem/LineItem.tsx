@@ -7,8 +7,10 @@ type LineItemProps = {
 
 const LineItem = ({ children, className, ...rest }: LineItemProps) => {
     return (
-        <div className={`${styles.LineItem} ${className ?? ''}`} {...rest}>
-            {children}
+        <div className={styles.LineItemWrapper}>
+            <div className={`${styles.LineItem} ${className ?? ''}`} {...rest}>
+                {children}
+            </div>
         </div>
     );
 };
