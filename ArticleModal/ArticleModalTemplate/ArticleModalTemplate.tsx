@@ -28,9 +28,14 @@ const ArticleModalTemplate = ({
     onImageUpload,
 }: ArticleModalTemplateProps) => {
     return (
-        <Flex width={'100%'} flexDirection="column" className={styles.ArticleModalTemplate}>
+        <Flex
+            width={'100%'}
+            flexDirection="column"
+            justifyContent="space-between"
+            className={styles.ArticleModalTemplate}
+        >
             <Block className={styles.Header}>
-                <Flex justifyContent="space-between">
+                <Flex justifyContent="space-between" className={styles.HeaderWrapper}>
                     <Flex alignItems="center" gap={12}>
                         <div className={styles.Label}>{type === 'create' ? '작성하기' : '수정하기'} </div>
                         <Text fontSize="var(--font-size-lg)" fontWeight="var(--font-weight-bold)">
@@ -39,19 +44,21 @@ const ArticleModalTemplate = ({
                     </Flex>
                     <BasicModal.Close />
                 </Flex>
+                <Flex className={styles.InputWrapper}>
+                    <BasicInput
+                        placeholder="제목을 입력해주세요."
+                        value={title}
+                        onChange={onInputChange}
+                        className={styles.ArticleInput}
+                    />
+                </Flex>
+                <Block className={styles.EditorWrapper}>
+                    <ArticleEditor value={editor} onEditorChange={onEditorChange} onImageUpload={onImageUpload} />
+                </Block>
             </Block>
-            <Flex className={styles.InputWrapper}>
-                <BasicInput
-                    placeholder="제목을 입력해주세요."
-                    value={title}
-                    onChange={onInputChange}
-                    className={styles.ArticleInput}
-                />
-            </Flex>
-            <Flex flexDirection="column" width={'100%'} className={styles.Main}>
-                <ArticleEditor value={editor} onEditorChange={onEditorChange} onImageUpload={onImageUpload} />
-            </Flex>
-            <Block width={'100%'} className={styles.Footer}>
+
+            {/* <Flex flexDirection="column" width={'100%'} className={styles.Main}></Flex> */}
+            <Block className={styles.Footer}>
                 <BasicButton onClick={onButtonClick} variant="gradient" height={48}>
                     작성하기
                 </BasicButton>
