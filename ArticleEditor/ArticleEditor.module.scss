@@ -7,25 +7,30 @@
 
 :global {
     .quill {
-        // z-index: 1;
-    }
-
-    .ql-toolbar {
-        border-top-left-radius: var(--border-radius);
-        border-top-right-radius: var(--border-radius);
-        height: 60px;
-
-        display: flex;
-        align-items: center;
-
-        background-color: var(--base-color-senary);
-        color: var(--base-color-tertiary);
-        //TODO: color적용안되는 부분 해결하기
+        border-radius: var(--border-radius-sm);
+        border: 1px solid var(--base-color-quaternary) !important;
     }
 
     .ql-container {
-        border-bottom-left-radius: var(--border-radius);
-        border-bottom-right-radius: var(--border-radius);
+        height: auto; /* 자동으로 내부 콘텐츠에 맞춰 높이 설정 */
+        overflow-y: auto;
+        min-height: 300px;
+    }
+
+    .ql-toolbar {
+        // border-top-left-radius: var(--border-radius-sm);
+        // border-top-right-radius: var(--border-radius-sm);
+        border: none !important;
+        // height: 60px;
+
+        display: flex;
+        align-items: center;
+    }
+
+    .ql-container {
+        border: none !important;
+        // border-bottom-left-radius: var(--border-radius-sm);
+        // border-bottom-right-radius: var(--border-radius-sm);
         overflow: hidden;
         // background-color: red !important;
     }
