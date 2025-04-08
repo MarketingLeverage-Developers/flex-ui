@@ -5,12 +5,13 @@ import React from 'react';
 type SectionWrapperProps = {
     children: React.ReactNode;
     labelText: string;
+    fontSize?: string;
 };
 
-const SectionWrapper = ({ children, labelText }: SectionWrapperProps) => {
+const SectionWrapper = ({ children, labelText, fontSize }: SectionWrapperProps) => {
     return (
         <Flex flexDirection="column" gap={10}>
-            <Text fontSize="var(--font-size-lg)" fontWeight="bold">
+            <Text fontSize={fontSize ?? 'var(--font-size-lg)'} fontWeight="bold">
                 {labelText}
             </Text>
             {children}
