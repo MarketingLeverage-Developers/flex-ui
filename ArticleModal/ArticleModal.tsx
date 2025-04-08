@@ -1,10 +1,8 @@
-import BasicModalBackdrop from 'headful/BasicModal/BasicModalBackdrop/BasicModalBackdrop';
-import BasicModalClose from 'headful/BasicModal/BasicModalClose/BasicModalClose';
-import BasicModalTrigger from 'headful/BasicModal/BasicModalTrigger/BasicModalTrigger';
 import Modal from 'headless/Modal/Modal';
 import React from 'react';
 import ArticleModalContent from './ArticleModalContent/ArticleModalContent';
 import ArticleModalTemplate from './ArticleModalTemplate/ArticleModalTemplate';
+import BasicModal from 'headful/BasicModal/BasicModal';
 
 type ArticleModalProps = {
     children: React.ReactNode;
@@ -16,8 +14,8 @@ const ArticleModal = ({ children }: ArticleModalProps) => {
 
 export default ArticleModal;
 
-ArticleModal.Trigger = BasicModalTrigger;
-ArticleModal.Backdrop = BasicModalBackdrop;
-ArticleModal.Close = BasicModalClose;
+ArticleModal.Trigger = BasicModal.Trigger;
+ArticleModal.Backdrop = BasicModal.Backdrop;
+ArticleModal.Close = BasicModal.Close;
 ArticleModal.Content = ArticleModalContent;
 ArticleModal.Template = ArticleModalTemplate;

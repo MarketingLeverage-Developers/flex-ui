@@ -6,7 +6,7 @@ import ArticleEditor from 'headful/ArticleEditor/ArticleEditor';
 import { ChangeEventHandler } from 'react';
 import BasicInput from 'headful/BasicInput/BasicInput';
 import BasicButton from 'headful/BasicButton/BasicButton';
-import ArticleModal from 'headful/ArticleModal/ArticleModal';
+import BasicModal from 'headful/BasicModal/BasicModal';
 
 type ArticleModalTemplateProps = {
     type: 'create' | 'update';
@@ -37,7 +37,7 @@ const ArticleModalTemplate = ({
                             {title}
                         </Text>
                     </Flex>
-                    <ArticleModal.Close />
+                    <BasicModal.Close />
                 </Flex>
             </Block>
             <Flex className={styles.InputWrapper}>
