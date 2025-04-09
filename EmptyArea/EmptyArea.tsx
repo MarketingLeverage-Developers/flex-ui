@@ -1,5 +1,3 @@
-import Flex from 'headful/Flex/Flex';
-import Text from 'headful/Text/Text';
 import React from 'react';
 import styles from './EmptyArea.module.scss';
 
