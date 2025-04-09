@@ -65,7 +65,7 @@ type DefaultProfileProps = {
     title: string;
 };
 
-const DefaultProfile = ({ width, height, title }: DefaultProfileProps) => {
+export const DefaultProfile = ({ width, height, title }: DefaultProfileProps) => {
     const firstLetterOfTitle = title.charAt(0);
     const dimensionToString = (dim?: number | string): string => {
         if (typeof dim === 'number') {
