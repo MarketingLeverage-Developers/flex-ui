@@ -5,8 +5,8 @@
 
     width: 100%;
 
-    .Head {
-        .HeaderWrapper {
+    .HeaderWrapper {
+        .Header {
             display: flex;
             justify-content: space-between;
 
@@ -20,7 +20,7 @@
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px); // Safari 등 webkit 기반 브라우저 호환용
 
-            .Header {
+            .Left {
                 display: flex;
                 align-items: center;
                 gap: 12px;
@@ -38,10 +38,15 @@
                     font-weight: var(--font-weight-bold);
                 }
             }
+            .Right {
+                display: flex;
+                gap: 12px;
+            }
         }
 
         .InputWrapper {
             display: flex;
+            flex-direction: column;
 
             padding: 8px 60px 32px;
             border-bottom: 1px solid var(--base-color-quinary);
