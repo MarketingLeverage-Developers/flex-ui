@@ -1,0 +1,22 @@
+.RadioTabItem {
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    color: #333;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+
+    /* 마우스 오버 시 약간 진해진 배경색 */
+    &:hover {
+        background-color: #e0e0e0;
+    }
+
+    /* 활성 탭 스타일: 배경색과 텍스트 색, 경계색 변경 */
+    &.Active {
+        background-color: #007bff;
+        color: #fff;
+        border-color: #007bff;
+    }
+}
