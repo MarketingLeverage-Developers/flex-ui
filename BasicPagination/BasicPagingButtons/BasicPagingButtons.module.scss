@@ -1,3 +1,13 @@
+.BasicPagingButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .Flex {
+        display: flex;
+    }
+}
+
 .PagingButton {
     background: inherit;
     font-size: var(--font-size-md);

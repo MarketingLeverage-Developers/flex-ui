@@ -1,6 +1,26 @@
 .InfoGroupHead {
+    display: flex;
+
     padding: 10px 40px;
     background-color: var(--base-color-septenary);
     border-bottom: 1px solid var(--base-color-quinary);
     z-index: 1;
+
+    .Wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        width: 100%;
+
+        .Label {
+            font-size: var(--font-size-xs);
+            font-weight: var(--font-weight-bold);
+            color: var(--base-color-tertiary);
+        }
+    }
+
+    .RightNode {
+        display: flex;
+    }
 }

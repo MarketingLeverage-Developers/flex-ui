@@ -11,25 +11,11 @@ type EmptyAreaProps = {
 
 const EmptyArea = ({ icon, title, subTitle }: EmptyAreaProps) => {
     return (
-        <Flex
-            height={'100%'}
-            flexDirection="column"
-            justifyContent="center"
-            alignItems="center"
-            gap={16}
-            className={styles.EmptyArea}
-        >
+        <div className={styles.EmptyArea}>
             {icon}
-            <Text color="var(--base-color-primary)" fontSize="var(--font-size-lg)" fontWeight="var(--font-weight-bold)">
-                {title}
-            </Text>
-
-            {subTitle && (
-                <Text color="var(--base-color-tertiary)" fontSize="var(--font-size-sm)">
-                    {subTitle}
-                </Text>
-            )}
-        </Flex>
+            <div className={styles.Title}>{title}</div>
+            {subTitle && <div className={styles.SubTitle}>{subTitle}</div>}
+        </div>
     );
 };
 

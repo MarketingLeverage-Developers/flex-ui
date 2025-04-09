@@ -1,7 +1,4 @@
-import Flex from 'headful/Flex/Flex';
 import styles from './ArticleTemplate.module.scss';
-import Block from 'headful/Block/Block';
-import Text from 'headful/Text/Text';
 import ArticleEditor from 'headful/ArticleEditor/ArticleEditor';
 import { ChangeEventHandler } from 'react';
 import BasicInput from 'headful/BasicInput/BasicInput';
@@ -30,37 +27,34 @@ const ArticleTemplate = ({
     isModal,
 }: ArticleTemplateProps) => {
     return (
-        <Flex width={'100%'} flexDirection="column" justifyContent="space-between" className={styles.ArticleTemplate}>
-            <Block className={styles.Header}>
-                <Flex justifyContent="space-between" className={styles.HeaderWrapper}>
-                    <Flex alignItems="center" gap={12}>
+        <div className={styles.ArticleTemplate}>
+            <div className={styles.Head}>
+                <div className={styles.HeaderWrapper}>
+                    <div className={styles.Header}>
                         <div className={styles.Label}>{type === 'create' ? '작성하기' : '수정하기'} </div>
-                        <Text fontSize="var(--font-size-lg)" fontWeight="var(--font-weight-bold)">
-                            {title}
-                        </Text>
-                    </Flex>
+                        <span className={styles.Title}>{title}</span>
+                    </div>
                     {isModal && <BasicModal.Close />}
-                </Flex>
-                <Flex className={styles.InputWrapper}>
+                </div>
+                <div className={styles.InputWrapper}>
                     <BasicInput
                         placeholder="제목을 입력해주세요."
                         value={title}
                         onChange={onInputChange}
                         className={styles.ArticleInput}
                     />
-                </Flex>
-                <Block className={styles.EditorWrapper}>
+                </div>
+                <div className={styles.EditorWrapper}>
                     <ArticleEditor value={editor} onEditorChange={onEditorChange} onImageUpload={onImageUpload} />
-                </Block>
-            </Block>
+                </div>
+            </div>
 
-            {/* <Flex flexDirection="column" width={'100%'} className={styles.Main}></Flex> */}
-            <Block className={styles.Footer}>
+            <div className={styles.Footer}>
                 <BasicButton onClick={onButtonClick} variant="gradient" height={48}>
                     작성하기
                 </BasicButton>
-            </Block>
-        </Flex>
+            </div>
+        </div>
     );
 };
 

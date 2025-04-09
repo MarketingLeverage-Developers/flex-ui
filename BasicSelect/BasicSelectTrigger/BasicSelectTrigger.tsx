@@ -1,7 +1,6 @@
 import React from 'react';
 import Dropdown from 'headless/Dropdown/Dropdown';
 import SelectGroup, { useSelectGroup } from 'headless/SelectGroup/SelectGroup';
-import FlexBox from 'headful/Flex/Flex';
 import styles from './BasicSelectTrigger.module.scss';
 
 type BasicSelectTriggerProps = {
@@ -27,11 +26,11 @@ const BasicSelectTrigger = ({ icon, label }: BasicSelectTriggerProps) => {
     console.log('selectGroupValue: ', selectGroupValue);
 
     return (
-        <Dropdown.Trigger className={styles['basic-select-trigger']} style={inlineTriggerStyle}>
-            <FlexBox gap={4} alignItems="center">
+        <Dropdown.Trigger className={styles.BasicSelectTrigger} style={inlineTriggerStyle}>
+            <div className={styles.Wrapper}>
                 {icon}
                 {label}
-                <SelectGroup.Display className={styles['basic-select-trigger__display']} style={inlineDisplayStyle} />
+                <SelectGroup.Display className={styles.BasicSelectTriggerDisplay} style={inlineDisplayStyle} />
                 {/* 필요 시 아래와 같이 아이콘을 조건에 따라 렌더링할 수 있습니다.
             {selectGroupValue !== '' ? (
               <VscClose width={10} height={10} />
@@ -39,7 +38,7 @@ const BasicSelectTrigger = ({ icon, label }: BasicSelectTriggerProps) => {
               <PolygonImage width={8} height={6} />
             )}
         */}
-            </FlexBox>
+            </div>
         </Dropdown.Trigger>
     );
 };

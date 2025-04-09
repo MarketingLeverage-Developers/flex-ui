@@ -1,12 +1,10 @@
 import TabGroupItem from 'headless/TabGroup/TabGroupItem';
 import React from 'react';
 import styles from './ProfileCard.module.scss';
-import Text from 'headful/Text/Text';
 import classNames from 'classnames';
 import { useTabGroup } from 'headless/TabGroup/TabGroup';
 import Image from 'headful/Image/Image';
 import LineItem from 'headful/LineItem/LineItem';
-import Flex from 'headful/Flex/Flex';
 
 type ProfileCardProps = { profile: string | null; title: string; subTitle: string } & React.ComponentProps<
     typeof TabGroupItem
@@ -22,17 +20,13 @@ const ProfileCard = ({ profile, title, subTitle, ...props }: ProfileCardProps) =
     return (
         <TabGroupItem {...props} className={combinedClassName}>
             <LineItem>
-                <Flex gap={12}>
+                <div className={styles.ProfileWrapper}>
                     <Profile width={32} height={32} profile={profile} title={title} />
-                    <Flex flexDirection="column" gap={4}>
-                        <Text fontSize={14} fontWeight={700} color="#3e4449">
-                            {title}
-                        </Text>
-                        <Text fontSize={12} color="#cacccd">
-                            {subTitle}
-                        </Text>
-                    </Flex>
-                </Flex>
+                    <div className={styles.TextWrapper}>
+                        <div className={styles.Title}>{title}</div>
+                        <div className={styles.SubTitle}>{subTitle}</div>
+                    </div>
+                </div>
             </LineItem>
         </TabGroupItem>
     );

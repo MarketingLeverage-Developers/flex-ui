@@ -1,4 +1,3 @@
-import FlexBox from 'headful/Flex/Flex';
 import { useDropdown } from 'headless/Dropdown/Dropdown';
 import SelectGroup, { useSelectGroup } from 'headless/SelectGroup/SelectGroup';
 import React from 'react';
@@ -24,14 +23,14 @@ const BasicSelectItem = ({ children, value, onBasicSelectItemClick }: BasicSelec
 
     return (
         <SelectGroup.Item
-            className={styles['basic-select-item']}
+            className={styles.BasicSelectItem}
             value={value}
             onSelectGroupItemClick={handleBaiscSelectItemPageSizeItemClick}
         >
-            <FlexBox justifyContent="space-between" width={`100%`}>
+            <div className={styles.Wrapper}>
                 <div>{children}</div>
                 {isCurrentItem && <FaCheck width={16} color="#f98131" />}
-            </FlexBox>
+            </div>
         </SelectGroup.Item>
     );
 };

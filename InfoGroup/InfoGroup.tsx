@@ -1,14 +1,14 @@
 import React from 'react';
-import Flex from 'headful/Flex/Flex';
 import InfoGroupItem from './InfoGroupItem/InfoGroupItem';
 import InfoGroupHead from './InfoGroupHead/InfoGroupHead';
+import styles from './InfoGroup.module.scss';
 
 type InfoGroupProps = {
     children: React.ReactNode;
 };
 
 const InfoGroup = ({ children }: InfoGroupProps) => {
-    return <Flex flexDirection="column">{children}</Flex>;
+    return <div className={styles.InfoGroup}>{children}</div>;
 };
 
 export default InfoGroup;

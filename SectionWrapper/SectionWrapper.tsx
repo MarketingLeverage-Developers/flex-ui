@@ -1,6 +1,5 @@
-import Flex from 'headful/Flex/Flex';
-import Text from 'headful/Text/Text';
 import React from 'react';
+import styles from './SectionWrapper.module.scss';
 
 type SectionWrapperProps = {
     children: React.ReactNode;
@@ -8,14 +7,12 @@ type SectionWrapperProps = {
     fontSize?: string;
 };
 
-const SectionWrapper = ({ children, labelText, fontSize }: SectionWrapperProps) => {
+const SectionWrapper = ({ children, labelText }: SectionWrapperProps) => {
     return (
-        <Flex flexDirection="column" gap={10}>
-            <Text fontSize={fontSize ?? 'var(--font-size-lg)'} fontWeight="bold">
-                {labelText}
-            </Text>
+        <div className={styles.SectionWrapper}>
+            <div className={styles.Text}>{labelText}</div>
             {children}
-        </Flex>
+        </div>
     );
 };
 

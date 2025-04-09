@@ -1,4 +1,8 @@
 .EmptyTable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     border-radius: var(--border-radius);
     height: 208px;
     background-color: var(--base-color-septenary);
@@ -7,4 +11,10 @@
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
     color: var(--base-color-tertiary);
+
+    .Wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
 }
