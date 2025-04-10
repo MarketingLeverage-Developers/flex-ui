@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from './EmptyArea.module.scss';
+import Flex from 'headful/Flex/Flex';
+import Text from 'headful/Text/Text';
 
 type EmptyAreaProps = {
     icon: React.ReactNode;
