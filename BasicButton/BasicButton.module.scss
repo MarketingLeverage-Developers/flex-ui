@@ -1,8 +1,10 @@
-/* Block: basic-button */
-.basic-button {
-    padding: 5px 16px;
+.BasicButton {
+    padding: 0 10px;
     box-sizing: border-box;
-    width: auto;
+    // CSS 변수로 전달된 값을 사용하여 동적 스타일 적용
+    width: var(--button-width);
+    height: var(--button-height);
+    opacity: var(--button-opacity);
     border-radius: var(--border-radius);
     border: none;
     color: var(--base-color-secondary);
@@ -11,4 +13,11 @@
     white-space: nowrap;
     transition: all 0.3s ease;
     cursor: pointer;
+    background: #f98131; // 기본 solid 배경
+
+    &.Gradient {
+        background: linear-gradient(45deg, #f98131, #f6d365);
+    }
 }
+
+// variant가 gradient인 경우 별도 클래스를 통해 그라데이션 배경 적용

@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import styles from './BasicButton.module.scss';
 
 type BasicButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -9,16 +10,36 @@ type BasicButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
     variant?: 'solid' | 'gradient';
 };
 
-const BasicButton = ({ children, isVisible = true, width, height, variant = 'solid', ...props }: BasicButtonProps) => {
-    const inlineStyle: React.CSSProperties = {
-        width: `${width ?? '100%'}`,
-        height: `${height ?? 40}px`,
-        opacity: isVisible ? 1 : 0,
-        background: variant === 'gradient' ? 'linear-gradient(45deg, #f98131, #f6d365)' : '#f98131',
+const BasicButton = ({
+    children,
+    isVisible = true,
+    width,
+    height,
+    variant = 'solid',
+    style,
+    ...props
+}: BasicButtonProps) => {
+    // CSS 변수 형태로 동적 값을 전달합니다.
+    type CSSPropertiesWithVars = React.CSSProperties & {
+        [key: `--${string}`]: string | number;
+    };
+    const cssVars: CSSPropertiesWithVars = {
+        '--button-width': width ? (typeof width === 'number' ? `${width}px` : width) : '100%',
+        '--button-height': height ? `${height}px` : '40px',
+        '--button-opacity': isVisible ? 1 : 0,
     };
 
+    const combinedStyle = classNames(styles.BasicButton, {
+        [styles.Gradient]: variant === 'gradient',
+    });
+
     return (
-        <button {...props} className={styles['basic-button']} style={inlineStyle}>
+        <button
+            {...props}
+            className={combinedStyle}
+            // 다른 inline style와 합쳐서 전달할 수도 있습니다.
+            style={{ ...cssVars, ...style }}
+        >
             {children}
         </button>
     );
