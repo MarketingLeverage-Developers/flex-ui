@@ -1,8 +1,11 @@
 import { useMemo, useRef } from 'react';
-import ReactQuill from 'react-quill';
+import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import styles from './ArticleEditor.module.scss';
+import { ImageActions } from '@xeger/quill-image-actions';
 import './CustomImageBlot';
+
+Quill.register('modules/imageActions', ImageActions);
 
 type ArticleEditorProps = {
     value: string;
@@ -56,7 +59,10 @@ const ArticleEditor = ({ value, onEditorChange, onImageUpload }: ArticleEditorPr
                     // });
 
                     // 3. 현재 커서 위치에 이미지 삽입
-                    editor.insertEmbed(range.index, 'customImage', { src: image.path, uuid: image.uuid });
+                    editor.insertEmbed(range.index, 'customImage', {
+                        src: 'https://yt3.googleusercontent.com/1Et_2yOD9ItQ18tWvIQLDTHW5Y9b7yKSrKJ8-DOSrOtQfHk5-2H1utSGvkt5BYflTpCMake5=s900-c-k-c0x00ffffff-no-rj',
+                        uuid: image.uuid,
+                    });
                     // 삽입 후 커서 위치를 업데이트 (각 이미지가 1칸씩 증가한다고 가정)
                     range.index += 1;
                 }
@@ -69,15 +75,19 @@ const ArticleEditor = ({ value, onEditorChange, onImageUpload }: ArticleEditorPr
 
     const modules = useMemo(
         () => ({
+            imageActions: {},
             toolbar: {
                 container: [
                     [{ header: [1, 2, false] }],
-                    ['bold', 'italic', 'underline', 'strike'],
+                    ['underline', 'strike', 'bold', 'italic'],
                     [{ list: 'ordered' }, { list: 'bullet' }],
                     ['link', 'image'],
                 ],
                 handlers: {
                     image: handleImageUploadButtonClick, // 올바르게 구현된 함수 사용
+                },
+                ImageResize: {
+                    modules: ['Resize'],
                 },
             },
         }),
@@ -93,6 +103,19 @@ const ArticleEditor = ({ value, onEditorChange, onImageUpload }: ArticleEditorPr
             theme="snow"
             modules={modules}
             placeholder="내용을 입력하세요..."
+            formats={[
+                'header',
+                'bold',
+                'italic',
+                'strike',
+                'underline',
+                'list',
+                'bullet',
+                'link',
+                'customImage',
+                'width',
+                'height',
+            ]}
         />
     );
 };
