@@ -1,3 +1,4 @@
+import Flex from 'headful/Flex/Flex';
 import styles from './EmptyTable.module.scss';
 import { PiWarningCircle } from 'react-icons/pi';
 
@@ -7,12 +8,12 @@ type EmptyAreaProps = {
 
 const EmptyTable = ({ text }: EmptyAreaProps) => {
     return (
-        <div className={styles.EmptyTable}>
-            <div className={styles.Wrapper}>
+        <Flex justifyContent="center" alignItems="center" className={styles.EmptyTable}>
+            <Flex flexDirection="column" alignItems="center" gap={20}>
                 <PiWarningCircle size={24} />
                 {text}
-            </div>
-        </div>
+            </Flex>
+        </Flex>
     );
 };
 

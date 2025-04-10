@@ -1,15 +1,6 @@
 .ArticleTemplate {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    width: 100%;
-
-    .HeaderWrapper {
-        .Header {
-            display: flex;
-            justify-content: space-between;
-
+    .Header {
+        .HeaderWrapper {
             position: sticky;
             top: 0;
             padding: 22px 26px;
@@ -20,23 +11,13 @@
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px); // Safari 등 webkit 기반 브라우저 호환용
 
-            .Left {
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                .Label {
-                    border-radius: 12px;
-                    font-size: var(--font-size-xs);
-                    font-weight: var(--font-weight-bold);
-                    color: var(--base-color-secondary);
-                    padding: 6px 9px;
-                    background: linear-gradient(96.77deg, #ff3c3c -0.96%, #ff6666 100%);
-                }
-
-                .Title {
-                    font-size: var(--font-size-lg);
-                    font-weight: var(--font-weight-bold);
-                }
+            .Label {
+                border-radius: 12px;
+                font-size: var(--font-size-xs);
+                font-weight: var(--font-weight-bold);
+                color: var(--base-color-secondary);
+                padding: 6px 9px;
+                background: linear-gradient(96.77deg, #ff3c3c -0.96%, #ff6666 100%);
             }
             .Right {
                 display: flex;
@@ -45,9 +26,6 @@
         }
 
         .InputWrapper {
-            display: flex;
-            flex-direction: column;
-
             padding: 8px 60px 32px;
             border-bottom: 1px solid var(--base-color-quinary);
 

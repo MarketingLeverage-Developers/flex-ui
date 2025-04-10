@@ -1,5 +1,8 @@
 import React from 'react';
 import styles from './InfoGroupHead.module.scss';
+import Flex from 'headful/Flex/Flex';
+import Block from 'headful/Block/Block';
+import Text from 'headful/Text/Text';
 
 type InfoGroupHeadProps = {
     label: React.ReactNode;
@@ -7,12 +10,20 @@ type InfoGroupHeadProps = {
 };
 const InfoGroupHead = ({ label, rightNode }: InfoGroupHeadProps) => {
     return (
-        <div className={styles.InfoGroupHead}>
-            <div className={styles.Wrapper}>
-                <div className={styles.Label}>{label}</div>
-            </div>
-            <div className={styles.RightNode}>{rightNode}</div>
-        </div>
+        <Flex className={styles.InfoGroupHead}>
+            <Flex width={'100%'} justifyContent="space-between" alignItems="center">
+                <Block>
+                    <Text
+                        fontSize="var(--font-size-xs)"
+                        fontWeight="var(--font-weight-bold)"
+                        color="var(--base-color-tertiary)"
+                    >
+                        {label}
+                    </Text>
+                </Block>
+            </Flex>
+            <Flex>{rightNode}</Flex>
+        </Flex>
     );
 };
 

@@ -5,27 +5,6 @@
     &.Active {
         background-color: var(--active-color-primary);
     }
-
-    .ProfileWrapper {
-        display: flex;
-        gap: 12px;
-
-        .TextWrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-
-            .Title {
-                font-size: 14px;
-                font-weight: 700;
-                color: #3e4449;
-            }
-            .SubTitle {
-                font-size: 12px;
-                color: #cacccd;
-            }
-        }
-    }
 }
 
 .Profile {

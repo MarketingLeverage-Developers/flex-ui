@@ -1,4 +1,4 @@
-.BasicSelectItem {
+.basic-select-item {
     height: 32px;
     padding: 0 6px;
     margin: 0 8px;
@@ -7,7 +7,6 @@
     align-items: center;
     font-family: Pretendard;
     font-weight: var(--font-weight-semi-bold); /* Block: basic-select */
-
     .basic-select__box {
         font-size: var(--font-size-sm);
         cursor: pointer;
@@ -22,11 +21,4 @@
     }
     &--active {
     }
-}
-
-.Wrapper {
-    display: flex;
-    justify-content: space-between;
-
-    width: 100%;
 }

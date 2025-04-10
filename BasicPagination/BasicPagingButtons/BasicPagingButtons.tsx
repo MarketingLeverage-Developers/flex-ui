@@ -1,9 +1,10 @@
+import React from 'react';
 import BasicPagination from '../BasicPagination';
 import { PaginationValueType } from 'headless/Pagination/Pagination';
 import { SlArrowLeft } from 'react-icons/sl';
 import { SlArrowRight } from 'react-icons/sl';
+import FlexBox from 'headful/Flex/Flex';
 import { Pagination } from 'types/pagination';
-import styles from './BasicPagingButtons.module.scss';
 
 type BasicPagingButtonsProps = {
     onPagingButtonClick: (paginationValue: Pagination) => void;
@@ -27,12 +28,12 @@ const BasicPagingButtons = ({ onPagingButtonClick }: BasicPagingButtonsProps) =>
     };
 
     return (
-        <div className={styles.BasicPagingButtons}>
+        <FlexBox justifyContent="center" alignItems="center">
             <BasicPagination.FastPrev onFastPrevClick={handleFastPrevButtonClick}>
-                <div className={styles.Flex}>
+                <FlexBox>
                     <SlArrowLeft />
                     <SlArrowLeft />
-                </div>
+                </FlexBox>
             </BasicPagination.FastPrev>
             <BasicPagination.Prev onPrevClick={handlePrevButtonClick}>
                 <SlArrowLeft />
@@ -42,12 +43,12 @@ const BasicPagingButtons = ({ onPagingButtonClick }: BasicPagingButtonsProps) =>
                 <SlArrowRight />
             </BasicPagination.Next>
             <BasicPagination.FastNext onFastNextClick={handleFastNextButtonClick}>
-                <div className={styles.Flex}>
+                <FlexBox>
                     <SlArrowRight />
                     <SlArrowRight />
-                </div>
+                </FlexBox>
             </BasicPagination.FastNext>
-        </div>
+        </FlexBox>
     );
 };
 

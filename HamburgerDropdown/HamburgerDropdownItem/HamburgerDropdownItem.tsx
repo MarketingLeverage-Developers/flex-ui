@@ -18,9 +18,9 @@ const HamburgerDropdownItem = ({ children, onHamburgerDropdownItemClick }: Hambu
     };
 
     return (
-        <div className={styles.HamburgerDropdownItem} onClick={handleItemClick}>
+        <Flex onClick={handleItemClick} className={styles.HamburgerDropdownItem} alignItems="center">
             {children}
-        </div>
+        </Flex>
     );
 };
 

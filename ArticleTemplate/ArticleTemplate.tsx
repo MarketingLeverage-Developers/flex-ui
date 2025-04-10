@@ -1,4 +1,7 @@
+import Flex from 'headful/Flex/Flex';
 import styles from './ArticleTemplate.module.scss';
+import Block from 'headful/Block/Block';
+import Text from 'headful/Text/Text';
 import ArticleEditor from 'headful/ArticleEditor/ArticleEditor';
 import { ChangeEventHandler } from 'react';
 import BasicInput from 'headful/BasicInput/BasicInput';
@@ -35,49 +38,37 @@ const ArticleTemplate = ({
     isModal,
 }: ArticleTemplateProps) => {
     return (
-        <div className={styles.ArticleTemplate}>
-            <div className={styles.HeaderWrapper}>
-                <div className={styles.Header}>
-                    <div className={styles.Left}>
+        <Flex width={'100%'} flexDirection="column" justifyContent="space-between" className={styles.ArticleTemplate}>
+            <Block className={styles.Header}>
+                <Flex justifyContent="space-between" className={styles.HeaderWrapper}>
+                    <Flex alignItems="center" gap={12}>
                         <div className={styles.Label}>{type === 'create' ? '작성하기' : '수정하기'} </div>
-                        <span className={styles.Title}>{title}</span>
-                    </div>
-                    <div className={styles.Right}>
-                        {/* {category && onTabChange && (
-                            <BasicTab defaultValue={category}>
-                                <BasicTab.Item value={Category.REVIEW} onTabGroupItemClick={onTabChange}>
-                                    리뷰
-                                </BasicTab.Item>
-                                <BasicTab.Item value={Category.ESTIMATE} onTabGroupItemClick={onTabChange}>
-                                    견적
-                                </BasicTab.Item>
-                                <BasicTab.Item value={Category.CASE} onTabGroupItemClick={onTabChange}>
-                                    사례
-                                </BasicTab.Item>
-                            </BasicTab>
-                        )} */}
-                        {isModal && <BasicModal.Close />}
-                    </div>
-                </div>
-                <div className={styles.InputWrapper}>
+                        <Text fontSize="var(--font-size-lg)" fontWeight="var(--font-weight-bold)">
+                            {title}
+                        </Text>
+                    </Flex>
+                    {isModal && <BasicModal.Close />}
+                </Flex>
+                <Flex className={styles.InputWrapper}>
                     <BasicInput
                         placeholder="제목을 입력해주세요."
                         value={title}
                         onChange={onInputChange}
                         className={styles.ArticleInput}
                     />
-                </div>
-                <div className={styles.EditorWrapper}>
+                </Flex>
+                <Block className={styles.EditorWrapper}>
                     <ArticleEditor value={editor} onEditorChange={onEditorChange} onImageUpload={onImageUpload} />
-                </div>
-            </div>
+                </Block>
+            </Block>
 
-            <div className={styles.Footer}>
+            {/* <Flex flexDirection="column" width={'100%'} className={styles.Main}></Flex> */}
+            <Block className={styles.Footer}>
                 <BasicButton onClick={onButtonClick} variant="gradient" height={48}>
                     작성하기
                 </BasicButton>
-            </div>
-        </div>
+            </Block>
+        </Flex>
     );
 };
 
