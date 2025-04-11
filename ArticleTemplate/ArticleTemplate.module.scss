@@ -30,15 +30,11 @@
             border-bottom: 1px solid var(--base-color-quinary);
 
             .ArticleInput {
-                box-sizing: border-box;
-
-                padding: 2px;
-                border: 1px solid transparent;
                 // box-sizing: border-box;
-
-                &:focus-within {
-                    border: 1px solid var(--brand-color-primary);
-                }
+                // border: none;
+                // padding: 2px;
+                // border: 1px solid transparent;
+                // box-sizing: border-box;
 
                 input {
                     font-size: var(--font-size-5xl);

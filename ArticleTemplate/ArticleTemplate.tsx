@@ -11,31 +11,34 @@ import { Category } from 'types/model/content';
 import TabGroup from 'headless/TabGroup/TabGroup';
 import RadioTab from 'headful/RadioTab/RadioTab';
 import BasicTab from 'headful/BasicTab/BasicTab';
+import FormInput from 'headful/FormInput/FormInput';
 
 type ArticleTemplateProps = {
     isModal?: boolean;
     type: 'create' | 'update';
     title: string;
-    editor: string;
+    // editor: string;
     category?: Category;
     onButtonClick: () => void;
     onInputChange: ChangeEventHandler<HTMLInputElement>;
-    onEditorChange: React.Dispatch<React.SetStateAction<string>>;
-    onImageUpload: (files: FileList) => Promise<any>;
+    // onEditorChange: React.Dispatch<React.SetStateAction<string>>;
+    // onImageUpload: (files: FileList) => Promise<any>;
     onTabChange?: (value: string) => void;
+    children: React.ReactNode;
 };
 
 const ArticleTemplate = ({
     type,
     title,
-    editor,
+    // editor,
     category,
     onButtonClick,
     onInputChange,
-    onEditorChange,
-    onImageUpload,
+    // onEditorChange,
+    // onImageUpload,
     onTabChange,
     isModal,
+    children,
 }: ArticleTemplateProps) => {
     return (
         <Flex width={'100%'} flexDirection="column" justifyContent="space-between" className={styles.ArticleTemplate}>
@@ -54,12 +57,13 @@ const ArticleTemplate = ({
                         placeholder="제목을 입력해주세요."
                         value={title}
                         onChange={onInputChange}
-                        className={styles.ArticleInput}
+                        fontSize={18}
+                        fontWeight={'bold'}
+                        variant="none"
+                        // className={styles.ArticleInput}
                     />
                 </Flex>
-                <Block className={styles.EditorWrapper}>
-                    <ArticleEditor value={editor} onEditorChange={onEditorChange} onImageUpload={onImageUpload} />
-                </Block>
+                <Block className={styles.EditorWrapper}>{children}</Block>
             </Block>
 
             {/* <Flex flexDirection="column" width={'100%'} className={styles.Main}></Flex> */}
