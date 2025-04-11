@@ -1,25 +1,28 @@
 /* Block: basic-input */
-.basic-input {
-    padding: 10px 18px;
+.BasicInput {
+    padding: 10px 12px;
     width: 100%;
     box-sizing: border-box;
     border-radius: var(--border-radius);
-    border: 1px solid var(--base-color-quaternary);
+    border: 1px solid transparent;
     display: flex;
     align-items: center;
     color: var(--base-color-tertiary);
 
+    &.Border {
+        border: 1px solid var(--base-color-quaternary);
+    }
     &:focus-within {
         border: 1px solid var(--brand-color-primary);
     }
-}
 
-/* Element: basic-input__input */
-.basic-input__input {
-    width: 100%;
-    padding: 10px 18px;
-    border: none;
-    font-size: var(--font-size-sm);
-    font-family: Pretendard, sans-serif;
-    outline: none;
+    input {
+        width: 100%;
+        padding: 0;
+        border: none;
+        font-size: var(--input-font-size);
+        font-weight: var(--input-font-weight);
+        font-family: Pretendard, sans-serif;
+        outline: none;
+    }
 }
