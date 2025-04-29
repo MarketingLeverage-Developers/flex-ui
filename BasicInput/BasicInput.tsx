@@ -1,4 +1,5 @@
-import React from 'react';
+// BasicInput.tsx
+import React, { forwardRef } from 'react';
 import styles from './BasicInput.module.scss';
 import classNames from 'classnames';
 
@@ -10,26 +11,33 @@ type BasicInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
     variant?: 'border' | 'none';
 };
 
-const BasicInput = ({ left, right, fontSize, fontWeight, variant = 'border', ...props }: BasicInputProps) => {
-    type CSSPropertiesWithVars = React.CSSProperties & {
-        [key: `--${string}`]: string | number;
-    };
-    const cssVars: CSSPropertiesWithVars = {
-        '--input-font-size': fontSize ? `${fontSize}px` : '16px',
-        '--input-font-weight': fontWeight ?? 'regular',
-    };
+// forwardRef로 감싸면서 ref를 HTMLInputElement에 포워딩
+const BasicInput = forwardRef<HTMLInputElement, BasicInputProps>(
+    ({ left, right, fontSize, fontWeight, variant = 'border', ...props }, ref) => {
+        type CSSPropertiesWithVars = React.CSSProperties & {
+            [key: `--${string}`]: string | number;
+        };
+        const cssVars: CSSPropertiesWithVars = {
+            '--input-font-size': fontSize ? `${fontSize}px` : '16px',
+            '--input-font-weight': fontWeight ?? 'regular',
+        };
 
-    const combinedStyle = classNames(styles.BasicInput, {
-        [styles.Border]: variant === 'border',
-    });
+        const combinedClass = classNames(styles.BasicInput, {
+            [styles.Border]: variant === 'border',
+        });
 
-    return (
-        <div className={combinedStyle} style={{ ...cssVars, ...props.style }}>
-            {left}
-            <input {...props} />
-            {right}
-        </div>
-    );
-};
+        return (
+            <div className={combinedClass} style={{ ...cssVars, ...props.style }}>
+                {left}
+                {/* 여기서 ref를 전달 */}
+                <input ref={ref} {...props} />
+                {right}
+            </div>
+        );
+    }
+);
+
+// 디버그를 위해 컴포넌트 이름 지정
+BasicInput.displayName = 'BasicInput';
 
 export default BasicInput;
