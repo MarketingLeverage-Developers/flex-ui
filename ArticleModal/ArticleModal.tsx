@@ -3,6 +3,7 @@ import React from 'react';
 import ArticleModalContent from './ArticleModalContent/ArticleModalContent';
 import ArticleModalTemplate from '../ArticleTemplate/ArticleTemplate';
 import BasicModal from 'headful/BasicModal/BasicModal';
+import ArticleModalNestedContent from './ArticleModalNestedContent/ArticleModalNestedContent';
 
 type ArticleModalProps = {
     children: React.ReactNode;
@@ -19,3 +20,4 @@ ArticleModal.Backdrop = BasicModal.Backdrop;
 ArticleModal.Close = BasicModal.Close;
 ArticleModal.Content = ArticleModalContent;
 ArticleModal.Template = ArticleModalTemplate;
+ArticleModal.NestedContent = ArticleModalNestedContent;
