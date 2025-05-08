@@ -3,14 +3,14 @@ import { IconType } from 'react-icons';
 import styles from './SidebarMenuIconText.module.scss';
 
 type SidebarMenuIconTextProps = {
-    icon: IconType;
+    icon?: IconType;
     label: string;
 };
 
 const SidebarMenuIconText = ({ icon: Icon, label }: SidebarMenuIconTextProps) => {
     return (
         <div className={styles['sidebar-menu-icon-text']}>
-            <Icon className={styles['sidebar-menu-icon-text__icon']} />
+            {Icon && <Icon className={styles['sidebar-menu-icon-text__icon']} />}
             <span className={styles['sidebar-menu-icon-text__label']}>{label}</span>
         </div>
     );

@@ -1,13 +1,13 @@
 .MediumMenu {
     display: flex;
-    gap: 16px;
+    gap: var(--space-20);
+    padding: var(--space-20) var(--space-30);
     width: 100%;
-    padding: 30px 40px;
     box-sizing: border-box;
 }
 
-.HasSmallMenu {
-    padding: 0px 40px;
-    padding-top: 30px;
-    padding-bottom: 10px;
-}
+// .HasSmallMenu {
+//     padding: 0px 40px;
+//     padding-top: 30px;
+//     padding-bottom: 10px;
+// }

@@ -8,7 +8,7 @@ import classNames from 'classnames';
 type SidebarMenuItemProps = {
     label: string;
     value: string;
-    icon: IconType;
+    icon?: IconType;
     onItemClick: (value: string) => void;
 };
 

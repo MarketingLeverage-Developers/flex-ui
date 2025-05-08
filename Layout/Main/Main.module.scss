@@ -1,7 +1,7 @@
 /* Block: main */
 .main {
     grid-area: main;
-    background: var(--base-color-secondary);
-    margin: 0;
+    background: #f5f5f5;
+    padding: var(--space-30);
     overflow-y: scroll;
 }
