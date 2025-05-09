@@ -1,8 +1,33 @@
-.BasicModalContent {
-    width: 100%;
-    max-width: 1140px;
-    background-color: var(--base-color-secondary);
-    z-index: var(--z-index-modal2);
-    border-radius: 20px;
+.Content {
+    width: var(--width);
+    height: var(--height); /* 뷰포트 높이의 50% 예시 */
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    background-color: var(--header-color);
+    z-index: 1001;
     transition: opacity 300ms, transform 300ms;
+    overflow: hidden; /* 외부 스크롤 방지 */
+
+    .Header {
+        flex: 0 0 auto; /* 높이 고정 */
+        padding: var(--space-20) var(--space-25);
+        background-color: var(--header-color);
+        font-size: var(--font-24);
+        font-weight: 600;
+        color: #fff;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        /* 필요하다면 height: 60px; 같이 명시해도 좋습니다 */
+    }
+
+    .Body {
+        flex: 1 1 auto; /* 남은 공간 전부 차지 */
+        background-color: #fff;
+        // padding: var(--space-20) var(--space-25);
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        overflow-y: auto; /* 본문에서만 세로 스크롤 */
+        padding: var(--space-30);
+    }
 }
