@@ -7,7 +7,7 @@ type MainContentProps = {
 
 const MainContent = ({ children }: MainContentProps) => {
     return (
-        <Box padding={30} backgroundColor="#f5f5f5" height="100%">
+        <Box padding={30} backgroundColor="#f5f5f5" height="auto">
             {children}
         </Box>
     );
