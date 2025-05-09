@@ -1,22 +1,27 @@
-import Flex from 'headful/Flex/Flex';
-import Text from 'headful/Text/Text';
+import Text from '@/ui-kit/components/contents/Text/Text';
+import Flex from '@/ui-kit/components/layouts/Flex/Flex';
 import React from 'react';
 
 type LabelProps = {
     label: string;
+    required?: boolean;
     children: React.ReactNode;
 };
 
-const Label = ({ label, children }: LabelProps) => {
+const Label = ({ label, required = false, children }: LabelProps) => {
     return (
-        <Flex flexDirection="column" gap={8}>
-            <Text
-                fontSize="var(--font-size-sm)"
-                fontWeight="var(--font-weight-semi-bold)"
-                color="var(--base-color-tertiary)"
-            >
-                {label}
-            </Text>
+        <Flex direction="column" gap={15}>
+            <Flex gap={7}>
+                <Text size={18} weight={600} color="#111">
+                    {label}
+                </Text>
+                {required && (
+                    <Text size={18} weight={600} color="red">
+                        *
+                    </Text>
+                )}
+            </Flex>
+
             {children}
         </Flex>
     );
