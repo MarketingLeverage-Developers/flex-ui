@@ -1,5 +1,5 @@
-import Text from '@/ui-kit/components/contents/Text/Text';
-import Flex from '@/ui-kit/components/layouts/Flex/Flex';
+import Text from '@/ui-kit/src/components/contents/Text/Text';
+import Flex from '@/ui-kit/src/components/layouts/Flex/Flex';
 import React from 'react';
 
 type LabelProps = {
