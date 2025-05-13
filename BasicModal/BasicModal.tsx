@@ -5,12 +5,10 @@ import BasicModalClose from './BasicModalClose/BasicModalClose';
 import BasicModalContent from './BasicModalContent/BasicModalContent';
 import BasicModalTrigger from './BasicModalTrigger/BasicModalTrigger';
 
-type BasicModalProps = {
-    children: React.ReactNode;
-};
+type BasicModalProps = React.ComponentProps<typeof Modal>;
 
-const BasicModal = ({ children }: BasicModalProps) => {
-    return <Modal>{children}</Modal>;
+const BasicModal = ({ ...props }: BasicModalProps) => {
+    return <Modal {...props} />;
 };
 
 export default BasicModal;
