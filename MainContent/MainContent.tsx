@@ -1,4 +1,4 @@
-import Box from '@/ui-kit/components/layouts/Box/Box';
+import Box from '@/ui-kit/src/components/layouts/Box/Box';
 import React from 'react';
 
 type MainContentProps = {

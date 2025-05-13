@@ -2,29 +2,21 @@ import Modal from '@/headless/Modal/Modal';
 import styles from './BasicModalContent.module.scss';
 import { HTMLAttributes } from 'react';
 import classNames from 'classnames';
-import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/types/types';
-import { dimensionToVariable } from '@/ui-kit/libs/utils';
-import Flex from '@/ui-kit/components/layouts/Flex/Flex';
-import Image from '@/ui-kit/components/contents/Image/Image';
+import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/src/types';
+import { dimensionToVariable } from '@/ui-kit/src/utils';
+import Flex from '@/ui-kit/src/components/layouts/Flex/Flex';
+import Image from '@/ui-kit/src/components/contents/Image/Image';
 import X from '@/assets/images/x.svg';
-import { config } from '@/ui-kit/configs/config';
 
 type ContentProps = HTMLAttributes<HTMLDivElement> & {
     title: string;
     width?: string;
     height?: string;
-    backgroundColor?: HexColor;
+    color?: HexColor;
     children: React.ReactNode;
 };
 
-const Content = ({
-    width = '40%',
-    height = 'auto',
-    backgroundColor = config.theme.primaryColor ?? '#E88731',
-    title,
-    children,
-    ...props
-}: ContentProps) => {
+const Content = ({ width = '40%', height = 'auto', color, title, children, ...props }: ContentProps) => {
     const combinedStyle = classNames(styles.Content, props.className);
 
     const contentVariables: CSSPropertiesWithVars = {
@@ -33,7 +25,7 @@ const Content = ({
     };
 
     const headerVariables: CSSPropertiesWithVars = {
-        '--header-color': backgroundColor,
+        '--color': color,
     };
 
     return (

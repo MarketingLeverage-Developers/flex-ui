@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     border-radius: 4px;
-    background-color: var(--header-color);
+    background-color: var(--color, var(--primary-color));
     z-index: 1001;
     transition: opacity 300ms, transform 300ms;
     overflow: hidden; /* 외부 스크롤 방지 */
@@ -12,7 +12,7 @@
     .Header {
         flex: 0 0 auto; /* 높이 고정 */
         padding: var(--space-20) var(--space-25);
-        background-color: var(--header-color);
+        background-color: var(--color, var(--primary-color));
         font-size: var(--font-24);
         font-weight: 600;
         color: #fff;
