@@ -1,13 +1,11 @@
 import Box from '@/ui-kit/src/components/layouts/Box/Box';
 import React from 'react';
 
-type ContentBoxProps = {
-    children: React.ReactNode;
-};
+type ContentBoxProps = React.ComponentProps<typeof Box>;
 
-const ContentBox = ({ children }: ContentBoxProps) => {
+const ContentBox = ({ children, ...props }: ContentBoxProps) => {
     return (
-        <Box padding={20} backgroundColor="#FFF" radius={5}>
+        <Box {...props} padding={20} backgroundColor="#FFF" radius={5}>
             {children}
         </Box>
     );
