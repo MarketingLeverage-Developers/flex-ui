@@ -1,6 +1,6 @@
 .BasicTableCell {
     border: 1px solid #eaeaea;
-    padding: 12px;
+    padding: var(--space-10);
     box-sizing: border-box;
     display: table-cell;
     vertical-align: middle;
@@ -15,7 +15,7 @@
     }
     &.AsHeader {
         background: var(--base-color-senary);
-        font-size: var(--font-size-sm);
+        font-size: var(--font-13);
         color: var(--base-color-tertiary);
     }
     &.Editable {

@@ -1,6 +1,6 @@
 .basic-table-row {
     // border-radius: var(--border-radius);
-    height: 50px;
+    height: var(--box-35);
 
     &:nth-of-type(even) {
     }

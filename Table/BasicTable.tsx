@@ -33,7 +33,7 @@ const BasicTable = ({ children }: BasicTableProps) => {
     }, []);
 
     return (
-        <div ref={wrapperRef} className={styles['basic-table-wrapper']}>
+        <div className={styles['basic-table-wrapper']}>
             <table className={styles['basic-table']}>{children}</table>
         </div>
     );

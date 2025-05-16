@@ -2,10 +2,10 @@
 
 .basic-table-header {
     background: var(--base-color-senary);
-    height: 60px;
+    height: var(--box-35);
     text-align: left;
     padding: 12px;
     // box-sizing: border-box;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-13);
     color: var(--base-color-tertiary);
 }
