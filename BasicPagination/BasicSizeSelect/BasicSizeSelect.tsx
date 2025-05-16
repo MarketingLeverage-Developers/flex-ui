@@ -1,3 +1,4 @@
+import SelectA from '@/ui-kit/src/components/contents/Select/A/SelectA';
 import BasicSelect from 'headful/BasicSelect/BasicSelect';
 import { usePagination } from 'headless/Pagination/Pagination';
 import { FaBook } from 'react-icons/fa';
@@ -19,20 +20,20 @@ const BasicSizeSelect = ({ onPageSizeSelectChange }: BasicSizeSelectProps) => {
     };
 
     return (
-        <BasicSelect defaultValue={paginationValue.size.toString()}>
-            <BasicSelect.Trigger icon={<FaBook width={14} height={14} />} label={'페이지 사이즈'} />
-            <BasicSelect.Content>
+        <SelectA defaultValue={paginationValue.size.toString()}>
+            <SelectA.Trigger icon={<FaBook width={14} height={14} />} label={'페이지 사이즈'} />
+            <SelectA.Content>
                 {paginationSizes.map((pageSize, index) => (
-                    <BasicSelect.Item
+                    <SelectA.Item
                         key={index}
                         value={pageSize.toString()}
-                        onBasicSelectItemClick={() => handleSelectItemClick(pageSize.toString())}
+                        onItemClick={() => handleSelectItemClick(pageSize.toString())}
                     >
                         {pageSize}
-                    </BasicSelect.Item>
+                    </SelectA.Item>
                 ))}
-            </BasicSelect.Content>
-        </BasicSelect>
+            </SelectA.Content>
+        </SelectA>
     );
 };
 
