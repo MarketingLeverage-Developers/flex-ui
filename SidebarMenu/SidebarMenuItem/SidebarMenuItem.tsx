@@ -4,19 +4,20 @@ import SelectGroup, { useSelectGroup } from 'headless/SelectGroup/SelectGroup';
 import styles from './SidebarMenuItem.module.scss';
 import SidebarMenu from '../SidebarMenu';
 import classNames from 'classnames';
+import { SelectGroupValue } from '@/headless/SelectGroup/SelectGroupItem';
 
 type SidebarMenuItemProps = {
     label: string;
     value: string;
     icon?: IconType;
-    onItemClick: (value: string) => void;
+    onItemClick: (value: SelectGroupValue) => void;
 };
 
 const SidebarMenuItem = ({ label, value, icon, onItemClick }: SidebarMenuItemProps) => {
     const { selectGroupValue } = useSelectGroup();
 
     const combinedClassName = classNames(styles.SidebarMenuItem, {
-        [styles.Active]: selectGroupValue.startsWith(value),
+        [styles.Active]: (selectGroupValue as string).startsWith(value),
     });
 
     return (
