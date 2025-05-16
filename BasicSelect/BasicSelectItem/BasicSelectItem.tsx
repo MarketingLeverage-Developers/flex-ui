@@ -4,6 +4,7 @@ import SelectGroup, { useSelectGroup } from 'headless/SelectGroup/SelectGroup';
 import React from 'react';
 import { FaCheck } from 'react-icons/fa6';
 import styles from './BasicSelectItem.module.scss';
+import { SelectGroupValue } from '@/headless/SelectGroup/SelectGroupItem';
 
 type BasicSelectItemProps = {
     children: React.ReactNode;
@@ -17,8 +18,8 @@ const BasicSelectItem = ({ children, value, onBasicSelectItemClick }: BasicSelec
 
     const isCurrentItem = value === selectGroupValue;
 
-    const handleBaiscSelectItemPageSizeItemClick = async (value: string) => {
-        onBasicSelectItemClick && onBasicSelectItemClick(value);
+    const handleBaiscSelectItemPageSizeItemClick = async (value: SelectGroupValue) => {
+        onBasicSelectItemClick && onBasicSelectItemClick(value as string);
         closeDropdown();
     };
 
