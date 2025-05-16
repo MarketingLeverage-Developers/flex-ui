@@ -16,7 +16,7 @@ type ContentProps = HTMLAttributes<HTMLDivElement> & {
     children: React.ReactNode;
 };
 
-const Content = ({ width = '40%', height = 'auto', color, title, children, ...props }: ContentProps) => {
+const Content = ({ width = '80%', height = '80%', color, title, children, ...props }: ContentProps) => {
     const combinedStyle = classNames(styles.Content, props.className);
 
     const contentVariables: CSSPropertiesWithVars = {
