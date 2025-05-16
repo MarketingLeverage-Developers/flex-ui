@@ -5,7 +5,7 @@ type ContentBoxProps = React.ComponentProps<typeof Box>;
 
 const ContentBox = ({ children, ...props }: ContentBoxProps) => {
     return (
-        <Box {...props} backgroundColor="#FFF" radius={5}>
+        <Box {...props} padding={{ y: 30, x: 20 }} backgroundColor="#FFF" radius={5}>
             {children}
         </Box>
     );
