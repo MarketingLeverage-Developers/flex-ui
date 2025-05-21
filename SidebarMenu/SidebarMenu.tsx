@@ -4,11 +4,12 @@ import styles from './SidebarMenu.module.scss';
 import SidebarMenuItem from './SidebarMenuItem/SidebarMenuItem';
 import SidebarMenuAccordion from './SidebarMenuAccordion/SidebarMenuAccordion';
 import SidebarMenuIconText from './SidebarMenuIconText/SidebarMenuIconText';
+import { SelectGroupValue } from '@/headless/SelectGroup/SelectGroupItem';
 
 type SidebarMenuProps = {
     children: React.ReactNode;
-    defaultValue: string;
-};
+    defaultValue: SelectGroupValue;
+} & React.ComponentProps<typeof SelectGroup.Item>;
 
 const SidebarMenu = ({ children, defaultValue }: SidebarMenuProps) => {
     return (
