@@ -14,7 +14,7 @@ type BasicTableCellProps = {
 
 const BasicTableCell = ({
     children,
-    align = 'center',
+    align = 'left',
     asHeader,
     isEditable = false,
     width,
@@ -27,9 +27,15 @@ const BasicTableCell = ({
         onTableCellChange && onTableCellChange(value);
     };
 
+    const alignMap = {
+        left: styles.Left,
+        right: styles.Right,
+        center: styles.Center,
+    };
+
     const cellClasses = classNames(
         styles.BasicTableCell,
-        align === 'center' ? styles.Left : styles.Right,
+        alignMap[align],
         asHeader && styles.AsHeader,
         isEditable && styles.Editable, // 편집 가능 시 추가 스타일 적용 (옵션)
         width && styles.Fixed

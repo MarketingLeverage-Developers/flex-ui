@@ -1,8 +1,10 @@
 .basic-table-row {
     // border-radius: var(--border-radius);
     border: 1px solid #e1e1e1;
-    height: var(--box-35);
+    box-sizing: border-box;
+    // height: var(--box-35);
 
-    &:nth-of-type(even) {
+    &:nth-of-type(odd) {
+        background-color: #fbfbfb;
     }
 }

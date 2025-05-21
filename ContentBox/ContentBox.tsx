@@ -1,13 +1,17 @@
 import Box from '@/ui-kit/src/components/layouts/Box/Box';
 import React from 'react';
+import styles from './ContentBox.module.scss';
 
-type ContentBoxProps = React.ComponentProps<typeof Box>;
+type ContentBoxProps = React.ComponentProps<typeof Box> & {
+    title: string;
+};
 
-const ContentBox = ({ children, ...props }: ContentBoxProps) => {
+const ContentBox = ({ children, title, ...props }: ContentBoxProps) => {
     return (
-        <Box {...props} padding={{ y: 30, x: 20 }} backgroundColor="#FFF" radius={5}>
+        <div className={styles.ContentBox} {...props}>
+            <div className={styles.Title}>{title}</div>
             {children}
-        </Box>
+        </div>
     );
 };
 

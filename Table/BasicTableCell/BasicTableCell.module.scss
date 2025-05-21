@@ -1,22 +1,28 @@
 .BasicTableCell {
     // border: 1px solid #eaeaea;
-    padding: var(--space-10);
+    height: var(--box-40);
+    padding: 0 var(--space-20);
     box-sizing: border-box;
     display: table-cell;
     vertical-align: middle;
     white-space: nowrap;
     position: relative;
+    color: #474747;
+    font-size: var(--font-14);
 
     &.Left {
+        text-align: left;
+    }
+    &.Center {
         text-align: center;
     }
     &.Right {
         text-align: right;
     }
     &.AsHeader {
-        background: var(--base-color-senary);
-        font-size: var(--font-13);
-        color: var(--base-color-tertiary);
+        // background: var(--base-color-senary);
+        font-weight: 500;
+        color: #161616;
     }
     &.Editable {
         outline: none;
