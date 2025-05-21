@@ -8,7 +8,7 @@ type BasicSizeSelectProps = {
 };
 
 const BasicSizeSelect = ({ onPageSizeSelectChange }: BasicSizeSelectProps) => {
-    const paginationSizes = [20, 50, 100, 200];
+    const paginationSizes = [20, 30, 50, 100, 200];
     const { changeSize, paginationValue } = usePagination();
 
     const handleSelectItemClick = async (value: string) => {
@@ -19,13 +19,18 @@ const BasicSizeSelect = ({ onPageSizeSelectChange }: BasicSizeSelectProps) => {
     };
 
     return (
-        <SelectA defaultValue={paginationValue.size.toString()}>
+        <SelectA
+            defaultValue={{
+                value: paginationValue.size.toString(),
+                label: `${paginationValue.size.toString()}개씩 보기`,
+            }}
+        >
             <SelectA.Trigger />
             <SelectA.Content>
                 {paginationSizes.map((pageSize, index) => (
                     <SelectA.Item
                         key={index}
-                        value={{ value: pageSize.toString(), label: `${pageSize.toString()}개 보기` }}
+                        value={{ value: pageSize.toString(), label: `${pageSize.toString()}개씩 보기` }}
                         onSelectGroupItemClick={() => handleSelectItemClick(pageSize.toString())}
                     />
                 ))}
