@@ -9,7 +9,7 @@ import { SelectGroupValue } from '@/headless/SelectGroup/SelectGroupItem';
 type SidebarMenuProps = {
     children: React.ReactNode;
     defaultValue: SelectGroupValue;
-} & React.ComponentProps<typeof SelectGroup.Item>;
+};
 
 const SidebarMenu = ({ children, defaultValue }: SidebarMenuProps) => {
     return (
