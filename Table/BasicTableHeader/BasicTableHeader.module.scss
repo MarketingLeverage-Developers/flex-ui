@@ -1,10 +1,10 @@
 // @import 'theme';
 
 .basic-table-header {
-    background: var(--base-color-senary);
-    height: var(--box-35);
+    background: inherit;
+    height: var(--box-40);
     text-align: left;
-    padding: 12px;
+    // padding: ;
     // box-sizing: border-box;
     font-size: var(--font-13);
     color: var(--base-color-tertiary);
