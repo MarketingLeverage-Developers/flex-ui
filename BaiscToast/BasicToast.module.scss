@@ -1,14 +1,28 @@
 .BasicToast {
-    transition: all 0.5s ease-in-out;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 12px 24px;
+    transition: opacity 1.2s ease, transform 0.5s ease;
+    background-color: #fff;
+    color: #161616;
+    padding: var(--space-10) var(--space-50);
     border-radius: 8px;
     position: fixed;
-    bottom: 20px;
+    top: 0; // top에 위치시킴
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -100px); // 초기 위치: 화면 바깥 위쪽
+    opacity: 0;
     z-index: 10000;
+    pointer-events: none;
+    box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.12);
+    display: flex;
+    gap: var(--space-15);
+    align-items: center;
+
+    font-size: vaR(--font-17);
+
+    &.Open {
+        transform: translate(-50%, 20px); // 최종 위치: 아래쪽으로 떨어짐
+        opacity: 1;
+        pointer-events: auto;
+    }
 
     &.Error {
         background-color: #f44336;

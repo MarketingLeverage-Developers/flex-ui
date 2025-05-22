@@ -3,21 +3,30 @@ import React from 'react';
 import styles from './BasicToast.module.scss';
 import Toast from '@/headless/Toast/Toast/Toast';
 import classNames from 'classnames';
+import Success from '@/assets/images/toast-success.svg';
+import Fail from '@/assets/images/toast-fail.svg';
+import Image from '@/ui-kit/src/components/contents/Image/Image';
 
 type BasicTostProviderProps = {
     children: React.ReactNode;
 };
 
 const BasicToastProvider = ({ children }: BasicTostProviderProps) => {
-    const { type } = useToastProvider();
+    const { toastValue, type } = useToastProvider();
 
     const className = classNames(styles.BasicToast, {
-        [styles.Error]: type === 'success',
+        [styles.Open]: toastValue,
+        [styles.Closed]: !toastValue,
+        // [styles.Error]: type === 'error',
     });
 
     return (
         <>
-            {children} <Toast className={className} />
+            {children}{' '}
+            <Toast
+                className={className}
+                icon={type === 'success' ? <Image width={25} image={Success} /> : <Image width={25} image={Fail} />}
+            />
         </>
     );
 };
