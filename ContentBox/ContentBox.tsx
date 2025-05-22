@@ -4,12 +4,16 @@ import styles from './ContentBox.module.scss';
 
 type ContentBoxProps = React.ComponentProps<typeof Box> & {
     title: string;
+    rightNode?: React.ReactNode;
 };
 
-const ContentBox = ({ children, title, ...props }: ContentBoxProps) => {
+const ContentBox = ({ children, title, rightNode, ...props }: ContentBoxProps) => {
     return (
         <div className={styles.ContentBox} {...props}>
-            <div className={styles.Title}>{title}</div>
+            <div className={styles.Title}>
+                {title}
+                <div>{rightNode}</div>
+            </div>
             {children}
         </div>
     );
