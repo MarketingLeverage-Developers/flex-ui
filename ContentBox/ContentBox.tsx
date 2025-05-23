@@ -11,7 +11,7 @@ const ContentBox = ({ children, title, rightNode, ...props }: ContentBoxProps) =
     return (
         <div className={styles.ContentBox} {...props}>
             <div className={styles.Title}>
-                {title}
+                <span>{title}</span>
                 <div>{rightNode}</div>
             </div>
             {children}
