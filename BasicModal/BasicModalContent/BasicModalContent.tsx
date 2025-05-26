@@ -1,6 +1,6 @@
 import Modal from '@/headless/Modal/Modal';
 import styles from './BasicModalContent.module.scss';
-import { HTMLAttributes } from 'react';
+import React, { HTMLAttributes } from 'react';
 import classNames from 'classnames';
 import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/src/types';
 import { dimensionToVariable } from '@/ui-kit/src/utils';
@@ -17,6 +17,10 @@ type ContentProps = HTMLAttributes<HTMLDivElement> & {
 };
 
 const Content = ({ width = '80%', height = '80%', color, title, children, ...props }: ContentProps) => {
+    const childArray = React.Children.toArray(children);
+
+    const body = childArray[0];
+    const buttons = childArray[1];
     const combinedStyle = classNames(styles.Content, props.className);
 
     const contentVariables: CSSPropertiesWithVars = {
@@ -33,12 +37,16 @@ const Content = ({ width = '80%', height = '80%', color, title, children, ...pro
             <div className={styles.Header} style={{ ...headerVariables }}>
                 <Flex justify="space-between">
                     {title}
-                    <Modal.Close>
-                        <Image image={X} alt="닫기" style={{ cursor: 'pointer' }} width={20} />
-                    </Modal.Close>
+
+                    <Flex gap={35}>
+                        {buttons}
+                        <Modal.Close>
+                            <Image image={X} alt="닫기" style={{ cursor: 'pointer' }} width={20} />
+                        </Modal.Close>
+                    </Flex>
                 </Flex>
             </div>
-            <div className={styles.Body}>{children}</div>
+            <div className={styles.Body}>{body}</div>
         </Modal.Content>
     );
 };
