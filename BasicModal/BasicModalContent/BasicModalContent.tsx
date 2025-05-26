@@ -35,7 +35,7 @@ const Content = ({ width = '80%', height = '80%', color, title, children, ...pro
     return (
         <Modal.Content {...props} className={combinedStyle} style={{ ...contentVariables }}>
             <div className={styles.Header} style={{ ...headerVariables }}>
-                <Flex justify="space-between">
+                <Flex justify="space-between" align="center">
                     {title}
 
                     <Flex gap={35}>
