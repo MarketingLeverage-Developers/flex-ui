@@ -3,7 +3,7 @@
     height: var(--height); /* 뷰포트 높이의 50% 예시 */
     display: flex;
     flex-direction: column;
-    border-radius: 4px;
+    border-radius: 20px;
     background-color: var(--color, var(--primary-color));
     z-index: 1001;
     transition: opacity 300ms, transform 300ms;
@@ -16,8 +16,8 @@
         font-size: var(--font-24);
         font-weight: 600;
         color: #fff;
-        border-top-left-radius: 4px;
-        border-top-right-radius: 4px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
         /* 필요하다면 height: 60px; 같이 명시해도 좋습니다 */
     }
 
@@ -25,8 +25,8 @@
         flex: 1 1 auto; /* 남은 공간 전부 차지 */
         background-color: #fff;
         // padding: var(--space-20) var(--space-25);
-        border-bottom-left-radius: 4px;
-        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
         overflow-y: auto; /* 본문에서만 세로 스크롤 */
         padding: var(--space-30);
     }
