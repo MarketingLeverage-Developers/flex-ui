@@ -1,4 +1,4 @@
-import { useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import styles from './ArticleEditor.module.scss';
@@ -11,9 +11,10 @@ type ArticleEditorProps = {
     value: string;
     onEditorChange: (value: string) => void;
     onImageUpload: (files: FileList) => Promise<any>;
+    disabled?: boolean;
 };
 
-const ArticleEditor = ({ value, onEditorChange, onImageUpload }: ArticleEditorProps) => {
+const ArticleEditor = ({ value, onEditorChange, onImageUpload, disabled = false }: ArticleEditorProps) => {
     const quillRef = useRef<ReactQuill>(null);
 
     const handleImageUploadButtonClick = async () => {
@@ -84,7 +85,7 @@ const ArticleEditor = ({ value, onEditorChange, onImageUpload }: ArticleEditorPr
                     ['link', 'image'],
                 ],
                 handlers: {
-                    image: handleImageUploadButtonClick, // 올바르게 구현된 함수 사용
+                    image: handleImageUploadButtonClick,
                 },
                 ImageResize: {
                     modules: ['Resize'],
@@ -94,11 +95,14 @@ const ArticleEditor = ({ value, onEditorChange, onImageUpload }: ArticleEditorPr
         []
     );
 
+    console.log('modules', modules);
+
     return (
         <ReactQuill
             className={styles.Editor}
             ref={quillRef}
             value={value}
+            readOnly={disabled}
             onChange={onEditorChange}
             theme="snow"
             modules={modules}
