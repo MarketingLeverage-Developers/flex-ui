@@ -1,0 +1,34 @@
+.CarTag {
+    width: fit-content;
+    border-radius: 8px;
+    color: #fff;
+    background-color: var(--color, var(--primary-color));
+    border: none;
+    word-break: keep-all;
+
+    &.Xxs {
+        padding: var(--space-7) var(--space-10);
+        font-size: var(--font-14);
+    }
+
+    &.Xs {
+        padding: var(--space-10) var(--space-15);
+        font-size: var(--font-16);
+    }
+
+    &.Sm {
+        padding: var(--space-15) var(--space-25);
+        font-size: var(--font-18);
+    }
+    &.Md {
+        padding: var(--space-20) var(--space-30);
+        font-size: var(--font-20);
+    }
+    &.Lg {
+        padding: var(--space-25) var(--space-40);
+        font-size: var(--font-22);
+    }
+    &.Full {
+        width: 100%;
+    }
+}
