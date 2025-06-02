@@ -10,7 +10,7 @@
 
     &.Active {
         background-color: #fff5eb;
-        border-right: 3px solid #e88731;
+        border-right: 3px solid var(--primary-color);
     }
 }
 
@@ -27,7 +27,7 @@
     cursor: pointer;
 
     &.Active {
-        color: #e88731;
+        color: var(--primary-color);
         font-weight: 500;
     }
 }
