@@ -8,6 +8,7 @@ import BasicPrev from './BasicPagingButtons/BasicPrev/BasicPrev';
 import BasicNext from './BasicPagingButtons/BasicNext/BasicNext';
 import BasicFasNext from './BasicPagingButtons/BasicFastNext/BasicFastNext';
 import BasicFastPrev from './BasicPagingButtons/BasicFastPrev/BasicFastPrev';
+import TotalText from './TotalText/TotalText';
 
 type BasicPaginationProps = {
     children: React.ReactNode;
@@ -31,3 +32,4 @@ BasicPagination.Prev = BasicPrev;
 BasicPagination.Pages = BasicPages;
 BasicPagination.Next = BasicNext;
 BasicPagination.FastNext = BasicFasNext;
+BasicPagination.TotalText = TotalText;
