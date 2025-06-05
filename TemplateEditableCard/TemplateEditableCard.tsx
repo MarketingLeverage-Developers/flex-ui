@@ -47,7 +47,7 @@ const TemplateEditableCard = ({
                             </ButtonB>
                             <ButtonB size="xs" color="#fff" onClick={onHideButtonClick}>
                                 <Text color="#1A73E8" size={16}>
-                                    {useAt ? '숨김' : '숨김해제'}
+                                    {useAt ? '숨김' : '해제'}
                                 </Text>
                             </ButtonB>
                         </div>
