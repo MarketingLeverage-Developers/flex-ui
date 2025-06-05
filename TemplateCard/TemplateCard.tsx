@@ -7,14 +7,15 @@ type TemplateCardProps = {
     subTitle: string;
     tags: Tag[];
     onCardClick: () => void;
+    children?: React.ReactNode;
 };
 
-const TemplateCard = ({ image, title, subTitle, tags, onCardClick }: TemplateCardProps) => {
+const TemplateCard = ({ image, title, subTitle, tags, onCardClick, children }: TemplateCardProps) => {
+    const imageComp = children;
+
     return (
         <div className={styles.TemplateCard} onClick={onCardClick}>
-            <div className={styles.Image}>
-                <img src={image} alt="템플릿 이미지" />
-            </div>
+            {imageComp ?? <Image image={image} />}
             <div className={styles.Texts}>
                 <span className={styles.Title}>
                     {title} <span className={styles.Number}>(45)</span>
@@ -33,3 +34,13 @@ const TemplateCard = ({ image, title, subTitle, tags, onCardClick }: TemplateCar
 };
 
 export default TemplateCard;
+
+const Image = ({ image }: { image: string }) => {
+    return (
+        <div className={styles.Image}>
+            <img src={image} alt="템플릿 이미지" />
+        </div>
+    );
+};
+
+TemplateCard.Image = Image;
