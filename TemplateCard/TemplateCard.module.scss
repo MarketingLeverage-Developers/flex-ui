@@ -1,0 +1,53 @@
+/* TemplateCard.module.scss */
+.TemplateCard {
+    display: flex;
+    gap: var(--space-15);
+    align-items: center;
+
+    .Image {
+        flex: 5;
+        height: var(--box-250);
+        border: 1px solid #e2e2e2;
+        border-radius: 4px;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .Texts {
+        flex: 6;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-15);
+
+        .Title {
+            font-size: var(--font-18);
+            font-weight: 600;
+
+            .Number {
+                font-size: var(--font-16);
+                font-weight: 400;
+            }
+        }
+
+        .SubTitle {
+            font-size: var(--font-16);
+            font-weight: 400;
+        }
+
+        .Tags {
+            display: flex;
+            gap: var(--space-7);
+            flex-wrap: wrap;
+            .Tag {
+                border-radius: 4px;
+                background-color: #e2e2e2;
+                padding: 4px 6px;
+                font-size: var(--font-13);
+                font-weight: 500;
+            }
+        }
+    }
+}
