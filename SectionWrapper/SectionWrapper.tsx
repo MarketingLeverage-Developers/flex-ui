@@ -4,7 +4,7 @@ import React from 'react';
 
 type SectionWrapperProps = {
     children: React.ReactNode;
-    labelText: string;
+    labelText?: string;
     fontSize?: string;
 };
 
