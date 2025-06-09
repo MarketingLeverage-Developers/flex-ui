@@ -9,6 +9,14 @@
     position: relative;
     color: #474747;
     font-size: var(--font-14);
+    background-color: var(--header-color);
+
+    &:first-child {
+        border-top-left-radius: var(--header-radius);
+    }
+    &:last-child {
+        border-top-right-radius: var(--header-radius);
+    }
 
     &.Left {
         text-align: left;
@@ -43,6 +51,10 @@
         text-align: inherit; /* 정렬 방식도 상속 */
         background: transparent; /* 배경 투명 */
         cursor: text; /* 일반 텍스트처럼 보이게 */
+    }
+    &.Border {
+        // background-color: #fff;
+        border-right: 1px solid #e2e2e2;
     }
 }
 

@@ -1,16 +1,29 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useLayoutEffect, useRef } from 'react';
 import styles from './BasicTable.module.scss';
 import BasicTableHeader from './BasicTableHeader/BasicTableHeader';
 import BasicTableRow from './BasicTableRow/BasicTableRow';
 import BasicTableCell from './BasicTableCell/BasicTableCell';
 import BasicTableBody from './BasicTableBody/BasicTableBody';
+import { useTableHeight } from '@/pages/inquiries/pages/indexes/pages/InquiryPage/components/TableHeightProvider/TableHeightProvider';
+import classNames from 'classnames';
 
 type BasicTableProps = {
+    border?: boolean;
     children: React.ReactNode;
+    headerRadius?: number;
 };
 
-const BasicTable = ({ children }: BasicTableProps) => {
+const BasicTable = ({ children, border = false, headerRadius = 0 }: BasicTableProps) => {
     const wrapperRef = useRef<HTMLDivElement>(null);
+    const containerRef = useRef<HTMLDivElement | null>(null);
+    const { setTableHeight } = useTableHeight();
+
+    useLayoutEffect(() => {
+        const el = containerRef.current;
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        setTableHeight(rect.height);
+    }, [children, setTableHeight]);
 
     useEffect(() => {
         const wrapperEl = wrapperRef.current;
@@ -32,8 +45,12 @@ const BasicTable = ({ children }: BasicTableProps) => {
         };
     }, []);
 
+    const tableClasses = classNames(styles['basic-table-wrapper'], border && styles.border);
+    const cssVariables: React.CSSProperties = {
+        '--radius': `${headerRadius}px`,
+    } as React.CSSProperties;
     return (
-        <div className={styles['basic-table-wrapper']}>
+        <div className={tableClasses} ref={containerRef ?? null} style={{ ...cssVariables }}>
             <table className={styles['basic-table']}>{children}</table>
         </div>
     );

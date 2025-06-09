@@ -1,0 +1,29 @@
+.HamburgerDropdownContent {
+    position: absolute;
+    border-radius: var(--border-radius-sm);
+    background-color: var(--base-color-secondary);
+    box-shadow: var(--brand-shadow-primary);
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid var(--primary-color);
+    z-index: 100;
+}
+.Header {
+    padding: 0 var(--space-15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--box-30);
+    box-sizing: border-box;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-size: 14;
+    font-weight: 400;
+}
+.Body {
+    height: auto;
+    width: var(--box-250);
+    max-height: var(--box-300);
+    padding: 15px;
+    overflow: auto;
+}
