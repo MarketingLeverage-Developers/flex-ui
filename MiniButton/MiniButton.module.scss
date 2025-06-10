@@ -2,7 +2,7 @@
     height: 24px;
     padding: 0 8px;
     border: none;
-    border-radius: var(--radius);
+    border-radius: var(--border-radius-sm);
     background-color: var(--base-color-primary-light);
 
     font-size: var(--font-size-xs);
@@ -11,6 +11,7 @@
 
     white-space: nowrap;
     cursor: pointer;
+
     &.Brand {
         background-color: var(--brand-color-primary-light);
         color: var(--brand-color-primary);
@@ -19,8 +20,5 @@
     &.Warning {
         background-color: var(--warning-color-primary-light);
         color: var(--warning-color-primary);
-    }
-    &.Light {
-        background-color: #ffffff;
     }
 }
