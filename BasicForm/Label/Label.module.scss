@@ -1,0 +1,23 @@
+.Label {
+    display: flex;
+    gap: var(--space-15);
+
+    .Text {
+        flex: 1;
+
+        .LabelText {
+            font-size: var(--font-14);
+            font-weight: 500;
+        }
+
+        .Required {
+            font-size: var(--font-14);
+            font-weight: 500;
+            color: #ff2b2b;
+        }
+    }
+
+    .Input {
+        flex: 4;
+    }
+}
