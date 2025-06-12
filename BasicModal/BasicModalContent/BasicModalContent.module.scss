@@ -1,33 +1,55 @@
 .Content {
     width: var(--width);
-    height: var(--height); /* 뷰포트 높이의 50% 예시 */
-    display: flex;
-    flex-direction: column;
+    height: var(--height);
     border-radius: 20px;
     background-color: var(--color, var(--primary-color));
     z-index: 1001;
     transition: opacity 300ms, transform 300ms;
-    overflow: hidden; /* 외부 스크롤 방지 */
+    overflow: visible;
+    // position: relative; // ⭐️ SubContent absolute 기준 잡기
+    padding: 0; // 내부 구조에 padding 위임
+}
 
-    .Header {
-        flex: 0 0 auto; /* 높이 고정 */
-        padding: var(--space-20) var(--space-25);
-        background-color: var(--color, var(--primary-color));
-        font-size: var(--font-24);
-        font-weight: 600;
-        color: #fff;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-        /* 필요하다면 height: 60px; 같이 명시해도 좋습니다 */
-    }
+/* 새로 추가된 Wrapper */
+.Wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: relative; // SubContent는 이 기준으로 붙음
+}
 
-    .Body {
-        flex: 1 1 auto; /* 남은 공간 전부 차지 */
-        background-color: #fff;
-        // padding: var(--space-20) var(--space-25);
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
-        overflow-y: auto; /* 본문에서만 세로 스크롤 */
-        padding: var(--space-30);
-    }
+/* 헤더 */
+.Header {
+    flex: 0 0 auto;
+    padding: var(--space-7) var(--space-30);
+    background-color: var(--color, var(--primary-color));
+    font-size: var(--font-20);
+    font-weight: 600;
+    color: #fff;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+/* 바디 */
+.Body {
+    flex: 1 1 auto;
+    background-color: #fff;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow-y: auto;
+    padding: var(--space-30);
+}
+
+/* 서브 콘텐츠 */
+.SubContent {
+    position: absolute;
+    left: calc(100% + var(--space-15)); // Content 오른쪽에 16px 띄워서 위치
+    top: 6.5%;
+    width: 100%;
+    height: 79.25%;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    z-index: 2000;
 }

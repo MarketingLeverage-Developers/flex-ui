@@ -21,6 +21,7 @@ const Content = ({ width = '80%', height = '80%', color, title, children, ...pro
 
     const body = childArray[0];
     const buttons = childArray[1];
+    const subContent = childArray[2];
     const combinedStyle = classNames(styles.Content, props.className);
 
     const contentVariables: CSSPropertiesWithVars = {
@@ -34,19 +35,22 @@ const Content = ({ width = '80%', height = '80%', color, title, children, ...pro
 
     return (
         <Modal.Content {...props} className={combinedStyle} style={{ ...contentVariables }}>
-            <div className={styles.Header} style={{ ...headerVariables }}>
-                <Flex justify="space-between" align="center">
-                    {title}
+            <div className={styles.Wrapper}>
+                <div className={styles.Header} style={{ ...headerVariables }}>
+                    <Flex justify="space-between" align="center">
+                        {title}
 
-                    <Flex gap={35}>
-                        {buttons}
-                        <Modal.Close>
-                            <Image image={X} alt="닫기" style={{ cursor: 'pointer' }} width={20} />
-                        </Modal.Close>
+                        <Flex gap={35} align="center">
+                            {buttons}
+                            <Modal.Close>
+                                <Image image={X} alt="닫기" style={{ cursor: 'pointer' }} width={15} />
+                            </Modal.Close>
+                        </Flex>
                     </Flex>
-                </Flex>
+                </div>
+                <div className={styles.Body}>{body}</div>
+                {subContent && <div className={styles.SubContent}>{subContent}</div>}
             </div>
-            <div className={styles.Body}>{body}</div>
         </Modal.Content>
     );
 };
