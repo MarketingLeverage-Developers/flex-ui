@@ -10,7 +10,7 @@ const TotalText = () => {
     return (
         <Text size={15}>
             전체{' '}
-            <Text size={15} color="#e88731" weight={500}>
+            <Text size={15} color="#1A73E8" weight={500}>
                 {total}
             </Text>{' '}
             건
