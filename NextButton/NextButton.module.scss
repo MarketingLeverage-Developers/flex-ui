@@ -1,0 +1,32 @@
+.NextButton {
+    background-color: var(--background-color);
+    width: fit-content;
+    cursor: pointer;
+    border: 1px solid var(--border-color, var(--primary-color));
+    color: var(--color, var(--primary-color));
+    word-break: keep-all;
+    border-radius: 8px;
+
+    &.Xxs {
+        padding: var(--space-7) var(--space-10);
+        font-size: var(--font-14);
+    }
+
+    &.Xs {
+        padding: var(--space-10) var(--space-15);
+        font-size: var(--font-16);
+    }
+
+    &.Sm {
+        padding: var(--space-15) var(--space-25);
+        font-size: var(--font-18);
+    }
+    &.Md {
+        padding: var(--space-20) var(--space-30);
+        font-size: var(--font-20);
+    }
+    &.Lg {
+        padding: var(--space-25) var(--space-40);
+        font-size: var(--font-22);
+    }
+}
