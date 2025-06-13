@@ -1,6 +1,5 @@
 import { usePagination } from '@/headless/Pagination/Pagination';
-import Text from '@/ui-kit/src/components/contents/Text/Text';
-import React from 'react';
+import styles from './TotalText.module.scss';
 
 const TotalText = () => {
     const {
@@ -8,13 +7,10 @@ const TotalText = () => {
     } = usePagination();
 
     return (
-        <Text size={15}>
-            전체{' '}
-            <Text size={15} color="#1A73E8" weight={500}>
-                {total}
-            </Text>{' '}
-            건
-        </Text>
+        <div className={styles.TotalText}>
+            전체
+            <span>{total}</span>건
+        </div>
     );
 };
 
