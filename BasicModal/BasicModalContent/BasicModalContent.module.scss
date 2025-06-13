@@ -38,7 +38,7 @@
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     overflow-y: auto;
-    padding: var(--space-30);
+    padding: var(--padding, var(--space-30));
 }
 
 /* 서브 콘텐츠 */

@@ -3,7 +3,7 @@ import styles from './BasicModalContent.module.scss';
 import React, { HTMLAttributes } from 'react';
 import classNames from 'classnames';
 import { CSSPropertiesWithVars, HexColor } from '@/ui-kit/src/types';
-import { dimensionToVariable } from '@/ui-kit/src/utils';
+import { dimensionToSpace, dimensionToVariable } from '@/ui-kit/src/utils';
 import Flex from '@/ui-kit/src/components/layouts/Flex/Flex';
 import Image from '@/ui-kit/src/components/contents/Image/Image';
 import X from '@/assets/images/x.svg';
@@ -14,9 +14,10 @@ type ContentProps = HTMLAttributes<HTMLDivElement> & {
     height?: string;
     color?: HexColor;
     children: React.ReactNode;
+    padding?: number;
 };
 
-const Content = ({ width = '80%', height = '80%', color, title, children, ...props }: ContentProps) => {
+const Content = ({ width = '80%', height = '80%', color, title, padding = 30, children, ...props }: ContentProps) => {
     const childArray = React.Children.toArray(children);
 
     const body = childArray[0];
@@ -31,6 +32,10 @@ const Content = ({ width = '80%', height = '80%', color, title, children, ...pro
 
     const headerVariables: CSSPropertiesWithVars = {
         '--color': color,
+    };
+
+    const bodyVariables: CSSPropertiesWithVars = {
+        '--padding': dimensionToSpace(padding),
     };
 
     return (
@@ -48,7 +53,9 @@ const Content = ({ width = '80%', height = '80%', color, title, children, ...pro
                         </Flex>
                     </Flex>
                 </div>
-                <div className={styles.Body}>{body}</div>
+                <div className={styles.Body} style={{ ...bodyVariables }}>
+                    {body}
+                </div>
                 {subContent && <div className={styles.SubContent}>{subContent}</div>}
             </div>
         </Modal.Content>
