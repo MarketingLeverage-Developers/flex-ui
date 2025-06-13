@@ -3,6 +3,7 @@ import styles from './BasicForm.module.scss';
 import GroupLabel from './GroupLabel/GroupLabel';
 import Label from './Label/Label';
 import Group from './Group/Group';
+import Divide from './Divide/Divide';
 
 type BasicFormProps = {
     children: React.ReactNode;
@@ -17,3 +18,4 @@ export default BasicForm;
 BasicForm.GroupLabel = GroupLabel;
 BasicForm.Group = Group;
 BasicForm.Label = Label;
+BasicForm.Divide = Divide;
