@@ -1,5 +1,6 @@
 import Description from './Description/Description';
 import styles from './InfoBox.module.scss';
+import InfoText from './InfoText/InfoText';
 import Section from './Section/Section';
 import Title from './Title/Title';
 
@@ -16,4 +17,4 @@ export default InfoBox;
 InfoBox.Section = Section;
 InfoBox.Title = Title;
 InfoBox.Description = Description;
-InfoBox.InfoText = InfoBox;
+InfoBox.InfoText = InfoText;
