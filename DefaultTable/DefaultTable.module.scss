@@ -1,0 +1,12 @@
+/* Wrapper div */
+/* 📌 테이블 전체 래퍼 */
+.DefaultTableWrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.DefaultTable {
+    width: var(--width);
+    table-layout: auto;
+    border-collapse: collapse;
+}
