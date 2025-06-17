@@ -17,9 +17,9 @@ const DefaultTable = ({ children, totalWidth, ...props }: DefaultTableProps) => 
     const cssVariables: CSSPropertiesWithVars = totalWidth ? { '--width': `${totalWidth}px` } : { '--width': '100%' };
 
     return (
-        // <div className={styles.DefaultTableWrapper} {...props} style={{ ...cssVariables, ...props.style }}>
-        <table className={styles.DefaultTable}>{children}</table>
-        // </div>
+        <div className={styles.DefaultTableWrapper} {...props} style={{ ...cssVariables, ...props.style }}>
+            <table className={styles.DefaultTable}>{children}</table>
+        </div>
     );
 };
 

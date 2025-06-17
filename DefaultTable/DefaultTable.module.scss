@@ -3,10 +3,12 @@
 .DefaultTableWrapper {
     width: 100%;
     overflow-x: auto;
+    border: 1px solid #e2e2e2;
 }
 
 .DefaultTable {
     table-layout: fixed;
     width: var(--width);
     border-collapse: collapse;
+    border-style: hidden;
 }
