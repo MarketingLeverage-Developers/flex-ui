@@ -1,0 +1,9 @@
+.ColorChip {
+    display: inline-block;
+    border-radius: 54px;
+    padding: 4px 8px;
+    color: var(--color);
+    background-color: var(--background-color);
+    font-size: var(--font-12);
+    font-weight: 600;
+}
