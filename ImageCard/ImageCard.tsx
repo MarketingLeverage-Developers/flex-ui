@@ -16,12 +16,12 @@ const ImageCard = ({ text, image, onDeleteButtonClick, onDownloadButtonClick }: 
             <div className={styles.ImageBox}>
                 <img src={image} alt="이미지" />
                 {onDeleteButtonClick && (
-                    <button className={styles.Delete}>
+                    <button className={styles.Delete} onClick={onDeleteButtonClick}>
                         <HiXMark className={styles.Icon} />
                     </button>
                 )}
                 {onDownloadButtonClick && (
-                    <button className={styles.Download}>
+                    <button className={styles.Download} onClick={onDownloadButtonClick}>
                         <LiaDownloadSolid className={styles.Icon} />
                     </button>
                 )}
