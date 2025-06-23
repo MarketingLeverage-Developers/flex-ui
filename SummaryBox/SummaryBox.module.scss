@@ -1,0 +1,56 @@
+.SummaryBox {
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    padding: var(--space-30) var(--space-20);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-25);
+}
+
+.Title {
+    font-size: var(--font-18);
+    font-weight: 600;
+    color: #161616;
+}
+
+.AreaForm {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-7);
+
+    .Label {
+        font-size: var(--font-15);
+        color: #161616;
+        font-weight: 600;
+    }
+
+    .Children {
+        font-size: var(--font-15);
+        color: #474747;
+    }
+}
+
+.LineForm {
+    display: flex;
+    gap: var(--space-7);
+
+    .Label {
+        font-size: var(--font-15);
+        color: #161616;
+        font-weight: 600;
+    }
+
+    .Children {
+        font-size: var(--font-15);
+        color: #474747;
+    }
+}
+
+.Row {
+    display: flex;
+}
+
+.Col {
+    flex: 1;
+}
