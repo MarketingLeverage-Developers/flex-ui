@@ -1,0 +1,42 @@
+.SummaryCard {
+    padding: var(--space-30) var(--space-35);
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #e2e2e2;
+    flex: 1;
+
+    display: flex;
+    gap: var(--space-20);
+
+    .Circle {
+        width: var(--box-60);
+        height: var(--box-60);
+        border-radius: 50%;
+        background-color: var(--color, var(--primary-color));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 50%;
+            height: 50%;
+        }
+    }
+
+    .Text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .Title {
+            font-size: var(--font-15);
+            color: #7b7b7b;
+        }
+
+        .Description {
+            font-size: var(--font-28);
+            color: #161616;
+            font-weight: 600;
+        }
+    }
+}
