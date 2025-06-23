@@ -5,18 +5,16 @@ import { LiaDownloadSolid } from 'react-icons/lia';
 
 type ImageCardProps = {
     text: string;
+    image: string;
     onDeleteButtonClick?: () => void;
     onDownloadButtonClick?: () => void;
 };
 
-const ImageCard = ({ text, onDeleteButtonClick, onDownloadButtonClick }: ImageCardProps) => {
+const ImageCard = ({ text, image, onDeleteButtonClick, onDownloadButtonClick }: ImageCardProps) => {
     return (
         <div className={styles.ImageCard}>
             <div className={styles.ImageBox}>
-                <img
-                    src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSspJMMw50HdlEKlIBVHtPEy7FuPKUUB4tgIg&s'}
-                    alt="이미지"
-                />
+                <img src={image} alt="이미지" />
                 {onDeleteButtonClick && (
                     <button className={styles.Delete}>
                         <HiXMark className={styles.Icon} />
