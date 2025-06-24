@@ -17,9 +17,8 @@ const ImageDraggableInput = ({
     onDeleteButtonClick,
 }: ImageDraggableInputProps) => {
     const fileInputRef = useRef<HTMLInputElement>(null);
-    const [preview, setPreview] = useState<string | null>(null);
 
-    const imageSrc = imageSource || preview;
+    const imageSrc = imageSource;
 
     const handleUploadClick = () => {
         fileInputRef.current?.click();
@@ -28,8 +27,6 @@ const ImageDraggableInput = ({
     const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0] as File;
         if (file && file.type.startsWith('image/')) {
-            const url = URL.createObjectURL(file);
-            setPreview(url);
             onInputChange(file);
         }
     };
@@ -38,8 +35,6 @@ const ImageDraggableInput = ({
         e.preventDefault();
         const file = e.dataTransfer.files?.[0];
         if (file && file.type.startsWith('image/')) {
-            const url = URL.createObjectURL(file);
-            setPreview(url);
             onInputChange(file);
         }
     };
