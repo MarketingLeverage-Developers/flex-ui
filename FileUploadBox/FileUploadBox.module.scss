@@ -1,0 +1,15 @@
+.FileUploadBox {
+    border-radius: 6px;
+    border: 1px dashed #bdbdbd;
+    height: var(--box-150);
+    width: 100%;
+
+    .BoxContent {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-7);
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+}
