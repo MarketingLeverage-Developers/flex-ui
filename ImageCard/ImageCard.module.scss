@@ -7,16 +7,19 @@
     .ImageBox {
         position: relative;
         width: 100%;
+        // height: var(--box-110);
         aspect-ratio: 1 / 1;
 
         border-radius: 5px;
         background-color: #d9d9d9;
         border: 1px solid #e2e2e2;
-
+        box-sizing: border-box;
         img {
             width: 100%;
-            height: 100%;
+            aspect-ratio: 1 / 1;
             border-radius: 5px;
+
+            object-fit: contain;
         }
 
         .Delete {
