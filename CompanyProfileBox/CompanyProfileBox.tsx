@@ -18,7 +18,9 @@ const CompanyProfileBox = ({ image, text, onBoxClick, isActive }: CompanyProfile
         <div className={className} onClick={onBoxClick}>
             {image ? <img src={image} alt="회사 이미지" /> : <div className={styles.Default} />}
 
-            <span>{text}</span>
+            <span>
+                {text} {text}
+            </span>
         </div>
     );
 };
