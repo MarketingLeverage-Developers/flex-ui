@@ -7,7 +7,7 @@
 }
 
 .DefaultTable {
-    table-layout: fixed;
+    table-layout: var(--table-layout);
     width: var(--width);
     border-collapse: collapse;
     border-style: hidden;

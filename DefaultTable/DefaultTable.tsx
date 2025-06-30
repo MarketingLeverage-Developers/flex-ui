@@ -11,10 +11,14 @@ import { CSSPropertiesWithVars } from '@/ui-kit/src/types';
 type DefaultTableProps = HTMLAttributes<HTMLDivElement> & {
     children: React.ReactNode;
     totalWidth?: number;
+    tableLayout?: 'fixed' | 'auto';
 };
 
-const DefaultTable = ({ children, totalWidth, ...props }: DefaultTableProps) => {
-    const cssVariables: CSSPropertiesWithVars = totalWidth ? { '--width': `${totalWidth}px` } : { '--width': '100%' };
+const DefaultTable = ({ children, totalWidth, tableLayout = 'fixed', ...props }: DefaultTableProps) => {
+    const cssVariables: CSSPropertiesWithVars = {
+        '--width': totalWidth ? `${totalWidth}px` : '100%',
+        '--table-layout': tableLayout,
+    };
 
     return (
         <div className={styles.DefaultTableWrapper} {...props} style={{ ...cssVariables, ...props.style }}>
