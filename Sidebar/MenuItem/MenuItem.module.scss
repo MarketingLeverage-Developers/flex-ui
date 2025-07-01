@@ -1,0 +1,24 @@
+/* Block: sidebar-menu-item */
+.MenuItem {
+    width: 100%;
+    border-radius: 30px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    font-size: var(--font-14);
+    font-weight: var(--font-weight-bold);
+    padding: var(--space-10) var(--space-20);
+    box-sizing: border-box;
+    color: var(--base-color-tertiary);
+    cursor: pointer;
+
+    &:hover {
+        color: #7b7b7b;
+        background: #fff; // blackAlpha008
+    }
+
+    &.Active {
+        color: #7b7b7b;
+        background: #fff; // blackAlpha004
+    }
+}

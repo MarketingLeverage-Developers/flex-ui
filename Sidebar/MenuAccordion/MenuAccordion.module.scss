@@ -1,0 +1,50 @@
+/* Block: sidebar-menu-accordion */
+
+.Box {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    gap: 16px;
+    align-items: center;
+    box-sizing: border-box;
+
+    &.Active {
+        background-color: #fff5eb;
+        border-right: 3px solid var(--primary-color);
+    }
+}
+
+.Button {
+    width: 100%;
+    background-color: inherit;
+    padding: var(--space-15) var(--space-25);
+    border: none;
+
+    font-size: var(--font-15);
+    font-weight: 400;
+    color: #7b7b7b;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &.Active {
+        color: var(--primary-color);
+        font-weight: 500;
+    }
+}
+
+.Visible {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Hidden {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    // height: auto !important;
+    transition: all 0.3s ease-out, /* 높이 애니메이션 */ opacity 0.2s ease-out; /* 투명도 애니메이션 */
+    .Content {
+        padding: var(--space-15) var(--space-25);
+    }
+}
