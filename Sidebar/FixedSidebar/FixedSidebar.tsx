@@ -12,11 +12,11 @@ type FixedMenuProps = {
 };
 
 const FixedSidebar = ({ menuTree, onMenuClick }: FixedMenuProps) => {
-    const { isHovered } = useSidebar();
+    const { isHovered, isOpen } = useSidebar();
 
     return (
         <>
-            {isHovered && (
+            {(isHovered || isOpen) && (
                 <Portal>
                     <div className={styles.FixedSidebar}>
                         <Header fixed />
