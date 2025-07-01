@@ -1,33 +1,36 @@
 import React from 'react';
 import styles from './Header.module.scss';
-import { SidebarMode, useSidebar } from '../Sidebar';
+import { SidebarMode, useSidebar } from '../CompanySidebar';
 import Logo from '@/assets/images/logo.svg';
 import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight } from 'react-icons/md';
 import { IoMdClose } from 'react-icons/io';
 
 type HeaderProps = {
     fixed?: boolean;
+    image: string | null;
+    text: string;
 };
 
-const Header = ({ fixed = false }: HeaderProps) => {
+const Header = ({ image, text, fixed = false }: HeaderProps) => {
     const { mode } = useSidebar();
     const shouldRenderWide = fixed || mode === SidebarMode.WIDE;
 
-    return <>{shouldRenderWide ? <WideHeader fixed={fixed} /> : <NarrowHeader />}</>;
+    return <>{shouldRenderWide ? <WideHeader image={image} text={text} /> : <NarrowHeader image={image} />}</>;
 };
 
 export default Header;
 
 type WideHeaderProps = {
-    fixed?: boolean;
+    image: string | null;
+    text: string;
 };
 
-const WideHeader = ({ fixed }: WideHeaderProps) => {
+const WideHeader = ({ image, text }: WideHeaderProps) => {
     return (
         <div className={styles.Header}>
             <div className={styles.Logo}>
-                <img src={Logo} alt="로고" />
-                <span>MLeverage</span>
+                {image ? <img src={image} alt="회사 이미지" /> : <div className={styles.Default} />}
+                <span>{text}</span>
             </div>
 
             <ModeButton />
@@ -36,12 +39,17 @@ const WideHeader = ({ fixed }: WideHeaderProps) => {
     );
 };
 
-const NarrowHeader = () => {
+type NarrowHeaderProps = {
+    image: string | null;
+};
+
+const NarrowHeader = ({ image }: NarrowHeaderProps) => {
     return (
         <div className={styles.NarrowHeader}>
             <div className={styles.Logo}>
-                <img src={Logo} alt="로고" />
+                {image ? <img src={image} alt="회사 이미지" /> : <div className={styles.Default} />}
             </div>
+            <ModeButton />
         </div>
     );
 };
