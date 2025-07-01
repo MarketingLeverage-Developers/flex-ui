@@ -1,0 +1,39 @@
+.Item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-15);
+    padding: var(--space-15);
+    cursor: pointer;
+    user-select: none;
+    &:hover {
+        background-color: #e6f0ff;
+    }
+
+    .Checkbox {
+        width: var(--box-15);
+        height: var(--box-15);
+        border: 1px solid#D5D5D5;
+        box-sizing: border-box;
+        border-radius: 4px;
+        padding: 1px;
+        font-size: var(--font-12);
+        color: #e2e2e2;
+        &.Active {
+            background-color: var(--primary-color);
+            border: none;
+            color: #fff;
+        }
+    }
+
+    .Text {
+        span {
+            color: #474747;
+            font-size: var(--font-15);
+            font-weight: 400;
+        }
+        &.Active span {
+            color: #161616;
+            font-weight: 500;
+        }
+    }
+}
