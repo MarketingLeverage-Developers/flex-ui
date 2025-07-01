@@ -1,0 +1,21 @@
+.IconItem {
+    width: 100%;
+    height: 58px;
+    padding: 12px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.Active {
+        background-color: #fff5eb;
+        border-right: 3px solid var(--primary-color);
+    }
+
+    .Icon {
+        width: 16px;
+        height: 16px;
+        color: #7b7b7b;
+    }
+}

@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
-import { IconType } from 'react-icons';
+import { IconContext, IconType } from 'react-icons';
 import Accordion, { useAccordion } from 'headless/Accordion/Accordion';
 import { FaChevronDown } from 'react-icons/fa6';
-import styles from './MenuAccordion.module.scss';
+import styles from './AccordionItem.module.scss';
 import classNames from 'classnames';
 import { useLocation } from 'react-router-dom';
 import Sidebar from '../Sidebar';
+import MenuIconText from '../IconTextItem/MenuIconText';
 
 type AccordionProps = {
     children: React.ReactNode;
@@ -14,7 +15,7 @@ type AccordionProps = {
     label: string;
 };
 
-const MenuAccordion = ({ value, children, icon, label }: AccordionProps) => {
+const AccordionItem = ({ value, children, icon, label }: AccordionProps) => {
     const location = useLocation();
     const isActive = location.pathname.startsWith(value);
 
@@ -39,8 +40,8 @@ const MenuAccordion = ({ value, children, icon, label }: AccordionProps) => {
             <Accordion.Box className={boxClassName}>
                 <Accordion.Button className={buttonClassName}>
                     <Accordion.Visible className={styles.Visible}>
-                        <Sidebar.IconText icon={icon} label={label} />
-                        <FaChevronDown size={12} />
+                        <IconText icon={icon} label={label} />
+                        <FaChevronDown className={styles.Icon} size={12} />
                     </Accordion.Visible>
                 </Accordion.Button>
                 <Accordion.Hidden className={styles.Hidden}>
@@ -51,7 +52,7 @@ const MenuAccordion = ({ value, children, icon, label }: AccordionProps) => {
     );
 };
 
-export default withProvider(MenuAccordion);
+export default withProvider(AccordionItem);
 
 function withProvider<P extends {}>(WrappedComponent: React.ComponentType<P>): React.FC<P> {
     return (props: P) => {
@@ -62,3 +63,17 @@ function withProvider<P extends {}>(WrappedComponent: React.ComponentType<P>): R
         );
     };
 }
+
+type IconTextProps = {
+    icon?: IconType;
+    label: string;
+};
+
+const IconText = ({ icon: Icon, label }: IconTextProps) => {
+    return (
+        <div className={styles.IconText}>
+            {Icon && <Icon />}
+            <span>{label}</span>
+        </div>
+    );
+};
