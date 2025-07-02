@@ -9,7 +9,7 @@ import CompanyProfileItem from '../CompanyProfileItem/CompanyProfileItem';
 
 type CompanyItemProps = {
     fixed?: boolean;
-    company: Company;
+    company: any;
 } & React.ComponentProps<typeof SelectGroup.Item>;
 
 const CompanyItem = ({ value, company, fixed, onSelectGroupItemClick }: CompanyItemProps) => {

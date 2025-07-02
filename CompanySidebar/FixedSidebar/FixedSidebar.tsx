@@ -3,13 +3,12 @@ import styles from './FixedSidebar.module.scss';
 import { SelectGroupValue } from '@/headless/SelectGroup/SelectGroupItem';
 import Portal from '@/headless/Portal/Portal';
 import Header from '../Header/Header';
-import { Company } from '@/types/model/company';
 import CompanyItem from '../Companytem/CompanyItem';
 import { useSidebar } from '../CompanySidebar';
 
 type FixedMenuProps = {
-    companies: Company[];
-    selectedCompany: Company;
+    companies: any[];
+    selectedCompany: any;
     onCompanyClick: (value: SelectGroupValue) => void;
 };
 
@@ -21,7 +20,7 @@ const FixedSidebar = ({ companies, selectedCompany, onCompanyClick }: FixedMenuP
             {isOpen && (
                 <Portal>
                     <div className={styles.FixedSidebar}>
-                        <Header image={selectedCompany.profile} text={selectedCompany.companyName} fixed />
+                        <Header image={selectedCompany.profile} text={selectedCompany.text} fixed />
                         {companies.map((company) => {
                             return (
                                 <CompanyItem

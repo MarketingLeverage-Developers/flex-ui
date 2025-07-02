@@ -1,12 +1,11 @@
 import styles from './DynamicMenu.module.scss';
 import { SelectGroupValue } from '@/headless/SelectGroup/SelectGroupItem';
 import Header from '../Header/Header';
-import { Company } from '@/types/model/company';
 import CompanyItem from '@/headful/CompanySidebar/Companytem/CompanyItem';
 
 type DynamicMenuProps = {
-    companies: Company[];
-    selectedCompany: Company;
+    companies: any[];
+    selectedCompany: any;
     onCompanyClick: (value: SelectGroupValue) => void;
 };
 
