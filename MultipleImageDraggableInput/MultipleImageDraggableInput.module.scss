@@ -1,0 +1,116 @@
+.Wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-7);
+}
+
+.ImageDraggableInput {
+    background-color: #f5f6fa;
+    border: 2px dashed #bdbdbd;
+    border-radius: 6px;
+    padding: var(--space-25);
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+    &:hover {
+        border-color: #999;
+    }
+}
+
+.Content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-7);
+    align-items: center;
+}
+
+.Icon {
+    width: var(--box-30);
+    height: var(--box-30);
+    color: var(--primary-color);
+}
+
+.Text {
+    color: var(--primary-color);
+    font-size: var(--font-14);
+}
+
+.uploadButton {
+    width: fit-content;
+    background-color: var(--primary-color);
+    padding: var(--space-7) var(--space-15);
+    border-radius: 8px;
+    display: inline-block;
+    cursor: pointer;
+
+    font-size: var(--font-15);
+    color: #fff;
+}
+
+.PreviewList {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.PreviewItem {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-7);
+    img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #e2e2e2;
+        object-fit: contain;
+        border-radius: 8px;
+        width: 100%;
+        aspect-ratio: 4/5;
+    }
+    .ImageName {
+        font-size: var(--font-14);
+        color: #474747;
+    }
+}
+
+.Delete {
+    position: absolute;
+    top: var(--space-7);
+    right: var(--space-10);
+    width: var(--box-20);
+    height: var(--box-20);
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    .Icon {
+        color: #474747;
+        width: 60%;
+        height: 60%;
+    }
+}
+
+.Check {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--box-50);
+    height: var(--box-50);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
