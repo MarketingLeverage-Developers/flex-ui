@@ -11,7 +11,7 @@ const OpenButton = () => {
 
     return (
         <div className={styles.OpenButton}>
-            <RxHamburgerMenu onClick={handleButtonClick} />
+            <RxHamburgerMenu className={styles.Icon} onClick={handleButtonClick} />
         </div>
     );
 };
