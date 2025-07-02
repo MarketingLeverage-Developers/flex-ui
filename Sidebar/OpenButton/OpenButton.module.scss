@@ -1,0 +1,9 @@
+.OpenButton {
+    display: none;
+
+    @media (max-width: 1200px) {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+}
