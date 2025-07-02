@@ -1,4 +1,3 @@
-import { Company } from '@/types/model/company';
 import { useSidebar } from '../CompanySidebar';
 import styles from './OpenButton.module.scss';
 import { FaUser } from 'react-icons/fa';

@@ -4,7 +4,6 @@ import styles from './CompanyItem.module.scss';
 import classNames from 'classnames';
 import { SidebarMode, useSidebar } from '../CompanySidebar';
 import ProfileItem from '../ProfileItem/ProfileItem';
-import { Company } from '@/types/model/company';
 import CompanyProfileItem from '../CompanyProfileItem/CompanyProfileItem';
 
 type CompanyItemProps = {
