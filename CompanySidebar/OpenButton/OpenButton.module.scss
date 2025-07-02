@@ -6,4 +6,28 @@
         align-items: center;
         height: 100%;
     }
+
+    .Logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        span {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        img {
+            width: 16px;
+            height: 16px;
+
+            box-sizing: border-box;
+        }
+    }
+    .Default {
+        width: 16px;
+        height: 16px;
+        background-color: #d9d9d9;
+        border-radius: 4px;
+    }
 }

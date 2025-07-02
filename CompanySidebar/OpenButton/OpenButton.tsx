@@ -1,8 +1,14 @@
+import { Company } from '@/types/model/company';
 import { useSidebar } from '../CompanySidebar';
 import styles from './OpenButton.module.scss';
 import { FaUser } from 'react-icons/fa';
 
-const OpenButton = () => {
+type OpenButtonProps = {
+    image: string | null;
+    text: string;
+};
+
+const OpenButton = ({ image, text }: OpenButtonProps) => {
     const { setIsOpen } = useSidebar();
 
     const handleButtonClick = () => {
@@ -10,8 +16,11 @@ const OpenButton = () => {
     };
 
     return (
-        <div className={styles.OpenButton}>
-            <FaUser onClick={handleButtonClick} />
+        <div className={styles.OpenButton} onClick={handleButtonClick}>
+            <div className={styles.Logo}>
+                {image ? <img src={image} alt="회사 이미지" /> : <div className={styles.Default} />}
+                <span>{text}</span>
+            </div>
         </div>
     );
 };
