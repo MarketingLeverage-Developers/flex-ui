@@ -6,14 +6,10 @@
     overflow: hidden;
 
     .Title {
-        border-top-right-radius: 20px;
-        border-top-right-radius: 20px;
-        padding: var(--space-15) var(--space-30);
+        padding: 15px 30px;
 
-        font-size: var(--font-17);
+        font-size: 17px;
         font-weight: 500;
-
-        border-bottom: 1px solid #f0f0f0;
 
         display: flex;
         justify-content: space-between;
