@@ -66,23 +66,24 @@ const MultipleImageDraggableInput = ({
                     </div>
                 </div>
             </div>
-
-            {imageSources.map((src, index) => (
-                <div key={index} className={styles.PreviewItem}>
-                    <img src={src} alt={`미리보기 ${index + 1}`} onClick={() => onImageClick?.(index)} />
-                    {selectedImage === src && (
-                        <div className={styles.Check}>
-                            <FaCheck className={styles.Icon} />
+            <div className={styles.PreviewList}>
+                {imageSources.map((src, index) => (
+                    <div key={index} className={styles.PreviewItem}>
+                        <img src={src} alt={`미리보기 ${index + 1}`} onClick={() => onImageClick?.(index)} />
+                        {selectedImage === src && (
+                            <div className={styles.Check}>
+                                <FaCheck className={styles.Icon} />
+                            </div>
+                        )}
+                        <div className={styles.Delete} onClick={() => onDeleteButtonClick(index)}>
+                            <FaXmark className={styles.Icon} />
                         </div>
-                    )}
-                    <div className={styles.Delete} onClick={() => onDeleteButtonClick(index)}>
-                        <FaXmark className={styles.Icon} />
+                        <div className={styles.ImageName}>
+                            <span>{imageNames[index]}</span>
+                        </div>
                     </div>
-                    <div className={styles.ImageName}>
-                        <span>{imageNames[index]}</span>
-                    </div>
-                </div>
-            ))}
+                ))}
+            </div>
         </div>
     );
 };
