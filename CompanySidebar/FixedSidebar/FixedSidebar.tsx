@@ -20,7 +20,7 @@ const FixedSidebar = ({ companies, selectedCompany, onCompanyClick }: FixedMenuP
             {isOpen && (
                 <Portal>
                     <div className={styles.FixedSidebar}>
-                        <Header image={selectedCompany.profile} text={selectedCompany.text} fixed />
+                        <Header image={selectedCompany.profile} text={selectedCompany.companyName} fixed />
                         {companies.map((company) => {
                             return (
                                 <CompanyItem
