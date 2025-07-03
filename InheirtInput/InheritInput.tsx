@@ -12,7 +12,7 @@ const InheritInput = ({
                 all: 'unset',
 
                 // ✅ 기존 텍스트 스타일을 명시적으로 복원
-                fontSize: '12px',
+                fontSize: '15px',
                 fontWeight: 400,
                 lineHeight: '20px',
                 fontFamily: 'inherit',
@@ -31,6 +31,7 @@ const InheritInput = ({
                 color: disabled ? '#999' : 'inherit',
                 cursor: disabled ? 'not-allowed' : updatable ? 'text' : 'default',
                 opacity: disabled ? 0.6 : 1,
+                textAlign: 'right',
 
                 ...props.style,
             }}
