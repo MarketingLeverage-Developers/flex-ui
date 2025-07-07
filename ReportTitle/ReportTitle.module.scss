@@ -1,0 +1,21 @@
+.ReportTitle {
+    padding-top: 28px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #373737;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    img {
+        width: 25px;
+        height: 25px;
+    }
+
+    span {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 500;
+    }
+}
