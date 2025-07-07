@@ -1,0 +1,24 @@
+.ProgressBar {
+    width: 60px;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 2px 0 0 2px;
+    overflow: hidden;
+}
+
+.Bar {
+    height: 100%;
+    background-color: #8fde6b;
+    transition: width 0.3s ease;
+}
+
+.Label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #161616;
+    font-size: 9px;
+    font-weight: 600;
+    pointer-events: none;
+}
