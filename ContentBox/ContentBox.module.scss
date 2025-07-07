@@ -5,6 +5,12 @@
     border: 1px solid #e2e2e2;
     overflow: hidden;
 
+    width: var(--width, auto);
+    height: var(--height, auto);
+
+    display: flex;
+    flex-direction: column;
+
     .Title {
         padding: 15px 30px;
 
