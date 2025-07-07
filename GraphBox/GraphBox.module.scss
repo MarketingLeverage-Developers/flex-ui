@@ -8,16 +8,17 @@
     padding: 12px;
 
     .Title {
-        padding: 15px 30px;
-
-        font-size: 13px;
-        font-weight: 500;
+        padding: 12px;
 
         display: flex;
         justify-content: space-between;
         align-items: center;
 
         span {
+            font-size: 13px;
+            font-weight: 600;
+            color: #161616;
+
             display: -webkit-box; // flex-box와 비슷하게 작동하는 구형 웹킷 박스 모델 사용
             -webkit-box-orient: vertical; // 박스의 방향을 수직으로 설정
             overflow: hidden; // 내용이 넘칠 경우 숨김
