@@ -31,4 +31,14 @@
         width: 100%;
         height: 85%;
     }
+
+    &.Sub {
+        padding: 12px;
+        background-color: #f8f8f8;
+        .Title {
+            span {
+                font-size: 10px;
+            }
+        }
+    }
 }
