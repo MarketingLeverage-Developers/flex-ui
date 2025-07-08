@@ -1,0 +1,21 @@
+// .A4Wrapper {
+//     display: flex;
+//     justify-content: center; /* 수평 가운데 정렬 */
+//     align-items: center; /* 수직 가운데 정렬 (선택사항) */
+//     height: 100%;
+//     overflow: auto;
+//     padding: 16px;
+//     box-sizing: content-box;
+//     background-color: #fff;
+// }
+
+// A4.module.scss
+.A4 {
+    width: 794px;
+    aspect-ratio: 210 / 297;
+    background-color: #f5f5f5;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 32px; // 필요시 조정
+}
