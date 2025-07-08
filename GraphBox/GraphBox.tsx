@@ -5,11 +5,12 @@ import classNames from 'classnames';
 
 type GraphBoxProps = React.ComponentProps<typeof Box> & {
     title?: string;
+    header?: React.ReactNode;
     rightNode?: React.ReactNode;
     sub?: boolean;
 };
 
-const GraphBox = ({ children, title, sub, rightNode, ...props }: GraphBoxProps) => {
+const GraphBox = ({ children, title, sub, rightNode, header, ...props }: GraphBoxProps) => {
     const className = classNames(styles.GraphBox, {
         [styles.Sub]: sub,
     });
@@ -17,7 +18,8 @@ const GraphBox = ({ children, title, sub, rightNode, ...props }: GraphBoxProps) 
     return (
         <div className={className} {...props}>
             <div className={styles.Title}>
-                <span>{title}</span>
+                {title && <span>{title}</span>}
+                {header && <div>{header}</div>}
                 <div>{rightNode}</div>
             </div>
 
