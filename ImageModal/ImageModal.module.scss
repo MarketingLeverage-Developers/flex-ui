@@ -1,0 +1,19 @@
+.ImageModalBackdrop {
+    z-index: 1200;
+}
+.ImageModalContent {
+    display: flex;
+    flex-direction: column;
+    z-index: 1201;
+}
+
+.Close {
+    width: 100%;
+    cursor: pointer;
+    .Icon {
+        display: flex;
+        color: #fff;
+        justify-self: flex-end;
+        font-size: 30px;
+    }
+}
