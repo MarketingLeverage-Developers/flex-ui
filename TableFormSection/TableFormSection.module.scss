@@ -1,0 +1,58 @@
+.TableFormSection {
+    padding: var(--space-30);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-15);
+}
+
+.Content {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e2e2e2;
+    border-bottom: none;
+    border-right: none;
+    margin-bottom: var(--space-15);
+    > * {
+        width: 100%;
+    }
+}
+
+.Title {
+    font-size: var(--font-20);
+    font-weight: 600;
+    color: #161616;
+}
+
+.Row {
+    width: 100%;
+    display: flex;
+
+    > * {
+        width: inherit;
+    }
+}
+.Cell {
+    display: flex;
+    font-size: var(--font-14);
+
+    .CellLabel {
+        padding: var(--space-15) var(--space-10);
+        width: var(--box-100);
+        background-color: #f8f8f8;
+        border: 1px solid #e2e2e2;
+        border-left: none;
+        border-top: none;
+    }
+    .CellValue {
+        padding: var(--space-15) var(--space-10);
+        flex: 1;
+        font-weight: 500;
+        border: 1px solid #e2e2e2;
+        border: 1px solid #e2e2e2;
+        border-left: none;
+        border-top: none;
+        display: flex;
+        align-items: center;
+    }
+}
