@@ -12,9 +12,9 @@
     flex-direction: column;
 
     .Title {
-        padding: 15px 30px;
+        padding: var(--space-20) var(--space-30);
 
-        font-size: 17px;
+        font-size: var(--font-17);
         font-weight: 500;
 
         display: flex;
