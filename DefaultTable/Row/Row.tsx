@@ -18,7 +18,7 @@ const Row = ({ children, onMouseEnter, onMouseLeave, bgColor = '#fff', ...props 
             onMouseLeave={onMouseLeave}
             {...props}
             className={styles.Row}
-            style={{ ...variables }}
+            style={{ ...variables, ...props.style }}
         >
             {children}
         </tr>
