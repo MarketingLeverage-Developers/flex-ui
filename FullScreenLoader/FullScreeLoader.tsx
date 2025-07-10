@@ -1,3 +1,4 @@
+import DeferredComponent from '@/components/DeferredComponent/DeferredComponent';
 import { useIsMutating } from '@tanstack/react-query';
 
 const FullscreenLoader = () => {
@@ -6,10 +7,12 @@ const FullscreenLoader = () => {
     if (isMutating === 0) return null;
 
     return (
-        <div style={styles.overlay}>
-            <div style={styles.spinner} />
-            <div style={styles.text}>잠시만 기다려 주세요...</div>
-        </div>
+        <DeferredComponent active={isMutating > 0}>
+            <div style={styles.overlay}>
+                <div style={styles.spinner} />
+                <div style={styles.text}>잠시만 기다려 주세요...</div>
+            </div>
+        </DeferredComponent>
     );
 };
 

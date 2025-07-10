@@ -1,3 +1,4 @@
+import DeferredComponent from '@/components/DeferredComponent/DeferredComponent';
 import { useIsFetching } from '@tanstack/react-query';
 import React from 'react';
 
@@ -7,10 +8,12 @@ const FullscreenFetchLoader = () => {
     if (isFetching === 0) return null;
 
     return (
-        <div style={styles.overlay}>
-            <div style={styles.spinner} />
-            <div style={styles.text}>데이터를 불러오는 중입니다...</div>
-        </div>
+        <DeferredComponent active={isFetching > 0}>
+            <div style={styles.overlay}>
+                <div style={styles.spinner} />
+                <div style={styles.text}>데이터를 불러오는 중입니다...</div>
+            </div>
+        </DeferredComponent>
     );
 };
 
