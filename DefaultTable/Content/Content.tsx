@@ -6,11 +6,13 @@ type ContentProps = {
     children?: React.ReactNode;
     align?: 'left' | 'center' | 'right';
     width?: number | string;
+    height?: number | string;
 };
 
-const Content = ({ width, children, align = 'left' }: ContentProps) => {
+const Content = ({ width, children, height = 40, align = 'left' }: ContentProps) => {
     const cssVariables: React.CSSProperties = {
         '--width': dimensionToString(width),
+        '--height': dimensionToString(height),
         '--align': align,
     } as React.CSSProperties;
 

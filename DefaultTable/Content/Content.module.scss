@@ -3,8 +3,9 @@
     align-items: center;
     justify-content: var(--align);
 
-    height: 40px;
+    height: var(--height);
     padding: 0 15px;
     font-size: 15px;
     box-sizing: border-box;
+    overflow: visible;
 }
