@@ -2,7 +2,9 @@
     transition: opacity 1.2s ease, transform 0.5s ease;
     background-color: #fff;
     color: #161616;
-    padding: var(--space-10) var(--space-50);
+    width: 70%;
+    max-width: 500px;
+    padding: var(--space-10) var(--space-30);
     border-radius: 8px;
     position: fixed;
     top: 0; // top에 위치시킴
