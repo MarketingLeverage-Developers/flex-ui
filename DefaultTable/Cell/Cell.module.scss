@@ -11,6 +11,13 @@
     max-width: var(--cell-width);
     overflow: visbile;
 
+    &:first-child {
+        padding-left: 15px;
+    }
+    &:last-child {
+        padding-right: 15px;
+    }
+
     // .Content {
     //     display: flex; /* block 요소로 명시 (table-cell 내부 div는 기본 block 이지만 명시적용 권장) */
     //     align-items: center;
