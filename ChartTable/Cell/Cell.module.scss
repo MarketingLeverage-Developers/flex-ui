@@ -29,6 +29,27 @@
     &.NoBorder {
         border: none;
         background: #fff;
+        position: relative;
+        // box-sizing: border-box;
+        &.Horizontal::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 5px;
+            height: 1px;
+            background: #dedede;
+        }
+
+        &.Vertical::before {
+            content: '';
+            position: absolute;
+            right: 0px;
+            bottom: 0;
+            width: 1px;
+            height: 5px;
+            background: #dedede;
+        }
     }
 }
 

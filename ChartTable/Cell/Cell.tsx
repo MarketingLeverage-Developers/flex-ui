@@ -13,6 +13,8 @@ type CellProps = {
     value?: string | number;
     bgColor?: HexColor;
     noBorder?: boolean;
+    horizontal?: boolean;
+    vertical?: boolean;
 } & TdHTMLAttributes<HTMLTableCellElement>;
 
 const Cell = ({
@@ -25,6 +27,8 @@ const Cell = ({
     value,
     bgColor,
     noBorder = false,
+    horizontal,
+    vertical,
     ...props
 }: CellProps) => {
     const handleTableCellChange: ChangeEventHandler<HTMLInputElement> = (e) => {
@@ -40,6 +44,8 @@ const Cell = ({
 
     const cellClasses = classNames(styles.Cell, {
         [styles.NoBorder]: noBorder,
+        [styles.Vertical]: vertical,
+        [styles.Horizontal]: horizontal,
     });
 
     const cssVariables: CSSPropertiesWithVars = {
