@@ -23,7 +23,7 @@ const ContentBox = ({
     rightNode,
     s,
     width,
-    height,
+    height = '100%',
     ...props
 }: ContentBoxProps) => {
     const cssVariables: CSSPropertiesWithVars = {
