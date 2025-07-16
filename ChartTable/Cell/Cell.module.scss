@@ -1,0 +1,35 @@
+.Cell {
+    border: 1px solid #dedede;
+    text-align: center;
+    padding: 0;
+    font-size: 12px;
+    background: var(--background, #fff);
+    color: #7b7b7b; /* ✅ 핵심 */
+    vertical-align: middle;
+    height: 20px;
+    box-sizing: border-box;
+
+    &[data-type='blue'] {
+        background: #4a90e2;
+        color: #fff !important;
+        font-weight: bold;
+    }
+
+    &[data-type='purple'] {
+        background: #c59cff;
+        color: #7b7b7b !important;
+        font-weight: bold;
+    }
+
+    &[data-type='transparent'] {
+        background: #fff;
+        color: #7b7b7b;
+    }
+
+    &.NoBorder {
+        border: none;
+        background: #fff;
+    }
+}
+
+/* ✅ 추가: border 없는 셀 */

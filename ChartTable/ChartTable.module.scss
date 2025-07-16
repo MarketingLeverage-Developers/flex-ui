@@ -1,0 +1,11 @@
+.ChartTableWrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.ChartTable {
+    width: var(--width);
+    table-layout: var(--table-layout);
+    border-collapse: collapse;
+    border-style: hidden;
+}
