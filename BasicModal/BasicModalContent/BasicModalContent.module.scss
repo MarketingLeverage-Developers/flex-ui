@@ -22,9 +22,9 @@
 /* 헤더 */
 .Header {
     flex: 0 0 auto;
-    padding: var(--space-7) var(--space-30);
+    padding: 12px 32px;
     background-color: var(--color, var(--primary-color));
-    font-size: var(--font-20);
+    font-size: 20px;
     font-weight: 600;
     color: #fff;
     border-top-left-radius: 20px;
@@ -38,7 +38,7 @@
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     overflow-y: auto;
-    padding: var(--padding, var(--space-30));
+    padding: var(--padding, 32px);
 }
 
 /* 서브 콘텐츠 */
