@@ -16,12 +16,24 @@ const ImageCard = ({ text, image, onDeleteButtonClick, onDownloadButtonClick }: 
             <div className={styles.ImageBox}>
                 <img src={image} alt="이미지" />
                 {onDeleteButtonClick && (
-                    <button className={styles.Delete} onClick={onDeleteButtonClick}>
+                    <button
+                        className={styles.Delete}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            onDeleteButtonClick();
+                        }}
+                    >
                         <HiXMark className={styles.Icon} />
                     </button>
                 )}
                 {onDownloadButtonClick && (
-                    <button className={styles.Download} onClick={onDownloadButtonClick}>
+                    <button
+                        className={styles.Download}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            onDownloadButtonClick();
+                        }}
+                    >
                         <LiaDownloadSolid className={styles.Icon} />
                     </button>
                 )}
