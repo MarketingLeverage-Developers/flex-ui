@@ -16,7 +16,7 @@ const DynamicMenu = ({ menuTree, onMenuClick }: DynamicMenuProps) => {
             <div className={styles.DynamicMenu}>
                 {menuTree.map((menu) => {
                     if (!menu.children || menu.children.length === 0) return null;
-                    return <Menu menu={menu} onMenuClick={onMenuClick} />;
+                    return <Menu key={menu.key} menu={menu} onMenuClick={onMenuClick} />;
                 })}
             </div>
         </>

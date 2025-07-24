@@ -5,6 +5,7 @@ type ColorChipProps = {
     color: HexColor;
     bgColor: HexColor;
     text: string;
+    style?: React.CSSProperties;
 };
 
 const ColorChip = ({ color, bgColor, text }: ColorChipProps) => {

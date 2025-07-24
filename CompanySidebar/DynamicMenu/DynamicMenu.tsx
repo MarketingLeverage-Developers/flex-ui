@@ -16,7 +16,7 @@ const DynamicMenu = ({ companies, selectedCompany, onCompanyClick }: DynamicMenu
             <div className={styles.DynamicMenu}>
                 {companies.map((company) => {
                     return (
-                        <CompanyItem value={company.uuid} company={company} onSelectGroupItemClick={onCompanyClick} />
+                        <CompanyItem key={company.uuid} value={company.uuid} company={company} onSelectGroupItemClick={onCompanyClick} />
                     );
                 })}
             </div>
