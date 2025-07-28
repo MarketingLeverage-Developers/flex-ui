@@ -14,11 +14,11 @@
     .Title {
         padding: var(--space-20) var(--space-30);
 
-        font-size: var(--font-17);
+        font-size: var(--font-size);
         font-weight: 500;
 
         display: flex;
-        justify-content: space-between;
+        justify-content: var(--title-align);
         align-items: center;
 
         span {
