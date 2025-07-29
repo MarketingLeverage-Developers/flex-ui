@@ -1,0 +1,26 @@
+.MobileMediumMenuItem {
+    font-size: 15px;
+    font-weight: 400;
+    padding: 0px 11px;
+    min-width: 80px;
+    height: 40px;
+
+    background-color: inherit;
+
+    cursor: pointer;
+
+    color: #bdbdbd;
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+
+    // &:hover {
+    //     color: #464646;
+    // }
+
+    &.active {
+        // active 상태일 때 적용할 스타일을 여기에 작성합니다.
+        font-weight: 500;
+        color: #161616; /* 예시: active일 때 글자색을 파란색으로 변경 */
+        border-bottom: 2px solid #161616;
+    }
+}
