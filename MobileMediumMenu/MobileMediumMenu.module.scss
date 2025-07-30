@@ -1,15 +1,22 @@
 .MobileMediumMenu {
-    display: flex;
-    justify-content: center;
+    position: relative;
+    padding: 0 20px; // 내용 좌우 여백 유지
+    overflow-x: auto;
 
-    width: 100%;
-    box-sizing: border-box;
+    // 스크롤바 숨기기
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 
-    // flex-wrap: wrap;
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100vw; // 화면 전체 폭
+        height: 1px;
+        background-color: #f0f0f0;
+    }
 }
-
-// .HasSmallMenu {
-//     padding: 0px 40px;
-//     padding-top: 30px;
-//     padding-bottom: 10px;
-// }
