@@ -1,11 +1,11 @@
 import Box from '@/ui-kit/src/components/layouts/Box/Box';
 import React from 'react';
-import styles from './ContentBox.module.scss';
+import styles from './MobileContentBox.module.scss';
 import { BoxSize, CSSPropertiesWithVars } from '@/ui-kit/src/types';
 import { dimensionToString, dimensionToVariable, spacingToSpace, spacingToString, toFont } from '@/ui-kit/src/utils';
 import classNames from 'classnames';
 
-type ContentBoxProps = React.ComponentProps<typeof Box> & {
+type MobileContentBoxProps = React.ComponentProps<typeof Box> & {
     title?: React.ReactNode;
     titleAlign?: 'space-between' | 'center' | 'end' | 'start';
     titleBorder?: boolean;
@@ -17,7 +17,7 @@ type ContentBoxProps = React.ComponentProps<typeof Box> & {
     s?: boolean;
 };
 
-const ContentBox = ({
+const MobileContentBox = ({
     children,
     title,
     titleAlign = 'space-between',
@@ -29,12 +29,12 @@ const ContentBox = ({
     width,
     height = '100%',
     ...props
-}: ContentBoxProps) => {
+}: MobileContentBoxProps) => {
     const cssVariables: CSSPropertiesWithVars = {
-        '--width': s ? dimensionToString(width) : dimensionToVariable(width),
-        '--height': s ? dimensionToString(height) : dimensionToVariable(height),
-        '--padding': s ? spacingToString(props.padding) : spacingToSpace(props.padding),
-        '--font-size': s ? dimensionToString(fontSize) : toFont(fontSize),
+        '--width': dimensionToString(width),
+        '--height': dimensionToString(height),
+        '--padding': spacingToString(props.padding),
+        '--font-size': dimensionToString(fontSize),
         '--title-align': titleAlign,
     };
 
@@ -43,7 +43,7 @@ const ContentBox = ({
     });
 
     return (
-        <div className={styles.ContentBox} {...props} style={{ ...props.style, ...cssVariables }}>
+        <div className={styles.MobileContentBox} {...props} style={{ ...props.style, ...cssVariables }}>
             {(title || header || rightNode) && (
                 <div className={TitleClassName}>
                     {title && <span>{title}</span>}
@@ -57,4 +57,4 @@ const ContentBox = ({
     );
 };
 
-export default ContentBox;
+export default MobileContentBox;
