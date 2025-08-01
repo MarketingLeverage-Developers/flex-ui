@@ -1,0 +1,57 @@
+.ImageForm {
+    width: 976px;
+    height: 209px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    border: 1px dashed var(--main, #e88731);
+    background: var(--gray7, #f8f8f8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .ImageInput {
+        border: 0;
+        clip: rect(0, 0, 0, 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+        white-space: nowrap;
+    }
+    .CustomFileupload {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 15px;
+        font-weight: 500;
+        color: #333;
+
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        span:nth-child(2) {
+            color: var(--main, #e88731);
+            text-align: center;
+            font-family: Pretendard;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 140%; /* 21px */
+        }
+        span:nth-child(3) {
+            display: inline-flex;
+            padding: 8px 12px;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border-radius: 8px;
+            background: var(--main, #e88731);
+            color: #fff;
+        }
+    }
+}
