@@ -2,6 +2,7 @@ import React from 'react';
 import Dropdown, { useDropdown } from '@/headless/Dropdown/Dropdown';
 import styles from './Content.module.scss';
 import classNames from 'classnames';
+import DropdownContent from '@/components/Select/Content/DropdownContent';
 
 type ContentProps = {
     children: React.ReactNode;
@@ -15,7 +16,11 @@ const Content = ({ children }: ContentProps) => {
         [styles.Closed]: !dropdownValue, // dropdownValue가 false일 때 Closed 클래스 적용
     });
 
-    return <Dropdown.Content className={combinedStyle}>{children}</Dropdown.Content>;
+    return (
+        <Dropdown.Content full className={combinedStyle}>
+            {children}
+        </Dropdown.Content>
+    );
 };
 
 export default Content;
