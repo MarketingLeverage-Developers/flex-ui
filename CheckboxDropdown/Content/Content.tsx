@@ -2,7 +2,6 @@ import React from 'react';
 import Dropdown, { useDropdown } from '@/headless/Dropdown/Dropdown';
 import styles from './Content.module.scss';
 import classNames from 'classnames';
-import DropdownContent from '@/components/Select/Content/DropdownContent';
 
 type ContentProps = {
     children: React.ReactNode;
