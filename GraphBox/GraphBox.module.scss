@@ -1,39 +1,28 @@
 .GraphBox {
+    display: grid;
+    grid-template-rows: auto 1fr; // ⬅️ header는 auto, 나머지 children은 1fr
+    height: 100%;
     width: 100%;
-    height: 100%; // ✅ 전체 영역 사용
-    display: flex;
-    flex-direction: column; // ✅ 수직 분할
+    overflow: hidden;
     border-radius: 20px;
     background-color: #fff;
-    overflow: hidden;
     padding: 12px;
     box-sizing: border-box;
 
     .Title {
-        padding: 12px 0;
+        // 그대로 유지 (header 영역)
+        font-size: 13px;
+        padding: 10px 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        flex: none; // ✅ 고정 높이
-
-        span {
-            font-size: 13px;
-            font-weight: 600;
-            color: #161616;
-
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            -webkit-line-clamp: 1;
-        }
+        flex: none;
     }
 
     .Children {
-        flex: 1; // ✅ 나머지 공간 전부 사용
-        width: 100%;
-        min-height: 0; // ✅ flex 아이템 줄어들 수 있게
-        overflow: hidden; // 스크롤 방지 or 컨트롤
+        // 👇 flex 대신 height 비율로 자동 조절됨
+        min-height: 0;
+        overflow: hidden;
     }
 
     &.Sub {
