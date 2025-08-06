@@ -1,5 +1,7 @@
 .ColorChip {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 54px;
     padding: 4px 8px;
     color: var(--color);
