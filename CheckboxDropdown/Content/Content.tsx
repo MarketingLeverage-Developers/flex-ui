@@ -15,7 +15,11 @@ const Content = ({ children }: ContentProps) => {
         [styles.Closed]: !dropdownValue, // dropdownValue가 false일 때 Closed 클래스 적용
     });
 
-    return <Dropdown.Content className={combinedStyle}>{children}</Dropdown.Content>;
+    return (
+        <Dropdown.Content full className={combinedStyle}>
+            {children}
+        </Dropdown.Content>
+    );
 };
 
 export default Content;

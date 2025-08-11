@@ -1,0 +1,35 @@
+.MobileMediumMenu {
+    position: relative;
+    display: flex;
+    overflow-x: auto;
+    padding: 0 20px; // 내부 메뉴 여백 유지
+    background-color: #fff;
+
+    // 스크롤바 숨기기
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    // 뷰포트 전체 너비로 border 표시
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%); // 중앙 기준으로 정렬
+        width: 100vw; // 뷰포트 전체 너비
+        height: 1px;
+        background-color: #f0f0f0;
+        z-index: 0;
+    }
+
+    // 내부 요소는 위로 올라오게 (보더 위에 오도록)
+    > * {
+        position: relative;
+        z-index: 1;
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+}

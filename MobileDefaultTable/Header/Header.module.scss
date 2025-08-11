@@ -1,0 +1,13 @@
+// @import 'theme';
+
+.Header {
+    background: #fff;
+    height: var(--box-40);
+    text-align: left;
+    // padding: ;
+    // box-sizing: border-box;
+    font-size: var(--font-13);
+    color: var(--base-color-tertiary);
+
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.08);
+}

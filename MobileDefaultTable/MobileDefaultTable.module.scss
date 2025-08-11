@@ -1,0 +1,14 @@
+/* Wrapper div */
+/* 📌 테이블 전체 래퍼 */
+.MobileDefaultTableWrapper {
+    width: 100%;
+    overflow-x: auto;
+    // border: 1px solid #e2e2e2;
+}
+
+.MobileDefaultTable {
+    table-layout: var(--table-layout);
+    width: var(--width);
+    border-collapse: collapse;
+    border-style: hidden;
+}

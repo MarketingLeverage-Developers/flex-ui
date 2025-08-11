@@ -1,0 +1,11 @@
+.Content {
+    display: flex;
+    align-items: center;
+    justify-content: var(--align);
+
+    height: var(--height);
+    padding: 0 15px;
+    font-size: 15px;
+    box-sizing: border-box;
+    overflow: visible;
+}

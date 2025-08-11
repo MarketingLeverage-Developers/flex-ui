@@ -10,7 +10,7 @@ const A4 = ({ children, isPrintMode = false }: A4Props) => {
     const [scale, setScale] = useState(1);
     const A4_WIDTH = 794;
     const A4_HEIGHT = (A4_WIDTH * 297) / 210;
-    const PADDING = 20;
+    const PADDING = 0;
 
     useEffect(() => {
         if (isPrintMode) return; // PDF 모드일 땐 scale 계산 X
