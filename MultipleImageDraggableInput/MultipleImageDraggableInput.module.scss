@@ -50,12 +50,11 @@
 .PreviewList {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr)); // 긴 콘텐츠로 열 벌어짐 방지
     gap: 12px;
 }
 
 .PreviewItem {
-    width: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
