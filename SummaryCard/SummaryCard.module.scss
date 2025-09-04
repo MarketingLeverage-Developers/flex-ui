@@ -9,8 +9,8 @@
     gap: var(--space-20);
 
     .Circle {
-        width: var(--box-60);
-        height: var(--box-60);
+        width: var(--box-55);
+        height: var(--box-55);
         border-radius: 50%;
         background-color: var(--color, var(--primary-color));
         display: flex;
@@ -18,8 +18,8 @@
         align-items: center;
 
         img {
-            width: 50%;
-            height: 50%;
+            width: 40%;
+            height: 40%;
         }
     }
 
@@ -33,7 +33,7 @@
             color: #7b7b7b;
         }
 
-        .Description {
+        .Number {
             font-size: var(--font-28);
             color: #161616;
             font-weight: 600;

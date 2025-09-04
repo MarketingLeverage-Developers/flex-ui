@@ -14,7 +14,7 @@ const SummaryCard = ({ color, text, count, icon }: SummaryCardProps) => {
     };
 
     // count를 최소 두 자리 문자열로 포맷
-    const formattedCount = String(count).padStart(2, '0');
+    const formattedCount = count !== 0 ? String(count).padStart(2, '0') : count;
 
     return (
         <div className={styles.SummaryCard} style={{ ...cssVariables }}>
